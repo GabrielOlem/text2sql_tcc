@@ -1,0 +1,9 @@
+Context: You are a SQL expert, and I need your help building SQL queries. Please provide only the SQL query, without explanation.
+
+Schema: 'department' [ Primary Key: 'Department_ID' int, 'Name' text, 'Creation' text, 'Ranking' int, 'Budget_in_Billions' int, 'Num_Employees' int];
+'head' [ Primary Key: 'head_ID' int, 'name' text, 'born_state' text, 'age' int];
+'management' [ Primary Key: 'department_ID' int, 'head_ID' int, 'temporary_acting' text, Foreign Key: 'department_ID' int from 'management' 'department_ID', Foreign Key: 'head_ID' int from 'management' 'head_ID'];
+
+Question: How many heads of the departments are older than 56 ?
+
+Answer:
