@@ -87,6 +87,7 @@ def training(model, tokenizer, data, training_arguments, save_path):
     )
     model.config.use_cache = False
     trainer.train()
+    print('Saving model on ', save_path)
     model.save_pretrained(save_path)
 
 
@@ -130,15 +131,21 @@ if __name__ == "__main__":
     warmup_ratio = args.warmup_ratio
     lr_scheduler_type = args.lr_scheduler_type
     save_path = args.save_path
-
+    
+    print('Loading the Model')
     model, tokenizer = load_model(model_name)
     
+
     print_trainable_parameters(model)
 
+    print('Loading Dataset')
     data = dataset_loader(dataset_path)
 
+    print('Applying Lora configuration')
     model = lora(lora_r, lora_alpha, lora_dropout, model)
 
+
+    print('Creating Training Arguments')
     training_arguments = transformers.TrainingArguments(
         output_dir=output_dir,
         per_device_train_batch_size=per_device_train_batch_size,
@@ -156,4 +163,5 @@ if __name__ == "__main__":
     )
 
 
+    print('Training Initiated')
     training(model, tokenizer, data, training_arguments, save_path)
