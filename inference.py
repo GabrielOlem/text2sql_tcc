@@ -27,6 +27,7 @@ if __name__ == "__main__":
     model_path = args.model
     ispeft = bool(args.ispeft)
 
+    print('Loading the model')
     if ~ispeft:
         model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
         tokenizer = AutoTokenizer.from_pretrained(model)
@@ -48,16 +49,22 @@ if __name__ == "__main__":
         )
         tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b")
         tokenizer.pad_token = tokenizer.eos_token
-        
+    
+    print('Loading the dataset')
     database = pd.read_json(eval_path)
     database['NoAnswer'] = database.apply(lambda x: x['data'].split('Answer:')[0] + "Answer:", axis = 1)
+    if ~ispeft:
+        database['NoAnswer'] = database.apply(lambda x: 'Context: You are a SQL expert, and I need your help building SQL queries. Please provide only the SQL query, without explanation.\n' + x['NoAnswer'])
 
+    print('Dataset Loaded ', database.shape)
     file_save = ""
+    print('Inference Started')
     for query in database['NoAnswer']:
         model_inputs = tokenizer(query, return_tensors="pt")
         outputs = model.generate(**model_inputs, max_length=512)
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
-
+        print(output_text)
+    print('Saving inferences on ', save_path)
     with open(save_path, 'w') as f:
         f.write(file_save)
