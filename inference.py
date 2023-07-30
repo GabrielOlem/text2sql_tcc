@@ -31,7 +31,7 @@ if __name__ == "__main__":
     print('Loading the model')
     if ~ispeft:
         model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False)
     else:
         config = PeftConfig.from_pretrained(model_path, use_auth_token=True)
         bnb_config = BitsAndBytesConfig(
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             device_map="auto",
             trust_remote_code=True
         )
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
     
     print('Loading the dataset')
