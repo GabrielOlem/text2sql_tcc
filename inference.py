@@ -25,7 +25,7 @@ if __name__ == "__main__":
     save_path = args.save_path
     eval_path = args.eval_path
     model_path = args.model
-    ispeft = args.ispeft
+    ispeft = bool(args.ispeft)
 
     if ~ispeft:
         model = AutoModelForCausalLM.from_pretrained(model_path)
