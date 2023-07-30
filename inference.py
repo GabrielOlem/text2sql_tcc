@@ -17,20 +17,21 @@ if __name__ == "__main__":
     parser.add_argument('--eval_path', dest='eval_path', type=str)
     parser.add_argument('--save_path', dest='save_path', type=str)
     parser.add_argument('--model', dest='model', type=str)
-    parser.add_argument('--ispeft', dest='ispeft', type=str)
-    
+    parser.add_argument('--ispeft', dest='ispeft', type=bool)
+
     args = parser.parse_args()
     
     eval_path = args.eval_path
     save_path = args.save_path
     eval_path = args.eval_path
     model_path = args.model
-    ispeft = bool(args.ispeft)
+    ispeft = args.ispeft
+    print(model_path)
 
     print('Loading the model')
     if ~ispeft:
         model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-        tokenizer = AutoTokenizer.from_pretrained(model)
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
     else:
         config = PeftConfig.from_pretrained(model_path, use_auth_token=True)
         bnb_config = BitsAndBytesConfig(
@@ -40,14 +41,14 @@ if __name__ == "__main__":
             bnb_4bit_compute_dtype=torch.float16,
         )
         model = AutoModelForCausalLM.from_pretrained(
-            "tiiuae/falcon-7b",
+            model_path,
             return_dict=True,
             local_files_only=True,
             quantization_config=bnb_config,
             device_map="auto",
             trust_remote_code=True
         )
-        tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b")
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
         tokenizer.pad_token = tokenizer.eos_token
     
     print('Loading the dataset')
