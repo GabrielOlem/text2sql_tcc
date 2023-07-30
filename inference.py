@@ -28,7 +28,7 @@ if __name__ == "__main__":
     ispeft = bool(args.ispeft)
 
     if ~ispeft:
-        model = AutoModelForCausalLM.from_pretrained(model_path)
+        model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
         tokenizer = AutoTokenizer.from_pretrained(model)
     else:
         config = PeftConfig.from_pretrained(model_path, use_auth_token=True)
