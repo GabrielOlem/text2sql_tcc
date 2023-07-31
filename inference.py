@@ -37,7 +37,7 @@ if __name__ == "__main__":
         bnb_4bit_compute_dtype=torch.float16,
     )
     print(ispeft, ~ispeft, ~ispeft==0)
-    if ~ispeft:
+    if not ispeft:
         model = AutoModelForCausalLM.from_pretrained(
             model_path, 
             trust_remote_code=True,
