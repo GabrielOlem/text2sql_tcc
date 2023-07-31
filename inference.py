@@ -67,7 +67,7 @@ if __name__ == "__main__":
     file_save = ""
     print('Inference Started')
     for query in database['NoAnswer']:
-        model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False)
+        model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to('cuda')
         outputs = model.generate(**model_inputs, max_length=512)
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
