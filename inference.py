@@ -70,7 +70,7 @@ if __name__ == "__main__":
     print('Loading the dataset')
     database = pd.read_json(eval_path)
     database['NoAnswer'] = database.apply(lambda x: x['data'].split('Answer:')[0] + "Answer:", axis = 1)
-    if ~ispeft:
+    if not ispeft:
         database['NoAnswer'] = database.apply(lambda x: 'Context: You are a SQL expert, and I need your help building SQL queries. Please provide only the SQL query, without explanation.\n' + x['NoAnswer'], axis=1)
 
     print('Dataset Loaded ', database.shape)
