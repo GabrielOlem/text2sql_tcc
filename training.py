@@ -136,7 +136,7 @@ if __name__ == "__main__":
     model, tokenizer = load_model(model_name)
     
 
-    print_trainable_parameters(model)
+    
 
     print('Loading Dataset')
     data = dataset_loader(dataset_path)
@@ -144,6 +144,7 @@ if __name__ == "__main__":
     print('Applying Lora configuration')
     model = lora(lora_r, lora_alpha, lora_dropout, model)
 
+    print_trainable_parameters(model)
 
     print('Creating Training Arguments')
     training_arguments = transformers.TrainingArguments(
