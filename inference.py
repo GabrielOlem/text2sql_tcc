@@ -3,6 +3,9 @@ import transformers
 import torch
 import pandas as pd
 import argparse
+from optimum import (
+    to_bettertransformer
+)
 from peft import (
     PeftConfig,
     PeftModel
@@ -58,7 +61,7 @@ if __name__ == "__main__":
         tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
         
-    
+    model = model.to_bettertransformer()
     print('Loading the dataset')
     database = pd.read_json(eval_path)
     database['NoAnswer'] = database.apply(lambda x: x['data'].split('Answer:')[0] + "Answer:", axis = 1)
@@ -70,7 +73,7 @@ if __name__ == "__main__":
     print('Inference Started')
     for query in database['NoAnswer']:
         model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to('cuda')
-        outputs = model.generate(**model_inputs, max_length=512)
+        outputs = model.generate(**model_inputs, max_length=100)
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
         print(output_text)
