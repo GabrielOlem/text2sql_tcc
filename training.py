@@ -43,10 +43,10 @@ def load_model(model_name):
         device_map="auto",
         quantization_config=bnb_config,
         trust_remote_code=True
-    ).to_device('cuda')
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True).to_device('cuda')
+    )
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
-    model = prepare_model_for_kbit_training(model).to_device('cuda')
+    model = prepare_model_for_kbit_training(model)
     return model, tokenizer
 
 
@@ -60,9 +60,9 @@ def lora(lora_r, lora_alpha, lora_dropout, model):
         lora_dropout=lora_dropout,
         bias="none",
         task_type="CAUSAL_LM"
-    ).to_device('cuda')
+    )
 
-    model = get_peft_model(model, peft_config).to_device('cuda')
+    model = get_peft_model(model, peft_config)
     return model
 
 def print_trainable_parameters(model):
@@ -84,7 +84,7 @@ def training(model, tokenizer, data, training_arguments, save_path):
         train_dataset=data,
         data_collator = transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
         args=training_arguments,
-    ).to_device('cuda')
+    )
     model.config.use_cache = False
     trainer.train()
     print('Saving model on ', save_path)
@@ -160,7 +160,7 @@ if __name__ == "__main__":
         warmup_ratio=warmup_ratio,
         group_by_length=True,
         lr_scheduler_type=lr_scheduler_type,
-    ).to_device('cuda')
+    )
 
 
     print('Training Initiated')
