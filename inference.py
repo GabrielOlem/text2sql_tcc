@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
     print('Loading the model')
     if ~ispeft:
-        model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False)
+        model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True).to_device('cuda')
+        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False).to_device('cuda')
     else:
         config = PeftConfig.from_pretrained(model_path, use_auth_token=True)
         bnb_config = BitsAndBytesConfig(
@@ -47,12 +47,12 @@ if __name__ == "__main__":
             quantization_config=bnb_config,
             device_map="auto",
             trust_remote_code=True
-        )
-        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False)
+        ).to_device('cuda')
+        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False).to_device('cuda')
         tokenizer.pad_token = tokenizer.eos_token
     
     print('Loading the dataset')
-    database = pd.read_json(eval_path)
+    database = pd.read_json(eval_path).to_device('cuda')
     database['NoAnswer'] = database.apply(lambda x: x['data'].split('Answer:')[0] + "Answer:", axis = 1)
     if ~ispeft:
         database['NoAnswer'] = database.apply(lambda x: 'Context: You are a SQL expert, and I need your help building SQL queries. Please provide only the SQL query, without explanation.\n' + x['NoAnswer'], axis=1)
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     file_save = ""
     print('Inference Started')
     for query in database['NoAnswer']:
-        model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False)
+        model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to_device('cuda')
         outputs = model.generate(**model_inputs, max_length=512)
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
