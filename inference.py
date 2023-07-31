@@ -4,7 +4,8 @@ import torch
 import pandas as pd
 import argparse
 from peft import (
-    PeftConfig
+    PeftConfig,
+    PeftModel
 )
 from transformers import (
     AutoModelForCausalLM,
@@ -47,15 +48,16 @@ if __name__ == "__main__":
         config = PeftConfig.from_pretrained(model_path, use_auth_token=True)
         
         model = AutoModelForCausalLM.from_pretrained(
-            model_path,
+            config.base_model_name_or_path,
             return_dict=True,
             local_files_only=True,
             quantization_config=bnb_config,
             device_map="auto",
             trust_remote_code=True
         )
-        tokenizer = AutoTokenizer.from_pretrained(model_path, return_token_type_ids=False)
+        tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
+        
     
     print('Loading the dataset')
     database = pd.read_json(eval_path)
