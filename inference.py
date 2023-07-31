@@ -3,9 +3,6 @@ import transformers
 import torch
 import pandas as pd
 import argparse
-from optimum.bettertransformer import (
-    BetterTransformer
-)
 from peft import (
     PeftConfig,
     PeftModel
@@ -34,7 +31,7 @@ if __name__ == "__main__":
 
     print('Loading the model')
     bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
+        load_in_8bit=True,
         bnb_4bit_use_double_quat=True,
         bnb_4bit_quant_type="nf4",
         bnb_4bit_compute_dtype=torch.float16,
@@ -61,7 +58,15 @@ if __name__ == "__main__":
         tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
         
-    model = BetterTransformer.transform(model, keep_original_model=False)
+    
+    generation_config = model.generation_config
+    generation_config.max_new_tokens = 20
+    generation_config.temperature = 0.4
+    generation_config.top_p = 0.7
+    generation_config.num_return_sequences = 1
+    generation_config.pad_token_id = tokenizer.eos_token_id
+    generation_config.eos_token_id = tokenizer.eos_token_id
+
     print('Loading the dataset')
     database = pd.read_json(eval_path)
     database['NoAnswer'] = database.apply(lambda x: x['data'].split('Answer:')[0] + "Answer:", axis = 1)
@@ -73,7 +78,10 @@ if __name__ == "__main__":
     print('Inference Started')
     for query in database['NoAnswer']:
         model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to('cuda')
-        outputs = model.generate(**model_inputs, max_length=100)
+        outputs = model.generate(**model_inputs, 
+                                 max_length=100,
+                                 generation_config=generation_config
+                                 )
 
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
