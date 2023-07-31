@@ -19,7 +19,7 @@ if __name__ == "__main__":
     parser.add_argument('--save_path', dest='save_path', type=str)
     parser.add_argument('--model', dest='model', type=str)
     parser.add_argument('--ispeft', dest='ispeft', type=bool)
-
+    parser.add_argument('--usegconfig', dest='usegconfig', type=bool)
     args = parser.parse_args()
     
     eval_path = args.eval_path
@@ -27,6 +27,7 @@ if __name__ == "__main__":
     eval_path = args.eval_path
     model_path = args.model
     ispeft = args.ispeft
+    usegconfig = args.usegconfig
     print(model_path)
 
     print('Loading the model')
@@ -58,14 +59,14 @@ if __name__ == "__main__":
         tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
         
-    
-    generation_config = model.generation_config
-    generation_config.max_new_tokens = 20
-    generation_config.temperature = 0.4
-    generation_config.top_p = 0.7
-    generation_config.num_return_sequences = 1
-    generation_config.pad_token_id = tokenizer.eos_token_id
-    generation_config.eos_token_id = tokenizer.eos_token_id
+    if usegconfig:
+        generation_config = model.generation_config
+        generation_config.max_new_tokens = 20
+        generation_config.temperature = 0.4
+        generation_config.top_p = 0.7
+        generation_config.num_return_sequences = 1
+        generation_config.pad_token_id = tokenizer.eos_token_id
+        generation_config.eos_token_id = tokenizer.eos_token_id
 
     print('Loading the dataset')
     database = pd.read_json(eval_path)
