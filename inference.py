@@ -58,6 +58,7 @@ if __name__ == "__main__":
         )
         tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, return_token_type_ids=False)
         tokenizer.pad_token = tokenizer.eos_token
+        model = PeftModel.from_pretrained(model, model_path)
         
     if usegconfig:
         generation_config = model.generation_config
@@ -79,11 +80,11 @@ if __name__ == "__main__":
     print('Inference Started')
     for query in database['NoAnswer']:
         model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to('cuda')
-        outputs = model.generate(**model_inputs, 
-                                 max_length=100,
-                                 generation_config=generation_config
-                                 )
-
+        with torch.inference_mode():
+            outputs = model.generate(**model_inputs, 
+                                    max_length=100,
+                                    generation_config=generation_config
+            )
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
         print(output_text)
