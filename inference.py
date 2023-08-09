@@ -24,7 +24,6 @@ if __name__ == "__main__":
     
     eval_path = args.eval_path
     save_path = args.save_path
-    eval_path = args.eval_path
     model_path = args.model
     ispeft = args.ispeft
     usegconfig = args.usegconfig
@@ -51,7 +50,7 @@ if __name__ == "__main__":
         model = AutoModelForCausalLM.from_pretrained(
             config.base_model_name_or_path,
             return_dict=True,
-            local_files_only=True,
+            #local_files_only=True,
             quantization_config=bnb_config,
             device_map="auto",
             trust_remote_code=True
@@ -81,10 +80,15 @@ if __name__ == "__main__":
     for query in database['NoAnswer']:
         model_inputs = tokenizer(query, return_tensors="pt", return_token_type_ids=False).to('cuda')
         with torch.inference_mode():
-            outputs = model.generate(**model_inputs, 
-                                    max_length=100,
-                                    generation_config=generation_config
-            )
+            if usegconfig:
+                outputs = model.generate(**model_inputs, 
+                                        max_length=512,
+                                        generation_config=generation_config
+                )
+            else:
+                outputs = model.generate(**model_inputs, 
+                                        max_length=512
+                )
         output_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
         file_save += output_text + '\n'
         print(output_text)
