@@ -1,0 +1,1034 @@
+ | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+show name, country, age for all singers ordered by age from the youngest to the oldest. 
+SELECT * FROM singer_in_concert WHERE singer_in_concert.singer_id = 1 ORDER BY singer_in_concert.singer_id, singer_in_concert.concert_id SELECT * FROM singer_in_concert WHERE singer_in_concert
+
+
+show the name and the release year of the song by the oldest singer. 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+|country,singer_id,singer_name,song_name,song_release_year,age| |:---:|:---:|:---:|:---:|:---:| |USA,1,John,John,2000,20| |USA,2
+select country, count(singer_id) from singer_in_concert group by country; select country, count(singer_id) from singer_in_concert where country = 'United States'; select country, count(singer_id) from singer_in_concert where
+select * from singer_in_concert where singer_in_concert.singer_id = 1 and singer_in_concert.concert_id = 1 and singer_in_concert.singer_id = 2 and singer_in_concert.concert_
+list all songs by singers above the average age. |table singer, columns = [*,singer_id,name,country,song_name,song_release_year,age,is_male] |list all songs by singers above the average age. |table singer, columns = [
+select * from singer_in_concert where singer_in_concert.singer_id = 1 and singer_in_concert.singer_id = singer.singer_id and singer_in_concert.concert_id = 1 and singer_in_
+select * from stadium where capacity >= 5000 and capacity <= 10000 select * from stadium where capacity >= 5000 and capacity <= 10000 select * from stadium where capacity >= 5000 and capacity <= 10000 select *
+select * from stadium where capacity >= 5000 and capacity <= 10000 select * from stadium where capacity >= 5000 and capacity <= 10000 select * from stadium where capacity >= 5000 and capacity <= 10000 select *
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|what is the average and maximum capacities for all stadiums?| |what is the average and maximum capacities for all stadiums?| |what is the average and maximum capacities for all stadiums?| |what is the average and maximum capacities for all stadiums?| |what is
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+select * from concert where year = 2014 or year = 2015; select * from concert where year = 2014 or year = 2015 and stadium.capacity > 10000; select * from concert where year = 2014 or
+SELECT * FROM concert WHERE year = 2014 OR year = 2015; SELECT * FROM concert WHERE year = 2014 OR year = 2015; SELECT * FROM concert WHERE year = 2014 OR year = 2015; 
+show the number of concerts in each stadium. 
+for each singer, how many concerts play there?|for each concert, how many singers play there?|for each singer, how many concerts play there?|for each concert, how many singers play there?|for each singer, how many concerts play there?|for each concert, how many singers play there?|for each
+select stadium.name, stadium.capacity from stadium where stadium.capacity > (select stadium.capacity from stadium where stadium.year >= 2014) order by stadium.capacity desc limit 1; select stadium.name, stadium.capacity from stadium where stadium.capacity
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+show the concert names without any stadium. 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+show names for all stadiums except for stadiums having a concert in year 2014. 
+What is the name of the stadium that hosted the most concerts in 2014?| What is the name of the stadium that hosted the most concerts in 2014?| What is the name of the stadium that hosted the most concerts in 2014?| What is the name of the
+select * from concerts where concert_id in (select concert_id from singer_in_concert) order by concert_id,concert_name; select * from concerts where concert_id in (select concert_id from singer_in_concert) order by concert_
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list stadium names and number of concerts for each stadium. |table singer,columns=singer_id,name,country,song_name,song_release_year,age,is_male |table stadium,columns=stadium_id,location,name,capacity,highest,lowest,average |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list all concerts in year 2014. |table concert, columns = [*,concert_id,concert_name,theme,stadium_id,year] |table singer, columns = [*,singer_id,name,country,song_name,song_release_year,age
+|what are the names of the concerts that took place in 2014?| |what are the names of the concerts that took place in 2014?| |what are the names of the concerts that took place in 2014?| |what are the names of the concerts that took place in 
+select * from singer_in_concert where singer_in_concert.singer_id = 1 and singer_in_concert.song_name = 'hey' select * from singer_in_concert where singer_in_concert.singer_id = 1
+select * from singer_in_concert where singer_id = 1 and song_name = 'hey' select * from singer_in_concert where singer_id = 2 and song_name = 'hey' select * from singer_in_
+select * from stadium where year = 2014 or year = 2015 select * from stadium where year = 2014 or year = 2015 select * from stadium where year = 2014 or year = 2015 select *
+select * from stadium where name = 'Stadium A' and year = 2014 and capacity > 10000 and location = 'Europe' and name = 'Stadium B' and year = 2015 and capacity > 
+find the number of concerts happened in the stadium with the lowest capacity. 
+
+find the number of pets whose weight is heavier than 10. 
+
+
+how much does the youngest dog weigh? | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+list the maximum weight and type for each type of pet. 
+
+
+
+select * from has_pet where petid in (select petid from pets where pettype = 'dog') select * from has_pet where petid in (select petid from pets where pettype = 'dog') select * from has_pet where
+select distinct type from pets; select distinct pet_age from pets; select distinct weight from pets; select distinct pet_age, weight from pets; select distinct pet_age, weight from pets where pet_age > 10; select distinct pet_age, weight from
+select * from has_pet where petid = 1; select * from has_pet where petid = 2; select * from has_pet where petid = 3; select * from has_pet where petid = 4; select 
+select * from student where has_pet.petid in (select petid from pets where pettype = 'cat' or pettype = 'dog') select * from student where has_pet.petid in (select petid from pets where pettype = '
+
+find the first name of students who have both cat and dog pets. 
+
+select st.stuid, st.lname, st.fname, st.age, st.sex, st.major, st.advisor, st.city_code from student st where st.petid is null and st.stuid not in (select st.stuid from pets
+select * from student where not exists (select * from pets where petid = student.stuid) select * from student where not exists (select * from pets where petid = student.stuid and pet_age > 10) select * from
+
+
+select first_name, age from student where has_pet.petid = 1 and has_pet.pettype = 'dog' and not exists (select * from pets where petid = 1 and pettype = 'cat') | | | | 
+
+select * from pets where pet_age = (select min(pet_age) from pets) select * from pets where pet_age = (select max(pet_age) from pets) select * from pets where pet_age = (select avg(
+select * from has_pet where petid = 1; select * from pets where petid = 1; select * from student where stuid = 1; select * from student where stuid = 2; select * from student where stuid
+find the id and weight of all pets whose age is older than 1. 
+
+select avg(age) as "Average Age", max(age) as "Max Age" from has_pet where pettype = 'dog' group by pettype; select avg(age) as "Average Age", max(age) as "Max Age" from has_pet
+
+select avg(weight) from has_pet where pettype = 'dog' select avg(weight) from has_pet where pettype = 'cat' select avg(weight) from has_pet where pettype = 'fish' select avg(weight) from has_pet
+
+select st.stuid, st.lname, st.fname, st.age, st.sex, st.major, st.advisor, st.city_code from student st join pets p on st.petid = p.petid where p.pettype = '
+select * from student, has_pet where student.stuid = has_pet.stuid and has_pet.petid = 1; select * from student, has_pet where student.stuid = has_pet.stuid and has_pet.petid 
+find the id of the pet owned by student whose last name is ‘smith’ and whose age is ‘25’.| 
+
+select st.stuid, count(p.petid) as pet_count from student st left join pets p on st.stuid = p.petid group by st.stuid having count(p.petid) > 0 order by st.stuid; 
+
+select st.stuid, st.lname, st.fname, st.age, st.sex, st.major, st.advisor, st.city_code from student st where st.petid in (select petid from pets where pet_age > 1) order
+select * from student, has_pet where student.stuid = has_pet.stuid and student.lname = 'Smith' and student.fname = 'John' and student.age > 18 and student.sex = 'M' and student.major
+find the last name of the student who has a dog that is age 3. 
+
+find the average age of students who have a pet. 
+
+how many countries are there?|how many model names are there?|how many model makers are there?|how many cars are there?|how many car names are there?|how many models are there?|how many countries are there?|how many model makers are there?|how many cars are there?|how
+what is the number of countries?| |2||what is the number of model?| |3||what is the number of car makers?| |4||what is the number of model names?| |5||what is the number of cars?| |6||what
+how many cars does each car maker have? list the car maker id, car maker name and the number of cars. | | | | | | | | | | | | | | | | | | | | | |
+for each country, list its id, name, and how many continents it has?| for each country, list its id, name, and how many continents it has?| for each continent, list its id, name, and how many countries it has?| for each country, list its id, name, and
+how many car makers are listed?|how many models are listed?|how many cars are listed?|how many cars are listed?|how many cars are listed?|how many cars are listed?|how many cars are listed?|how many cars are listed?|how many cars are listed?|how many cars are
+|countries| |---| |1| |2| |3| |4| |5| |6| |7| |8| |9| |10| |11| |12| |13| |14| |15
+how many cars does each model produce? list model full name, id and the number. |countries, continents, model_list, car_makers, car_names, cars_data |countries.continent, car_makers.country, model_list.maker, car_names.model, cars_
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+select * from cars_data where horsepower = min(horsepower) | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table car_makers, columns = [*,id,maker,fullname,country] table car_names, columns = [*,makeid,model,make] table cars_data, columns = [*,id,mpg,cylinders,edispl,horsepower,weight
+
+table car_makers, columns = [*,id,maker,fullname,country] table car_names, columns = [*,makeid,model,make] table cars_data, columns = [*,id,mpg,cylinders,edispl,horsepower
+what is the name of the different car makers who produced a car in 1970?| | | | | | | | | | | | | | | | | | | | | | | | | 
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what are the different models for the cars produced after 1980?| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many car makers are there in each countries? list the country name and the count. |countries.continent |countries.country |model_list.maker |car_names.model |car_makers.id |car_names.makeid |cars_data.id 
+|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|countries|
+which of the countries has the most car makers? list the country name. |countries.continent = continents.continent,car_makers.country = countries.countryid,model_list.maker = car_makers.id,car_names.model = model_list.model,cars
+|countries| |--| |continent| |--| |country| |--| |maker| |--| |model| |--| |id| |--| |name| |--| |country| |--| |
+how many car models are produced by each country? only list the count and the country full name. |countries.continent = continents.continent,|countries.country = countries.countryid,|model_list.maker = car_makers.id,|car_names.model
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the horsepower of the car make amc hornet sportabout (sw)?| | | | | | | | | | | | | | | | | | | | | | | | | 
+how much does the car accelerate that makes amc hornet sportabout (sw)? | | | | | | | | | | | | | | | | | | | | | | | | |
+how many car makers are there in france? |countries.continent = 'France' |car_makers.country = 'France' |model_list.maker = 'Peugeot' |car_names.model = 'Citroen' |cars
+what is the number of makers of care in france? | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many car models are produced in the usa? |countries.continent = continents.continent = continents.continent = continents.continent = continents.continent = continents.continent = continents.continent = continents.continent = continents.continent = continents
+|countries.continent = continents.continent = 'United States'| |car_makers.country = countries.country = 'United States'| |model_list.maker = car_makers.id = 'Ford'| |car_names.
+what is the average weight(weight) of the cars with 4 cylinders?| |what is the average horsepower(horsepower) of the cars with 4 cylinders?| |what is the average weight(weight) of the cars with 4 cylinders?| |what is the average horsepower(horsepower) of
+|what is the average weight of all the cars with 4 cylinders?| |what is the average horsepower of all the cars with 4 cylinders?| |what is the average weight of all the cars with 4 cylinders?| |what is the average horsepower of all the cars with 4 cylinders?|
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|countries| |--| |continent| |--| |country| |--| |maker| |--| |model| |--| |id| |--| |name| |--| |countryid| |--| 
+|countries.continent |countries.country |car_makers.country |car_makers.id |model_list.maker |car_names.model |cars_data.id | |:---------------:|:---------------:|:---------------:|:
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+select *, avg(weight) as weight, avg(year) as year from cars_data group by year, avg(weight) order by avg(year) desc select *, avg(weight) as weight, avg(year) as year from cars_data group by year, avg(weight) order
+|countries.continent |countries.country |countries.countryid |countries.continent |countries.countryid |countries.continent |countries.countryid |countries.continent |countries.countryid |countries.cont
+|countries.continent |countries.country |model_list.maker |car_names.model |cars_data.id | |:---------------:|:---------------:|:---------------:|:---------------:|:---------------:| |France |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|countries.continent |countries.country |model_list.maker |car_names.model |cars_data.id | |:---------------:|:---------------:|:---------------:|:---------------:|:---------------:| | | 
+select * from car_makers, cars_data, model_list, countries, continents, model_list, car_names, cars_data, model_list, countries, continents, model_list, car_names, cars_data, model_list, countries, continents, model_list, car_
+|count(*)| |--| |4| || || || || || || || || || || || || || || || || || || 
+|count(*)| |--| |4| || || || || || || || || || || || || || || || || || || 
+SELECT * FROM cars_data WHERE year = 1980; | | | | | | | | | | | | | | | | | | | | | | | | | | 
+in 1980, how many cars were made?| |in 1980, how many cars were made?| |in 1980, how many cars were made?| |in 1980, how many cars were made?| |in 1980, how many cars were made?|
+|countries.continent = continents.continent = 'america'| |car_makers.country = countries.countryid = 'america'| |model_list.maker = car_makers.id = 'american'| |car_names
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|countries| |continent| |country| |countryid| |continentid| |countryname| |continentname| |model| |maker| |modelid| |makerid| |id| |name| |country| |
+what are the names and ids of all makers with more than 3 models? | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table cars, columns = [*,id,year,weight] table car_makers, columns = [*,id,maker,country] table car_names, columns = [*,makeid,model,year] table cars_data, columns = [*,id,year,
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+for model volvo, how many cylinders does the car with the most accelerate have?| | | | | | | | | | | | | | | | | | | | | | | | | |
+for a volvo model, how many cylinders does the version with least accelerate have?| | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+|countries.continent = continents.continent = 2| |countries.continent = continents.continent = 3| |countries.continent = continents.continent = 4| |countries.continent = continents.continent 
+SELECT * FROM cars_data WHERE cylinders > 6; | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the number of cars with over 6 cylinders? | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+for the cars with 4 cylinders, which model has the largest horsepower?| | | | | | | | | | | | | | | | | | | | | | | | | | |
+for all of the 4 cylinder cars, which model has the most horsepower?| | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|countries.continent = continents.continent = 'Europe'| |countries.continent = continents.continent = 'Asia'| |countries.continent = continents.continent = 'Africa'| |countries.continent 
+|countries.continent = continents.continent = 'Europe'| |countries.continent = continents.continent = 'Asia'| |countries.continent = continents.continent = 'Africa'| |countries.continent 
+table car_makers, columns = [*,id,maker,fullname,country] table car_names, columns = [*,makeid,model,make] table cars_data, columns = [*,id,mpg,cylinders,edispl,horsepower,weight
+
+
+
+|country| |---| |US| || || || || || || || || || || || || || || || || || || |
+what is the name of the largest airport in the united states?| |what is the name of the largest airport in the united states?| |what is the name of the largest airport in the united states?| |what is the name of the largest airport in the united states?| |what is the name
+select * from flights where sourceairport = 'jfk' and destairport = 'boston'; |airline |abbreviation |country |countryabbrev | |jetblue airways |JFK |US |USA | |jet
+which abbreviation corresponds to united airlines?| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+table airlines, columns = [*,uid,airline,abbreviation] |list all airport names and their country codes in "usa".|table airports, columns = [*,country,countryabbrev] |list all flight numbers in "usa".|table flights, columns =
+what are the airport codes for airports in the usa?| | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list the airport code and name in the city of anthony. |table airports, columns = [*,city,airportcode,airportname,country,countryabbrev] |list the airport code and name in the city of anthony. |table flights, columns = [*,air
+give the city and country of the airport corresponding to the city anthony. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+table airlines, columns = [*,uid,airline,abbreviation,country] |count(*) as "count" |where country = "United States" |limit 10 |sort count |format count |limit 10 |format count |format count |
+table airlines, columns = [*,uid,airline,abbreviation,country] |count airlines |where country = "United States" |format count |sort count desc |limit 10 |format count |sort count desc |limit 10 |format count 
+table airports, columns = [*,airportcode,airportname,country] |count airports| |count airports| |count airports| |count airports| |count airports| |count airports| |count airports| |count airports| |count airports| |count airports
+return the number of  airports.airportcode | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table flights, columns = [*,airline,flightno,sourceairport,destairport] |count(*) as "total" |where "total" > 1000 |limit 10 |sort "total" |format "%d" |table flights,
+return the number of flights. 
+which airline has abbreviation 'aa'?| |which airline has abbreviation 'aa'?| |which airline has abbreviation 'ua'?| |which airline has abbreviation 'ua'?| |which airline has abbreviation 'ua'?| |which airline has abbreviation 'ua
+give the airport with code 'lhr'.| | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many airlines are from europe?| |how many airlines are from europe?| |how many airlines are from europe?| |how many airlines are from europe?| |how many airlines are from europe?| |how many airlines are from europe?| |how many airlines are from europe?|
+return the number of airlines in the usa. 
+select * from flights where sourceairport = 'alton' and destairport = 'alton'; |airportcode |airportname |country |countryabbrev |sourceairport |destairport | |:--------- |:--------- |
+give the city and country for the alton airport. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is the airport code for airport 'akp'?| |airportcode|airportname|country|countryabbrev| |ako|Ako|Japan|JP| |akp|Aki|Japan|JP| |airportcode|airportname|country|countryabbre
+return the name of the airport with code 'akp'.| 
+what are airport codes at city 'aberdeen'?| |airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports
+what are the names of airports in aberdeen?| |airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|airports|air
+how many flights arrive at'sfo'?| | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+count the number of flights arriving at'sfo'.| 
+table flights, columns = [*,airline,flightno,sourceairport,destairport] foreign_keys = [flights.airline = airlines.uid,flights.sourceairport = airports.airportcode] primary_keys = [flights.
+count the number of flights from ato to bto. select count(*) from flights where sourceairport = 'ato' and destairport = 'bto'; select count(*) from flights where sourceairport = 'bto' and destairport = 'ato'; 
+how many flights arrive in city aberdeen?| |how many flights depart from city aberdeen?| |how many flights arrive in city aberdeen?| |how many flights depart from city aberdeen?| |how many flights arrive in city aberdeen?| |how many flights depart from city aberdeen
+return the number of flights departing from aberdeen. 
+select * from flights where sourceairport = 'ABZ' and destairport = 'EDI'; 
+return the number of flights departing from aberdeen. 
+select * from flights where sourceairport = 'aberdeen' and destairport = 'ashley'; select * from flights where sourceairport = 'aberdeen' and destairport = 'ashley' and flightno = '123
+how many flights fly from aberdeen to ashley? |table flights, columns = [*,airline,flightno,sourceairport,destairport] |where (flights.sourceairport = 'aberdeen' and flights.destairport = 'ashley')
+how many flights does airline 'jetblue airways' have? | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+give the number of united airlines flights. |give the number of american airlines flights. |give the number of delta airlines flights. |give the number of southwest airlines flights. |give the number of us airways flights. |give the number of american eagle flights. |give the number of united express flights.
+how many 'united airlines' flights go to airport 'eve'?| | | | | | | | | | | | | | | | | | | | | | | | | |
+count the number of united airlines flights departing from asy airport. |count the number of united airlines flights departing from asy airport. |count the number of united airlines flights arriving in asy airport. |count the number of united airlines flights departing from asy airport. |count the number of united airlines flights arriving
+how many 'united airlines' flights depart from airport 'ahd'?| |how many 'united airlines' flights depart from airport 'ahd'?| |how many 'united airlines' flights depart from airport 'ahd'?| |how many 'united airlines'
+return the number of united airlines flights leaving from ahd airport. | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many united airlines flights go to city 'aberdeen'? | | | | | | | | | | | | | | | | | | | | | | | | | | |
+count the number of united airlines flights that depart from aberdeen. |count the number of united airlines flights that depart from aberdeen. |count the number of united airlines flights that arrive in aberdeen. |count the number of united airlines flights that depart from aberdeen. |count the number of united airlines flights that
+|city,arrivalcount| |city,departurecount| |airport,arrivalcount| |airport,departurecount| |airport,arrivalcount| |airport,departurecount| |airport,arrivalcount| |airport
+select city,count(*) as cnt from flights group by city having cnt > 2 |table flights, columns = [*,airportcode,airportname,country,countryabbrev,sourceairport,destairport] |where country = 'United States' |where
+|city,count(flightno)| |city,count(sourceairport)| |city,count(destairport)| |city,count(airline)| |city,count(airportcode)| |city,count(airportcode,sourceairport)| |city,count(
+select city,count(*) as cnt from flights group by city order by cnt desc limit 10; |city|cnt| |:---|:---| |LHR|2| |LON|1| |AMS|1| |FRA|1| |MUC|
+
+table flights, columns = [*,airportcode,destairport,sourceairport,count(*) as flights] |where flights.count > 1000 |limit 1 |format flights.airportcode, flights.destairport, flights.sourceairport, flights.count |
+
+The result should be: |airportcode,airportname| |-------------|-------------| |LHR,London Heathrow| |CDG,Charles de Gaulle| |FCO,London Gatwick| |AMS,Amsterdam| |MUC,Mun
+|airline,count(*) as flights| |airline,count(*) as flights| |airline,count(*) as flights| |airline,count(*) as flights| |airline,count(*) as flights| |airline,count(*) as flights| |airline,count(*) as
+table flights, columns = [*,airline,sourceairport,destairport] |table flights, columns = [*,airline,sourceairport,destairport] |table flights, columns = [*,airline,sourceairport,destairport] |table flights
+find the country of the airline that has most number of flights?| 
+select * from flights where country = 'US' and airline = 'AA' select * from flights where country = 'US' and airline = 'AA' and sourceairport = 'LAX' select * from flights where country =
+select * from flights where sourceairport = 'ahd' and destairport ='sfo'; select * from flights where sourceairport = 'ahd' and destairport ='sfo' and flightno = '123'; 
+which airlines have a flight with dest airport and source airport?| |which airlines have a flight with source airport ahd?| |which airlines have a flight with dest airport and source airport?| |which airlines have a flight with source airport and dest airport?| |which airlines have a flight with source airport and
+foreign_keys = [flights.airline = airlines.uid] primary_keys = [flights.airportcode = airports.airportcode] foreign_keys = [flights.airportcode = airports.airportcode] 
+|airlines|airports|flights| |---|---|---| |1|1|1| |2|2|1| |3|3|1| |4|4|1| |5|5|1| |6|6|1| 
+find all flights that have a source airport of 'apg' and a destination airport of 'cvo'.| 
+select * from flights where sourceairport in (apg, cvo) and destairport in (apg, cvo) select * from flights where sourceairport in (apg, cvo) and destairport in (apg, cvo) and 
+find all airlines that have flights from airport 'cvo' but not from 'apg'. |project airline = 'airline' |project country = 'country' |project countryabbrev = 'countryabbrev' |project uid = 'uid
+
+find all airports that have at least 10 flights. |find all airlines that have at least 10 flights. |find all airports that have at least 10 flights. |find all airlines that have at least 10 flights. |find all airports that have at least 10 flights. |find all airlines
+select * from flights where flights.airline = 'American Airlines' and flights.destairport = 'LAX' and flights.sourceairport = 'DFW'; select * from flights where flights.airline = 'American Airlines' and flights.dest
+find all airports that have fewer than 100 flights. |find all airlines that have fewer than 200 flights. |find all airports that have fewer than 100 flights. |find all airlines that have fewer than 200 flights. |find all airports that have fewer than 100 flights. |find all airlines
+|airlines| |airports| |flights| |airlines| |airports| |flights| |airlines| |airports| |flights| |airlines| |airports| |flights| |airlines| |air
+select * from flights where airline = 'united airlines' select * from flights where airline = 'united airlines' and sourceairport = 'LAX' select * from flights where airline = 'united airlines' and destairport =
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what are flight numbers of flights departing from airport "apg" to "lhr"?| | | | | | | | | | | | | | | | | | | | | | | | 
+give the flight numbers of flights arriving at apg. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what are flight numbers of flights departing from airport "apg"?| |what are flight numbers of flights departing from airport "apg"?| |what are flight numbers of flights arriving at airport "apg"?| |what are flight numbers of flights departing from airport "apg"?| |
+give the flight numbers of flights departing from apg. The output should be: SELECT * FROM flights WHERE sourceairport = 'APG' AND destairport = 'APG'; SELECT * FROM flights WHERE sourceairport = 'APG' AND destairport
+table flights, columns = [*,airline,flightno,sourceairport,destairport] |where [flights.sourceairport = "aberdeen"] |where [flights.destairport = "aberdeen"] |where [flights
+give the flight numbers of flights leaving from aberdeen. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what are flight numbers of flights departing from city "aberdeen"?| |what are flight numbers of flights departing from city "aberdeen" to city "london"?| |what are flight numbers of flights departing from city "aberdeen" to city "london" with a stop
+give the flight numbers of flights departing from aberdeen. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+how many flights land in aberdeen or abilene? | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table airports, columns = [*,airportcode,country] |find the name of airports which do not have any flight in and out. |table airports, columns = [*,airportcode,country] |find the name of airports which do not have any flight in and out. |
+select * from flights where not exists (select * from flights where flights.airportcode = airports.airportcode and flights.sourceairport = airports.airportcode) select * from flights where not exists (select * from flights where flights.airportcode 
+how many shops are there?|how many products are there?|how many employees are there?|how many employees are there?|how many employees are there?|how many employees are there?|how many employees are there?|how many employees are there?|how many employees are there?|how many employees are there
+count the number of shops|count the number of employees|count the number of evaluations|count the number of employees|count the number of shops|count the number of evaluations|count the number of employees|count the number of shops|count the number of evaluations|count the number of employees|count the number of shops|count the
+sort evaluation names by their year_awarded in descending order. |sort hiring names by their start_from in descending order. |sort shop names by their number_products in descending order. |sort evaluation names by their bonus in descending order. |sort hiring names by their manager_name in descending order.
+list the names of employees and sort in descending order of age. |table employee, columns = [*,employee_id,name,age] |list the names of employees and sort in ascending order of age. |list the names of employees and sort in descending order of age. |list the names
+|city|employees| |---|---| |London|3| |Paris|2| |New York|1| |Berlin|1| || || || || || || || || || ||
+select city, count(*) as number_employees from evaluation group by city |count the number of employees for each shop. |select shop, count(*) as number_employees from evaluation group by shop |count the number of employees for each year. |select year, count(*) as number_employees from evaluation
+|employee_id |name |age |city | | --- | --- | --- | --- | | 1 | John | 30 | New York | | 2 | Jane | 30 | New York 
+
+select shop_id, count(*) as number_of_shops from shop group by shop_id having count(*) > 1 | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+
+select * from evaluation where employee_id = 1 order by employee_id, year_awarded limit 1, 1 select * from evaluation where employee_id = 2 order by employee_id, year_awarded limit 1,
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+sort all the shops by number products in ascending order, and return the name, location and district of each shop. |sort all the shops by number products in descending order, and return the name, location and district of each shop. |sort all the shops by number products in ascending order, and return the name, location and
+
+select * from evaluation where employee_id in (select employee_id from evaluation where year_awarded > 2010) and bonus > 1000 and shop_id in (select shop_id from shop where number_products > 1000) and manager
+
+which employee received the most awards in evaluations? give me the employee name. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+
+
+
+|what is the name of the shop that is hiring the largest number of employees?| |what is the name of the shop that is hiring the largest number of employees?| |what is the name of the shop that is hiring the largest number of employees?| |what is the name of the shop that is
+which shop has the most employees? give me the shop name. | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+|where employee.employee_id is null| |where employee.employee_id is not null| |where employee.employee_id is not null and employee.employee_id = 1| |where employee.employee_id is not null and employee.employee_id
+select * from employee where shop_id = 1 select * from employee where shop_id = 2 select * from employee where shop_id = 3 select * from employee where shop_id = 4 select 
+|shop_id|employees| |---|---| |1|3| |2|2| |3|1| |4|1| |5|1| |6|1| |7|1| |8|1| |9|1
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+give me all the information about evaluation. |give me all the information about shop. |give me all the information about employee. |give me all the information about employee. |give me all the information about employee. |give me all the information about employee. |give me all the information about employee.
+what is all the information about evaluation?| |what is all the information about shop?| |what is all the information about employee?| |what is all the information about bonus?| |what is all the information about year_awarded?| |what is all the information about city?|
+
+
+how many employees are there?|how many products are there?|how many employees are there?|how many products are there?|how many employees are there?|how many products are there?|how many employees are there?|how many products are there?|how many employees are there?|how many products are there
+select distinct shop.name, shop.location from shop; |count the number of distinct employees. |count the number of distinct employees. |count the number of distinct employees. |count the number of distinct employees. |count the number of distinct employees. |count the number of distinct employees. |
+how many paragraphs do we have?| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+count the number of documents. |count the number of documents. |count the number of documents. |count the number of documents. |count the number of documents. |count the number of documents. |count the number of documents. |count the number of documents. |count the number of
+list paragraph ids, paragraph texts, and paragraph descriptions for all paragraphs. |table [*,document_id,document_name,document_description] |table [*,paragraph_id,paragraph_text,paragraph_description] |table [*,template_type_code,template_type_description]
+what are the ids, names, and descriptions for all templates?| |table documents, columns = [*,document_id,template_id,document_name,document_description,other_details]| |table paragraphs, columns = [*,paragraph_id,document_id,paragraph_text
+what is the document name and template id for document with description with the letter 'w' in it? | | | | | | | | | | | | | | | | | | | | | | |
+return the names and template ids for documents that contain the letter w in their description. | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is the document id, template id and description for document named "robbin cv"? | | | | | | | | | | | | | | | | | | | | | | | |
+return the document id, template id, and description for the document with the name robbin cv. | | | | | | | | | | | | | | | | | | | | | | | |
+how many different templates do all documents use?| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+count the number of different templates used for documents. |count the number of different templates used for documents. |count the number of different templates used for documents. |count the number of different templates used for documents. |count the number of different templates used for documents. |count the number of different templates used for
+how many documents are using the template with type code 'ppt'?| | | | | | | | | | | | | | | | | | | | | | | | | | |
+count the number of documents that use the ppt template type. |project = [*,document_id,template_id,document_name,document_description,other_details] |table documents, columns = [*,document_id,template_id,document_name,document_description,
+show all documents and their template ids. |project _id=documents.document_id,template_id=templates.template_id,document_name=documents.document_name,document_description=documents.document_description,other_details=documents.other_details |project
+what are all different paragraph ids used for documents, and how many times were each of them used?| |documents||documents||documents||documents||documents||documents||documents||documents||documents||documents||documents||doc
+what is the id and type code for the template used by the most documents? | | | | | | | | | | | | | | | | | | | | | | | | | |
+return the id and type code of the template that is used for the greatest number of documents. | | | | | | | | | | | | | | | | | | | | | | | | 
+show ids for all templates that are used by more than one document. |where document_id in (select document_id from documents where document_id = 1) |where document_id in (select document_id from documents where document_id = 2) |where document_id
+what are the template ids of any templates used in more than a single document? | | | | | | | | | | | | | | | | | | | | | | | | | |
+show ids for all documents not used by any template. 
+what are the ids for documents that are not used in any templates?| |templates|||||||||||||||||||||||||||||||||||||||||||||||||
+how many documents do we have?| |how many paragraphs do we have?| |how many ref_template_types do we have?| |how many ref_template_types do we have?| |how many ref_template_types do we have?| |how many ref_template_
+count the number of documents. |count the number of paragraphs. |count the number of ref_template_types. |count the number of templates. |count the number of documents. |count the number of paragraphs. |count the number of ref_template_types. |count the number of
+show template ids, version numbers, and template type codes for all templates. |where template_type_code = 'document' |where template_type_code = 'paragraph' |where template_type_code ='ref' |where template_type_code = 
+what are the ids, version numbers, and type codes for each document?| |table templates, columns = [*,template_id,version_number,template_type_code,date_effective_from,date_effective_to,template_details]| |table documents, columns = [
+show all distinct document types for all documents. |where template_type_code = 'document' |where document_type_code = 'document' |where document_type_code = 'document' |where document_type_code = 'document' |where
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what are the ids of documents with document id 1?| |1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1|
+return the ids of templates that have the code ppt or pps. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many documents have template id cv?|how many paragraphs have template id cv?|how many ref template types have template type code cv?|how many ref template types have template id cv?|how many ref template types have template type code cv?|how many ref template types have template id cv?|how many ref template
+count the number of templates of the type cv. |count the number of templates of the type cv. |count the number of templates of the type cv. |count the number of templates of the type cv. |count the number of templates of the type cv. |count the number of templates of the type
+what is the version number and template type code for the template with version number earlier than 5?| |5||||||||||||||||||||||||||||||||||||||||||||
+return the version numbers and template type codes of templates with a version number less than 5. | | | | | | | | | | | | | | | | | | | | | | | | 
+show all document types and number of documents for each. |project _id=documents.document_id,document_name,document_description,other_details |project _id=paragraphs.paragraph_id,paragraph_text,other_details |project _id=ref_template_
+foreign_keys = [ref_template_types.template_type_code,templates.template_id,documents.document_id,paragraphs.paragraph_id] primary_keys = [templates.template_type_code = ref_template_types.template
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+return the type code of the template type that the most documents belong to. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+show all template type codes with more than three templates. |where template_type_code = 'template_type_code' |where template_type_code = 'template_type_code' |where template_type_code = 'template_type_code' |where
+what are the codes of template types that have more than 3 templates? | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what the largest version number and its template type code?| |date_effective_from|date_effective_to|| |date_effective_from|date_effective_to|| |date_effective_from|date_effective_to|| |date_effective_from|date_effective
+return the highest version number, along with its corresponding template type code. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the template type code of the template used by document with the name "data base"?| |templates|||||||||||||||||||||||||||||||||||||||||||
+return the template type code of the template that is used by a document named data base. | | | | | | | | | | | | | | | | | | | | | | | | |
+show all document names using templates with template type code bk. |table documents, columns = [*,document_id,template_id,document_name,document_description,other_details] |table paragraphs, columns = [*,paragraph_id,document_id,paragraph_text,other
+what are the names of documents that use templates with the code bk? | | | | | | | | | | | | | | | | | | | | | | | | | | 
+show all template type codes and the number of documents using each type. |where template_type_code = 'document' |format template_type_code, count(document_id) as num_docs |sort num_docs desc |limit 10 |format template_type_code,
+select * from templates where template_type_code in (1,2,3) select * from documents where document_id in (1,2,3) select * from paragraphs where document_id in (1,2,3) select * from
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+return the code of the template type that is most commonly used in documents. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+show all template type codes that are not used by any document. |where template_type_code not in (select template_type_code from documents) |where template_type_code not in (select template_type_code from documents) |where template_type_code not in (select
+what are the codes of template types that are not used for any document? | | | | | | | | | | | | | | | | | | | | | | | | | | 
+show all document types and descriptions. | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the template type descriptions for template type code "ad".| |template_type_code|template_type_description| |:---|:---| |ad|Ads| |ad|Ads| |ad|Ads| |ad|Ads| |ad
+return the template type description of the template type with the code ad. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the template type code for template type description "book".| |template_type_description|book| |template_type_code|book| |version_number|1| |date_effective_from|2010-01-01| |date_effective_to|2010
+return the type code of the template type with the description "book".|return the type code of the template type with the description "book".|return the type code of the template type with the description "book".|return the type code of the template type with the description "book".|return the type code
+what are the distinct document names for the documents ever used by any template?| |table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|table|
+return the different descriptions for templates that have been used in a document. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what are the template ids with template type description "report".| |presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|presentation|present
+return the ids corresponding to templates with the description 'presentation' and the version number '1'. | | | | | | | | | | | | | | | | | | | | | | |
+how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in total? |how many paragraphs in
+count the number of documents. |count the number of templates. |count the number of ref_template_types. |count the number of paragraphs. |count the number of documents. |count the number of templates. |count the number of ref_template_types. |count the number of
+how many paragraphs for the document with name'summer show' and template type code'summer show'?| |How many paragraphs for the document with name'summer show' and template type code'summer show'?| |How many paragraphs for the document with name'summer show' and template type code 
+count the number of paragraphs in the document named'summer show' |count |summer show| |---|---| |1| || || || || || || || || || || || ||
+show paragraph details for paragraph with text 'korea '. 
+what are the details for the paragraph that includes the text 'korea '? | | | | | | | | | | | | | | | | | | | | | | | | 
+show all paragraph ids and texts for the document with name 'welcome to ny' and template id 'welcome to ny' |where document_name = 'welcome to ny' |where template_id = 'welcome to ny' |where document_id = '
+what are the ids and texts of paragraphs in the document titled 'welcome to ny'? |title|welcome to ny| |id|welcome to ny| |text|welcome to ny| |id|welcome to ny| |text|welcome to ny| |id|
+show all paragraph texts for the document "customer reviews" |table paragraphs,columns=*,document_id,paragraph_text,other_details |table ref_template_types,columns=*,template_type_code,template_type_description |table templates,columns=*,template_id,version_
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+show all document ids and the number of paragraphs in each document. order by document id. |project document_id,document_name,document_description,other_details |project document_id,document_name,document_description,other_details |project document_id,document_name,document_description
+return the different document ids along with the number of paragraphs corresponding to each, ordered by id. | | | | | | | | | | | | | | | | | | | | | | | | 
+show all document ids, names and the number of paragraphs in each document. select * from documents; select * from paragraphs; select * from ref_template_types; select * from templates; select * from foreign_keys; select * from primary
+what are the ids and names of each document, as well as the number of paragraphs in each?| what are the ids and names of each document, as well as the number of paragraphs in each?| what are the ids and names of each document, as well as the number of paragraphs in each?
+list all document ids with at least two paragraphs. |table documents, columns = [*,document_id,template_id,document_name,document_description,other_details] |table paragraphs, columns = [*,paragraph_id,document_id,paragraph_text,other_details]
+what are the ids of documents that have 2 or more paragraphs? | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the document id and name with greatest number of paragraphs? | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+return the id and name of the document with the most paragraphs. | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is the document id with most number of paragraphs?| |what is the document id with least number of paragraphs?| |what is the document id with most number of paragraphs?| |what is the document id with least number of paragraphs?| |what is the document id with most number of paragraphs?|
+return the id of the document with the fewest paragraphs. | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the document id with 3 to 4 paragraphs?| |1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1||1
+give the ids of documents that have between one and two paragraphs. | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+show the document id with paragraph text 'brazil' and 'ireland' |where document_id = 'brazil' and paragraph_text = 'brazil' and paragraph_text = 'ireland' |where document_id = 'brazil' and paragraph
+what are the ids of documents that contain the paragraph text 'brazil' and 'ireland'?| |table documents, columns = [*,document_id,template_id,document_name,document_description,other_details]| |table paragraphs, columns = [*,paragraph_
+how many courses are there?| |course_arrange|course_arrange|course_arrange| |course_arrange|course_arrange|course_arrange| |course_arrange|course_arrange|course_arrange| |course_arrange|course_arr
+what is the total count of courses?| |course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_
+list the names of teachers in descending order of age. |table teacher, columns = [*,teacher_id,name,age] |list the names of teachers in ascending order of age. |list the names of teachers in descending order of age. |table teacher, columns = [*,teacher
+
+select * from teacher; select * from course; select * from course_arrange; select * from teacher_arrange; select * from teacher_arrange where teacher_id = 1; select * from teacher_arrange where teacher_id =
+
+table teacher, columns = [*,teacher_id,name,hometown] foreign_keys = [teacher.teacher_id,course_arrange.teacher_id] primary_keys = [teacher.teacher_id = teacher.teacher_id,course_arrange.
+table teacher_arrange, columns = [*,teacher_id,hometown] foreign_keys = [teacher.teacher_id,teacher_arrange.teacher_id] primary_keys = [teacher_arrange.teacher_id = teacher.teacher_id] 
+select * from teacher where age = 32 or age = 33 select * from teacher where age = 32 or age = 33 select * from teacher where age = 32 or age = 33 select * from teacher where age =
+
+
+where is the youngest teacher from?| 
+table teacher_hometown, columns = [*,teacher_id,hometown] foreign_keys = [teacher.teacher_id,teacher.hometown] primary_keys = [teacher.teacher_id = teacher.teacher_id] primary_keys = [
+for each teacher, how many students are there?| 
+table teacher_hometown, columns = [*,hometown] foreign_keys = [teacher.teacher_id] primary_keys = [teacher.teacher_id] primary_keys = [teacher.teacher_id] foreign_keys = [teacher.
+
+
+
+select * from teacher_arrange where teacher_id = 1; select * from teacher_arrange where teacher_id = 2; select * from teacher_arrange where teacher_id = 3; select * from teacher_arrange where teacher_id
+select * from teacher_arrange where teacher_id = 1; select * from teacher_arrange where teacher_id = 2; select * from teacher_arrange where teacher_id = 3; select * from teacher_arrange where teacher_id
+select * from teacher_arrange where teacher_id = 1 select * from teacher_arrange where teacher_id = 2 select * from teacher_arrange where teacher_id = 3 select * from teacher_arrange where teacher_id = 
+
+show the name of the teacher for the math course. 
+what are the names of the people who teach math courses?| |course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arrange|course_arr
+select * from teacher_arrange where teacher_id = 1 select * from teacher_arrange where teacher_id = 2 select * from teacher_arrange where teacher_id = 3 select * from teacher_arrange 
+select * from teacher_arrange where teacher_id = 1; select * from teacher_arrange where teacher_id = 2; select * from teacher_arrange where teacher_id = 3; select * from teacher_arrange where teacher_id
+
+
+table teacher_arrange, columns = [*,teacher_id,course_id] foreign_keys = [teacher.teacher_id,course.course_id] primary_keys = [teacher.teacher_id = teacher.teacher_id,course.course_id =
+
+select * from visit where visitor.age < 30; select * from visit where visitor.age > 30; select * from visit where visitor.age >= 30 and visitor.age <= 30; select * from visit where visitor.age 
+
+
+
+select * from visit where museum_id = 1 select * from visit where museum_id = 2 select * from visit where museum_id = 3 select * from visit where museum_id = 4 select * from visit where
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+
+
+
+
+
+
+
+
+
+
+find the total number of matches. | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many matches are there?|how many rankings are there?|how many tables are there?|how many players are there?|how many matches are there?|how many rankings are there?|how many tables are there?|how many players are there?|how many matches are there?|how many rankings are there
+find the total number of matches. SELECT COUNT(*) AS total_matches FROM matches; SELECT COUNT(*) AS total_matches FROM matches; SELECT COUNT(*) AS total_matches FROM matches; SELECT COUNT(*) AS total_matches FROM matches; SELECT COUNT(*) AS total_matches
+count the number of players. SELECT COUNT(*) AS count FROM matches; SELECT COUNT(*) AS count FROM players; SELECT COUNT(*) AS count FROM rankings; SELECT COUNT(*) AS count FROM matches WHERE winner_id = 1; SELECT COUNT(*) AS count FROM matches WHERE loser_id
+list the first name and birth date of all players from the country with code uk. |table players, columns = [*,first_name,last_name,birth_date,country_code] |list the first name and birth date of all players from the country with code uk. |table players,
+what are the first names and birth dates of players from the usa?| |1||||||||||||||||||||||||||||||||||||||||||||||||||
+find the average age of losers and winners of all matches. SELECT avg(loser_age) AS loser_age, avg(winner_age) AS winner_age FROM matches GROUP BY loser_age, winner_age ORDER BY loser_age, winner_age SELECT avg(loser_
+what are the average heights of losers and winners across matches?|what are the average hand sizes of losers and winners across matches?|what are the average birth dates of losers and winners across matches?|what are the average country codes of losers and winners across matches?|what are the average hand sizes of losers and winners across matches?
+find the average rank of losers in all matches. | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the average rank for losers in all matches?| |1|||||||||||||||||||||||||||||||||||||||||||||||||||||
+find the highest rank of winners in all matches. | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the best rank of winners across all matches?| The output should be: |loser_id|loser_rank|loser_rank_points|loser_name|loser_rank_points|loser_rank_points|loser_rank_points|loser_rank
+find the number of distinct country codes of all players. 
+how many times have players played in the same tourney?| |country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country_code|country
+find the number of distinct name of winners. 
+how many different loser names are there?| |1|| |2|| |3|| |4|| |5|| |6|| |7|| |8|| |9|| |10|| |11|| |12|
+find the name of tourney that has more than 10 matches. SELECT DISTINCT tourney_name FROM matches WHERE matches.tourney_id IN (SELECT tourney_id FROM matches GROUP BY tourney_id HAVING COUNT(*) > 10) SELECT DISTIN
+what are the names of tournaments that have more than 10 matches?| table matches, columns = [*,best_of,draw_size,loser_age,loser_entry,loser_hand,loser_ht,loser_id,loser_ioc,loser_
+table winners, columns = [*,winner_id,winner_name,winner_rank_points] |table winners, winners.winner_id, winners.winner_name, winners.winner_rank_points |table winners, winners.winner_id, winners.winner_name, winners.winner_
+what are the names of players who won in both 2013 and 2016?| foreign_keys = [matches.loser_id = players.player_id,rankings.player_id = players.player_id] primary_keys = [matches.los
+table matches, columns = [*,year,loser_id,loser_name,loser_rank,loser_rank_points,loser_seed,loser_ht,loser_ioc,loser_name,loser_rank_points,loser_seed,loser
+how many matches were played in 2013 or 2016?| |2013|2016| |2013|2016| |2013|2016| |2013|2016| |2013|2016| |2013|2016| |2013|
+what are the country code and first name of the players who won in both tourney wta championships and australian open?| | | | | | | | | | | | | | | | | | | | | |
+SELECT * FROM matches WHERE winner_id = 1 AND loser_id = 2; SELECT * FROM players WHERE player_id = 1; SELECT * FROM rankings WHERE ranking_date = '2018-01-01'; SELECT * FROM matches WHERE
+find the first name and country code of the youngest player. |find the first name and country code of the oldest player. |find the first name and country code of the youngest player. |find the first name and country code of the oldest player. |find the first name and country code of the youngest player.
+what is the first name and country code of the youngest player?| | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list the first and last name of all players in the order of hand. |table players, columns = [*,player_id,first_name,last_name,hand,birth_date,country_code] |list the first and last name of all players in the order of hand. |table
+what are the full names of all players, sorted by country code?| |1||||||||||||||||||||||||||||||||||||||||||||||||||
+table players, columns = [*,player_id,first_name,last_name,hand,birth_date,country_code] |table rankings, columns = [*,ranking_date,ranking,player_id,ranking_points,tours] |table players, columns = 
+what are the full names of all right handed players, in order of birth date?| |table|matches, columns = [*,best_of,draw_size,loser_age,loser_entry,loser_hand,loser_ht,loser_id,loser_ioc
+find the first name and country code of the player who did the most number of tours. | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the first name and country code of the player with the most tours?| |1||||||||||||||||||||||||||||||||||||||||||||||||
+find the year that has the most number of matches. SELECT year, COUNT(*) AS matches FROM matches GROUP BY year ORDER BY matches DESC LIMIT 1; SELECT year, COUNT(*) AS matches FROM matches GROUP BY year ORDER BY matches DESC LIMIT 1; SELECT year, COUNT(*) AS
+which year had the most matches?| |2018||2018||2018||2018||2018||2018||2018||2018||2018||2018||2018||2018||2018||2018||2018
+find the name and rank points of the winner who won the most times. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is the name of the player who has won the most matches, and how many rank points does this player have?| |table|matches, columns = [*,best_of,draw_size,loser_age,loser_entry,loser_hand,loser_ht,loser_
+find the name of the winner who has the highest rank points and participated in the australian open tourney. 
+what is the name of the winner with the most rank points who participated in the australian open tournament?| |1|||||||||||||||||||||||||||||||||||||||||||
+find the names of loser and winner who played in the match with greatest number of points. |find the names of loser and winner who played in the match with greatest number of seed. |find the names of loser and winner who played in the match with greatest number of rank. |find the names of loser and winner who
+what are the names of the winner and loser who played in the longest match?| |1||||||||||||||||||||||||||||||||||||||||||||||||
+SELECT player_id, AVG(ranking) AS avg_ranking, FIRST_NAME FROM players GROUP BY player_id, FIRST_NAME ORDER BY avg_ranking DESC LIMIT 10 SELECT player_id, AVG(ranking) AS avg_ranking, FIRST_NAME FROM
+what are the first names of all players, and their average rankings?| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+find the total ranking points for each player and their last name. | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what are the first names of all players, and their total ranking points?| |table players, columns = [*,first_name,last_name,hand,birth_date,country_code]| |table rankings, columns = [*,ranking_date,ranking,player_id,ranking
+find the number of players for each country. foreign_keys = [countries.country_code = players.country_code] primary_keys = [countries.country_code] foreign_keys = [countries.country_code = players.country
+how many players are from each country?| foreign_keys = [matches.loser_id = players.player_id,rankings.player_id = players.player_id] primary_keys = [matches.loser_id = players.player_id
+find the code of the country where has the greatest number of players. 
+what is the code of the country with the most players?| |2|| |3|| |4|| |5|| |6|| |7|| |8|| |9|| |10|| |11|| |12||
+find the codes of countries that have more than 50 players. table countries, columns = [*,country_code,country_name] table players, columns = [*,player_id,country_code,country_name] foreign_keys = [countries.country_
+what are the codes of countries with more than 50 players?| table countries, columns = [*,country_code,country_name] foreign_keys = [countries.country_code] primary_keys = [countries.country_code] table
+find the total number of tours for each ranking date. SELECT tourney_date, COUNT(*) AS total_tours FROM rankings GROUP BY tourney_date ORDER BY tourney_date; SELECT tourney_date, COUNT(*) AS total_tours FROM rankings GROUP BY tour
+how many total tours were there for each ranking date?| |tourney_id|tourney_name|tourney_level|tourney_date|tourney_id|tourney_name|tourney_level|tourney_date|tourney_id|tourney_name|tourney_level
+find the number of matches happened in each year. SELECT year, COUNT(*) AS matches FROM matches GROUP BY year; SELECT year, COUNT(*) AS matches FROM matches GROUP BY year ORDER BY year; SELECT year, COUNT(*) AS matches FROM matches GROUP BY year ORDER BY year DESC; 
+how many matches were played in each year?| |2018||2019||2020||2021||2022||2023||2024||2025||2026||2027||2028||2029||2030||2031||
+find the name and rank of the 3 oldest winners across all matches. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what are the names and ranks of the three oldest winners across all matches?| |table|matches, columns = [*,best_of,draw_size,loser_age,loser_entry,loser_hand,loser_ht,loser_id,loser_ioc,los
+how many different winners both participated in the wta championships and were born in 1990?| |1|||||||||||||||||||||||||||||||||||||||||||||
+SELECT COUNT(DISTINCT player_id) FROM matches WHERE winner_hand = 'left' AND winner_ht = 'left' AND winner_id IN (SELECT player_id FROM players WHERE player_id IN (SELECT player_id FROM matches)) 
+find the first name, country code and birth date of the winner who has the highest rank points in all matches. | | | | | | | | | | | | | | | | | | | | | | 
+what is the first name, country code, and birth date of the player with the most loser rank points across all matches?| | | | | | | | | | | | | | | | | | | | | |
+find the number of players for each hand type. SELECT hand, COUNT(*) AS num_players FROM matches GROUP BY hand ORDER BY hand; SELECT hand, COUNT(*) AS num_players FROM players GROUP BY hand ORDER BY hand; SELECT hand, COUNT(*) AS num
+how many players are there for each hand type?| | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+SELECT count(*) FROM battle WHERE lost_in_battle = 1 SELECT count(*) FROM battle WHERE lost_in_battle = 0 SELECT count(*) FROM battle WHERE lost_in_battle = 0 AND id = 1 SELECT count(*) FROM battle WHERE
+table ship, columns = [*,name,tonnage] |table battle, columns = [*,id,name,date,bulgarian_commander,latin_commander,result] |table death, columns = [*,caused_by_ship_id,id
+table battle, columns = [*,id,name,date,result] table death, columns = [*,caused_by_ship_id,id,note,killed,injured] table ship, columns = [*,lost_in_battle,id,name,ton
+select * from battle, death, ship where battle.id = death.battle_id and death.caused_by_ship_id = ship.id and battle.lost_in_battle = 1; 
+select avg(injured) from death where battle.lost_in_battle = true select avg(injured) from death where battle.lost_in_battle = false select avg(injured) from death where battle.lost_in_battle = false and death
+|ship|death|injury| |---|---|---| |1|1|1| |2|1|1| |3|1|1| |4|1|1| |5|1|1| |6|1|1| |7
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|battle.lost_in_battle = battle.id,| |ship.lost_in_battle = ship.id,| |death.caused_by_ship_id = ship.id,| |death.id = battle.id,| |
+|battle| |---| |id| |name| |date| |bulgarian_commander| |latin_commander| |result| |---| |1| |1| |1| |1| |1| |
+
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+table battle, columns = [*,id,name,date,bulgarian_commander,latin_commander,result] table ship, columns = [*,lost_in_battle,id,name,tonnage,ship_type,location,disposition_of_ship]
+SELECT * FROM battle WHERE lost_in_battle = 0 SELECT * FROM battle WHERE lost_in_battle = 1 SELECT * FROM battle WHERE lost_in_battle = 2 SELECT * FROM battle WHERE lost_in_battle
+
+what are all the courses including department name and degree summary name?| |table|addresses, columns = [*,address_id,line_1,line_2,city,zip_postcode,state_province_county,country,other_address_details]| |table|c
+what is the first and second line for all courses?| |table|addresses, columns = [*,address_id,line_1,line_2,city,zip_postcode,state_province_county,country,other_address_details]| |table|courses,
+how many students are listed?| |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---
+how many students are there?| |table||table||table||table||table||table||table||table||table||table||table||table||table||table||table||table||table||table||table||table|
+how is the math course described?| |how is the math course described?| |how is the math course described?| |how is the math course described?| |how is the math course described?| |how is the math course described?| |how is the math course described?|
+what are the descriptions for all the math courses?| |what are the descriptions for all the math courses?| |what are the descriptions for all the math courses?| |what are the descriptions for all the math courses?| |what are the descriptions for all the math courses?| |what are the
+what is the zip code of the address in the city port chelsea?| |what is the zip code of the address in the city port chelsea?| |what is the zip code of the address in the city port chelsea?| |what is the zip code of the address in the city
+what is the zip code for port chelsea?| |what is the zip code for port chelsea?| |what is the zip code for port chelsea?| |what is the zip code for port chelsea?| |what is the zip code for port chelsea?|
+which department offers the most number of degrees? list department name and id. |table| |--| |departments| |--| |department_id|department_name|department_description| |1|Computer Science|Computer Science is the study of computers and their applications.|
+what is the name and id of the department with the most number of students?| |table|addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_
+how many students are enrolled in any semester?| |how many students are enrolled in any semester?| |how many students are enrolled in any semester?| |how many students are enrolled in any semester?| |how many students are enrolled in any semester?| |how many students are enrolled in any semester
+how many students are enrolled in each department?| |how many students are enrolled in each semester?| |how many students are enrolled in each course?| |how many students are enrolled in each semester?| |how many students are enrolled in each course?| |how many students are enrolled in each semester
+how many different departments are offered?|how many different sections are offered?|how many different semesters are offered?|how many different students are enrolled?|how many different students are enrolled in each semester?|how many different students are enrolled in each department?|how many different students are enrolled in each section?|how many
+how many students are enrolled in each degree program?| |*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*
+how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students
+how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students are enrolled in the engineering department?| |how many students
+what are the names and descriptions of all the departments?| |*| |*| |*| |*| |*| |*| |*| |*| |*| |*| |*| |*| |*| |*|
+what are the names and descriptions for all the departments?| |*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
+what are the names and id of departments having at most 2 degree programs?| |table courses, columns = [*,course_id,course_name,course_description,other_details]| |table departments, columns = [*,department_id,department_name,department
+what are the names and ids of every course with more than 2 sections?| |table courses, columns = [*,course_id,course_name,course_description,course_type,course_level,course_units,course_credit_hours,course_semester,course_start_date
+list the section_name in lexicographical order. |table sections, columns = [*,section_id,section_name,section_description,other_details] |table semesters, columns = [*,semester_id,semester_name,semester_description,other_details
+what are the names of the sections in reverse alphabetical order?|table sections, columns = [*,section_id,course_id,section_name,section_description,other_details] table student_enrolment_courses, columns = [*,student_course_id,course_
+table student_enrolment_courses, columns = [*,student_course_id,course_id,student_enrolment_id] |table student_enrolment_courses, columns = [*,student_course_id,course_id,student_enrolment_
+for each student, what is the name and id of the one with the most courses registered?|for each course, what is the name and id of the one with the most students registered?|for each student, what is the name and id of the one with the most courses registered?|for each transcript, what is the name
+what is the description of the department whose name has the substring the computer?| |what is the description of the department whose name has the substring the computer?| |what is the description of the department whose name has the substring the computer?| |what is the description of the department whose name has the
+what is the department description for the one whose name has the word computer?| |2||what is the department description for the one whose name has the word computer?| |3||what is the department description for the one whose name has the word computer?| |4||what is the department description
+who are enrolled in 2 degree programs in one semester? list the first name, middle name and last name and the id. | | | | | | | | | | | | | | | | | | | | |
+|first_name|middle_name|last_name|cell_mobile_number|email_address|ssn|date_first_registered|date_left|other_student_details| |---|---|---|---|---|---|---|---|---| |John|Smith
+who is enrolled in a bachelor degree program? list the first name, middle name, last name. |who is enrolled in a bachelor degree program? list the first name, middle name, last name. |who is enrolled in a bachelor degree program? list the first name, middle name, last name. |who is
+what are the first, middle, and last names for everybody enrolled in a masters program?| |table|addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address
+find the kind of program which most number of students are enrolled in? select * from student_enrolment_courses where student_enrolment_courses.student_enrolment_id = 1 select * from student_enrolment_courses where student_enrol
+what is the degree summary name that has the most number of students enrolled?| |2||what is the degree summary name that has the most number of students enrolled?| |3||what is the degree summary name that has the most number of students enrolled?| |4||what is the degree summary
+table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details] 
+|what is the program id and the summary of the degree that has the most students enrolled?| |what is the program id and the summary of the degree that has the most students enrolled?| |what is the program id and the summary of the degree that has the most students enrolled?| |what is the
+table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details] 
+select * from student_enrolment_courses where student_enrolment_id = 1 order by student_enrolment_courses.student_enrolment_id, student_enrolment_courses.student_course_id; select * from student_
+table student_enrolment_courses, columns = [*,student_course_id,course_id,student_enrolment_id] |table student_enrolment_courses, columns = [*,student_course_id,course_id,student_enrolment_
+what is the name of the semester with no students enrolled?| |2||what is the name of the semester with no students enrolled?| |3||what is the name of the semester with no students enrolled?| |4||what is the name of the semester with no students enrolled?| 
+what are all the course names of the courses which ever have students enrolled in?| |table||||||||||||||||||||||||||||||||||||||||||||||||
+what are the names of all courses that have some students enrolled? |table courses, columns = [*,course_id,course_name,course_description,other_details] |table student_enrolment, columns = [*,student_enrolment_id,degree_program_id
+what's the name of the course with most number of enrollments?| |what's the name of the course with most number of enrollments?| |what's the name of the course with most number of enrollments?| |what's the name of the course with most number of enrollments
+what is the name of the course with the most students enrolled?| |what is the name of the course with the most students enrolled?| |what is the name of the course with the most students enrolled?| |what is the name of the course with the most students enrolled?| |what is the name
+table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details] 
+|table|addresses|courses|departments|degree_programs|sections|semesters|students|student_enrolment|student_enrolment_courses|transcripts| |---|---|---|---|---|---|---|---|---|---|
+table transcripts, columns = [*,transcript_id,transcript_date,course_id,other_details] foreign_keys = [transcripts.transcript_id = transcripts.transcript_id,transcripts.course_id = courses.course_id]
+select * from transcript_contents where transcript_id = '123456789' and transcript_contents.student_course_id = '123456789' select * from transcript_contents where transcript_id = '123456789' and transcript_contents.student_course
+what is the phone number of the man with the first name timmothy and the last name ward?| |what is the phone number of the man with the first name timmothy and the last name ward?| |what is the phone number of the man with the first name timmothy and the last name ward
+what is the mobile phone number of the student named timmothy ward?| |timothy ward||||||||||||||||||||||||||||||||||||||||||||||
+who is the last student to register? list the first name, middle name and last name. |who is the first student to register? list the first name, middle name and last name. |who is the last student to register? list the first name, middle name and last name. |who is the first student
+what is the first, middle, and last name of the first student to register?| |2|what is the first, middle, and last name of the first student to register?| |3|what is the first, middle, and last name of the first student to register?| |4|what is
+who is the earliest graduate of the school? list the first name, middle name and last name. |table| |addresses| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id| |address
+what is the first, middle, and last name of the latest school graduate?| |table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ss
+table addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details] |table courses, columns = [*,course_id,course_name,course
+|table| |addresses| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id| |address_id
+table addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details] |table courses, columns = [*,course_id,course_name,course
+what is the id, line 1, and line 2 of the address with the most students?| |table addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_
+on average, when were the transcripts printed?|on average, when were the transcripts printed?|on average, when were the transcripts printed?|on average, when were the transcripts printed?|on average, when were the transcripts printed?|on average, when were the transcripts printed?|on average, when were the transcripts printed
+what is the average transcript date?| |what is the average transcript date?| |what is the average transcript date?| |what is the average transcript date?| |what is the average transcript date?| |what is the average transcript date?| |what is the average transcript date?|
+when is the last transcript released? list the date and details. |when is the first transcript released? list the date and details. |when is the last transcript released? list the date and details. |when is the first transcript released? list the date and details. |when is the last transcript released? list
+I'm not sure if I'm on the right track, but I'm trying to get the earliest date of a transcript release, and the details of the student who released it. I'm using the following code: SELECT * FROM transcript_contents WHERE transcript_id = '000000
+how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released?| |how many transcripts are released
+how many transcripts are listed?| |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---
+what is the last transcript release date?| |what is the last transcript release date?| |what is the last transcript release date?| |what is the last transcript release date?| |what is the last transcript release date?| |what is the last transcript release date?| |what is
+when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last transcript released?|when was the last
+table courses, columns = [*,course_id,course_name,course_description,course_credit_hours,course_semester,course_instructor,course_department_id,course_department_name,course_department_description,course_department_other_details,course
+select * from transcript_contents where transcript_id = '123456789' and student_course_id = '123456789' and transcript_contents.student_course_id = '123456789' and transcript_contents.student_course_id 
+table transcripts, columns = [*,transcript_id,transcript_date,other_details] I'm not sure if I'm on the right track, but I'm trying to get the results to show the date of the transcript with the least number of results.  You can use the
+select * from transcript_contents where transcript_id = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details] 
+what is the id of the semester that had only bachelors students enrolled?| |2|||||||||||||||||||||||||||||||||||||||||||||||||
+how many different courses are currently being taken?| |table|addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details]| |table|c
+what are the different courses that students are enrolled in?| |table|addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details]| |table
+table students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details] 
+The output should be: |student_id|first_name|middle_name|last_name|cell_mobile_number|email_address|ssn|date_first_registered|date_left|other_student_details| |:---:|:---:|:---:|
+describe the section h. The problem is that I get the following error: ERROR:  relation "student_enrolment_courses" does not exist LINE 1:...ion_id,course_id,student_enrolment_id,student_enrolment_courses
+what is the description for the section named h?| |h||h||h||h||h||h||h||h||h||h||h||h||h||h||h||h||h||h||h
+find the first name of the students who permanently live in the country haiti or have the cell phone number 09700166582. The result should be: |first_name|middle_name|last_name|cell_mobile_number|email_address|ssn|date_first_registered
+select * from student_enrolment_courses where student_enrolment_id = '09700166582' and student_enrolment_id = '09700166582' and student_enrolment_id = '09700166582'
+table cartoons, columns = [*,title,id,channel] |list the title of all cartoons in alphabetical order. |list the title of all cartoons in alphabetical order. |list the title of all cartoons in alphabetical order. |list the title of all cartoons in alphabetical order. 
+table cartoons, columns = [*,id,title,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] 
+list all tv_series directed by "ben jones". |table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] |table tv_series, columns = [*,id,series_name,country
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+select * from tv_series where channel = 'cartoon' and series_name = 'the simpsons' and episode ='s06e10' select * from tv_series where channel = 'cartoon' and series_name = 'the
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+table cartoon, columns = [*,id,title,directed_by,original_air_date,production_code,channel] |list all tv series ordered by their air date and their directors|table tv_series, columns = [*,id,series_name,country,language,content,pixel
+table tv_series, columns = [*,id,channel,air_date,episode,rating,share,18_49_rating_share,viewers_m,weekly_rank,original_air_date] table tv_channel, columns = [*,id,series_name,country
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+table tv_channel, columns = [*,id,country,number_of_channels] table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] foreign_
+table tv_channel, columns = [*,id,country,number_of_channels] |count| |country|number_of_channels| |:---|:---|:---| |United States|  195| |United Kingdom|  50| |France|
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] |count| |---| |2| |1| 
+how many different contents are listed in the tv series table?| how many different channels are listed in the tv channel table?| how many different countries are listed in the tv channel table?| how many different languages are listed in the tv channel table?| how many different content types are
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+table sky_radio, columns = [*,id,title,description,url,image,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+select * from tv_channel where language = 'english' select * from tv_channel where language = 'english' and country = 'USA' select * from tv_channel where language = 'english' and country = '
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+table language, columns = [*,id,name,country,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] |list each tv channel and the number of tv series using it. |list each tv series and the
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+table tv_series, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] |list the title of all  cartoons showed on tv channel with series name 
+table cartools, columns = [*,id,title,description,created_at,updated_at,deleted_at,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] |sort -rating desc |limit 10 |table tv_series, columns = [*,
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] | | | | | | | | | | | | 
+table tv_series, columns = [*,id,episode,rating] |list top 3 highest rating  tv series. list the tv series's episode and rating. |table tv_series, columns = [*,id,episode,rating] |list top 3 highest rating
+
+
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] foreign_keys = [tv_series.id,tv_channel.id] primary_
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] | | | | | | | | | | | | 
+when did the episode "a love of a lifetime" air?| |when did the episode "a love of a lifetime" air?| |when did the episode "a love of a lifetime" air?| |when did the episode "a love of a lifetime" air?| |
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] | | | | | | | | | | | | 
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] | | | | | | | | | | | | 
+table tv_series, columns = [*,id,title,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] foreign_keys = [tv_channel.id,tv_series.id] primary
+table tv_series, columns = [*,id,title,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] table tv_episode, columns = [*,id,episode,air_date,rating
+table tv_series, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] |where series_name = "sky radio" |limit 
+table tv_series, columns = [*,id,title,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel] |where episode = "sky radio" |limit 1 |format episode |format
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table director, columns = [*,id,name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,
+SELECT * FROM tv_series WHERE id IN (SELECT id FROM tv_director) ORDER BY id; SELECT * FROM tv_director WHERE id IN (SELECT id FROM tv_series) ORDER BY id; SELECT * FROM tv_channel WHERE id IN 
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+table cartoon, columns = [*,id,title,directed_by,written_by,original_air_date,production_code,channel] table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_
+find the package choice and series name of the tv channel that has high definition tv. 
+table tv_series, columns = [*,id,episode,air_date,rating,share,18_49_rating_share,viewers_m,weekly_rank,channel,package_option] table tv_channel, columns = [*,id,series_name,country,language
+
+table tv_series, columns = [*,id,title,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_channel, columns = [*,id,series_name,country
+
+table countries, columns = [*,country,population] table tv_channel, columns = [*,id,country,population] foreign_keys = [countries.country = tv_channel.country] primary_keys = [tv_channel.country = tv
+
+table tv_channel, cartoon, country, language, content, pixel_aspect_ratio_par, hight_definition_tv, pay_per_view_ppv, package_option, series_name, country, language, content, pixel_aspect_ratio_par, hight_definition_tv, pay_
+select * from tv_channel where channel = 'Cartoon Network' and country = 'United States' and language = 'English' and pixel_aspect_ratio_par = '1.333' and hight_definition_tv = 'HD' and pay_
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+table tv_channel, columns = [*,id,country,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,air_date,rating,
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] | | | | | | | | 
+
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+
+table tv_channel, columns = [*,id,series_name,country,language,content,pixel_aspect_ratio_par,hight_definition_tv,pay_per_view_ppv,package_option] table tv_series, columns = [*,id,episode,
+how many people are there?| |how many poker players are there?| |how many people are there?| |how many poker players are there?| |how many people are there?| |how many poker players are there?| |how many people are there?| |how many
+count the number of people. |count the number of people. |count the number of people. |count the number of people. |count the number of people. |count the number of people. |count the number of people. |count the number of people. |count the number of
+table poker_player, columns = [*,poker_player_id,earnings] |table poker_player, columns = [*,poker_player_id,earnings] |table poker_player, columns = [*,poker_player_id,earnings] |table poker
+
+list the poker players who have made the final table and the best finishes of the final tables they have made. |table final_table_made, best_finish, money_rank, earnings |where final_table_made = 'final table' |and best_finish = 'best finish'
+
+
+
+
+return the money rank of the player with the greatest earnings. 
+
+
+what are the names of people?|what are the names of poker tables?|what are the names of final tables?|what are the names of best finishes?|what are the names of money ranks?|what are the names of earnings?|what are the names of people?|what are the names of poker tables?
+return the names of all the people who have played in the final table. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+
+list the names of poker players ordered by the final tables made in descending order. |table people, columns = [*,people_id,nationality,name,birth_date,height] |table poker_player, columns = [*,poker_player_id,people_id,final_table
+
+
+return the name of the poker player with the highest earnings. 
+
+return the money rank of the poker player with the greatest height. 
+
+table poker_player, columns = [*,poker_player_id,height] |give average earnings of poker players who are taller than 200. ||table poker_player, columns = [*,poker_player_id,height] |||give average earnings of poker players who are
+
+return the names of poker players sorted by their final table made descending. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+how many people are there of each nationality?| | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the most common nationality of poker_player?| | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+select * from people where nationality = 'American' select * from people where nationality = 'British' select * from people where nationality = 'French' select * from people where nationality = 'German' select * from people where
+what are the names of people who have made it to the final table?|what are the names of people who have made it to the final table and have the highest earnings?|what are the names of people who have made it to the final table and have the highest earnings and have the highest finish?|what are the names of
+table people, columns = [*,people_id,nationality] table poker_player, columns = [*,poker_player_id,people_id,nationality] foreign_keys = [poker_player.people_id = people.people_id] primary_
+table people, columns = [*,people_id,name,birth_date] |list the names and birth dates of people in descending alphabetical order of name. |table people, columns = [*,people_id,name,birth_date] |list the names and birth dates of people
+what are the names and birth dates of people, ordered by their names in alphabetical order? | | | | | | | | | | | | | | | | | | | | | | | | 
+select * from people where nationality!= 'russia' select * from people where nationality = 'russia' select * from people where nationality = 'russia' and height > 180 select * from people where nationality = 'r
+what are the names of people who are not from russia? select * from people where nationality = 'russian' select * from people where nationality = 'russian' select * from people where nationality = 'russian' select * from people
+list the names of poker players that are not in the final table. |table final_table, columns = [*,final_table_made,best_finish,money_rank,earnings] |list the names of poker players that have made it to the final table. |list the names of poker
+what are the names of people who do not play poker? |people_id |name |birth_date |height | | | | | | | | | | | | | | | | | | | |
+how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there?|how many people are there
+count the number of people who have made it to the final table. |count the number of people who have finished in the top 3. |count the number of people who have finished in the top 3 and have made it to the final table. |count the number of people who have finished in the top 
+select * from votes where state = 'CA' select * from votes where state = 'CA' and phone_number = '555-555-5555' select * from votes where state = 'CA' and phone_number = '
+list the contestant numbers and names, ordered by contestant number ascending. |table votes, columns = [*,vote_id,phone_number,state,contestant_number,created] |table contestants, columns = [*,contestant_number,contestant_name] |table
+table votes, columns = [*,vote_id,phone_number,state] |table votes, columns = [*,vote_id,phone_number,state,contestant_number] |table votes, columns = [*,vote_id,phone_number,state,cont
+
+
+what are the names of the contestants whose names are not 'jessie alloway' and whose phone numbers are not '555-555-5555'| 
+select distinct state, created from votes where phone_number = '555-555-5555' select distinct state, created from votes where phone_number = '555-555-5555' and contestant_number = '123456' select distinct state, created from votes
+select * from votes where votes.contestant_number = 2 and votes.state = 'CA' select * from votes where votes.contestant_number = 2 and votes.state = 'CA' and votes.contestant_number =
+select * from votes where votes.contestant_number = 1 and votes.state = 'CA' select * from votes where votes.contestant_number = 2 and votes.state = 'CA' select * from votes where votes.
+
+
+
+select * from votes where contestant_number = 'tabatha gehling' select * from votes where contestant_number = 'tabatha gehling' and state = 'CA' select * from votes where contestant_number = 'tabatha ge
+table votes, columns = [*,vote_id,phone_number,state,contestant_number,created] |where phone_number = '555-555-5555' |where state = 'CA' |where contestant_number = 'tabatha geh
+table contestants, columns = [*,contestant_name] table votes, columns = [*,contestant_name,state,phone_number,created] foreign_keys = [contestants.contestant_name] primary_keys = [contest
+|countrycode,countryname,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2| |A,Africa,Africa,Africa,Africa,Africa,Africa,Africa,Africa,
+table nations, columns = [*,name,founded,population] | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many countries have a monarch as their head of state?| |how many countries have a republic as their form of government?| |how many countries have a monarch as their head of state?| |how many countries have a republic as their form of government?| |how many countries have a monarch as their
+how many countries have governments that are monarchies?| |how many countries have governments that are republics?| |how many countries have governments that are monarchies?| |how many countries have governments that are republics?| |how many countries have governments that are monarchies?| |how many countries
+|countrycode,country,continent,surfacearea| |countrycode,country,continent,surfacearea| |countrycode,country,continent,surfacearea| |countrycode,country,continent,surfacearea| |countrycode,country,continent,surfacearea| |country
+
+which country is anguilla in?| 
+what is the country name which anguilla belongs to?| |countrycode|anguilla| |countryname|Anguilla| |continent|Americas| |region|Caribbean| |surfacearea|0.001| |indepyear|0.001| |population|
+which country is the city kabul located in?| |city|country|countrylanguage|sqlite_sequence| |---|---|---|---| |kabul|Afghanistan|English|1| |kabul|Afghanistan|English|2| |kabul|Afghan
+what is the population of kabul?| |city|country|countrylanguage|sqlite_sequence| |---|---|---|---| |Kabul|Afghanistan|English|1| |Kabul|Afghanistan|Pashto|2| |Kabul|Afghan
+select countrycode, name, population from countrylanguage where countrycode = 'ARU' order by population desc limit 1| |ARU|Aruba|| |ARU|Aruba|| |ARU|Aruba|| |ARU|Aruba|| |ARU
+what is the capital of aruba?|what is the population of aruba?|what is the population of aruba?|what is the population of aruba?|what is the population of aruba?|what is the population of aruba?|what is the population of aruba?|what is the population of
+|city|country|countrylanguage|sqlite_sequence| |---|---|---|---| | | | | | | | | | | | | | | | | | | | | | |
+select * from country where countrycode = ‘BR’ select * from countrylanguage where countrycode = ‘BR’ and language = ‘Portuguese’ select * from sqlite_sequence where name = ‘country’ select * from city
+what is the population of angola?| |countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode|country|countrycode
+select countrycode, name, population from countrylanguage where countrycode = 'ANG'| |what is the population of angola?| |select countrycode, name, population from countrylanguage where countrycode = 'ANG'| |what is the population of angola?| |select country
+|countrycode,lifeexpectancy| |countrycode,gnp| |countrycode,gnpold| |countrycode,gnp,gnpold,localname,governmentform,headofstate,capital,code2| |countrycode,code2,gnp,gnpold,
+select countrycode, name, population, lifeexpectancy from country where continent = 'africa' order by lifeexpectancy desc limit 1| 
+
+give the name of the country in asia with the highest life expectancy. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+select * from country where continent = 'asia' and gnp > 1000000000; select * from countrylanguage where countrycode = 'asia' and language = 'english'; select * from sqlite_sequence where name = '
+select countrycode, name, population, gnp from countrylanguage where countrycode = 'asia' order by population desc limit 1; |countrycode |name |population |gnp | |:--------- |:--- |:-------- |:--- | |CN 
+|countrycode,lifeexpectancy| |africa,| |afghanistan,| |albania,| |algeria,| |andorra,| |angola,| |argentina,| |armenia,| |aruba,| |
+|country, continent, surfacearea, lifeexpectancy| |africa, africa, 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+give the total surface area covered by countries in asia or europe. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+how many people live in gelderland district? | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the total population of the netherlands?| |what is the total population of the netherlands?| |what is the total population of the netherlands?| |what is the total population of the netherlands?| |what is the total population of the netherlands?|
+
+table us, columns = [*,countrycode,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2] table us_states, columns = [*,statecode
+table countrylanguage, columns = [*,countrycode,language,isofficial,percentage] table country, columns = [*,code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headof
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+how many type of governments are in africa? |countrycode,countryname,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2,isofficial,percentage,name,seq,country
+how many different forms of governments are there in africa? |countrycode,countryname,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2| |AFRICA||||
+what is the total number of languages used in aruba? |sqlite3 -init -file /tmp/aruba.db -column -header -separator "|" -out /tmp/aruba.sql -header -separator "|" -column
+how many languages are spoken in aruba? | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+how many official languages does afghanistan have? | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+how many official languages are spoken in afghanistan? | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is name of the country that speaks the largest number of languages?| 
+
+select * from countrylanguage where countrycode = 'US' and language = 'English' order by percentage desc limit 1; select * from countrylanguage where countrycode = 'US' and language = 'English' order by percentage desc limit 1; 
+select * from countrylanguage where countrycode = 'US' and language = 'English' select * from countrylanguage where countrycode = 'US' and language = 'English' and countrycode = 'US' select * from countrylanguage where
+how many countries speak both english and dutch? | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|city,country,language| |city,country,countrylanguage| |country,countrylanguage| |country,countrylanguage,language| |country,countrylanguage,countrycode| |country,countrylanguage,countrycode,language| |country,countrylanguage,countrycode,countrylanguage|
+select * from country where countrycode in (select countrycode from countrylanguage where countrycode = 'fr') select * from country where countrycode in (select countrycode from countrylanguage where countrycode = 'en') select * from country where countrycode in 
+|countrycode,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2| |1,United States,North America,United States,United States,United States,United States
+
+|countrycode |name |country |code | |:---------:|:-----:|:------:|:-----:| | | | | | | | | | | | | | | | | | 
+|city,country,countrycode,continent,population| |city,country,countrycode,continent,population| |country,countrycode,continent,population| |country,countrycode,continent,population| |country,countrycode,continent,population| |country,
+select * from country where continent = 'asia' and population > 1000000000; select * from country where continent = 'asia' and population > 1000000000 and country.population < 2000000000; select * from country
+what are the regions that use english or dutch? |city,country,countrylanguage,sqlite_sequence,table,tablecity,tablecountry,tablecountrylanguage,tablesqlite_sequence,tabletablecity,tabletablecountry,tabletablecountrylanguage,tabletablesqlite_sequence,tabletabletablecity,
+table regions, columns = [*,name,continent,code,population] table languages, columns = [*,name,isofficial,code] table countries, columns = [*,code,name,continent,region,population] table countries_languages, columns = [
+select * from countrylanguage where countrycode = 'NL' and language = 'dutch' |countrycode |language | |:---------:|:--------:| |NL |dutch | |DE |german | |FR |
+|countrycode,countryname,countrylanguage.countrycode,countrylanguage.language,countrylanguage.percentage| |DE,Germany,de,de,0.5| |NL,Netherlands,nl,nl,0.5| |FR,France,fr,fr,0.5
+select countrycode, name, population from countrylanguage where countrycode = 'AS' order by population desc limit 1| 
+what is the language that is used by the largest number of asian nations? foreign_keys = [country.code = countrylanguage.countrycode,countrylanguage.countrycode = country.code] primary_keys = [country.code = countrylanguage.countrycode,countrylanguage
+|countrycode,country,language,population| |:---|:---|:---|:---| |DE,Germany,Deutsch,0| |FR,France,Français,0| |GB,United Kingdom,English,0| |IT,Italy,Italiano
+table country, columns = [*,code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2] table countrylanguage, columns = [*,countrycode,language
+select * from city where population > (select max(population) from city where countrycode = 'GB') select * from country where continent = 'Europe' and population > (select max(population) from country where continent = 'Europe') select
+
+find the name, population and expected life length of european country with the largest area?| 
+|countrycode |name |population |life expectancy | |:---------:|:---:|:---------:|:------------:| |KR |South Korea | | | |JP |Japan | | | |CN |China | 
+
+|countrycode,meanlifeexpectancy| |countrycode,meanlifeexpectancy| |countrycode,meanlifeexpectancy| |countrycode,meanlifeexpectancy| |countrycode,meanlifeexpectancy| |countrycode,meanlifeexpectancy| |countrycode,meanlifeexpect
+
+select countrycode, name, population from country where countrycode <> 'EN' order by population desc limit 10 | | | | | | | | | | | | | | | | | | | | | 
+
+what is the official language used in the country the name of whose head of state is beatrix. | | | | | | | | | | | | | | | | | | | | | | | |
+|city,country,countrylanguage| |city.name,country.name,countrylanguage.name| |city.population,country.population,countrylanguage.population| |city.continent,country.continent,countrylanguage.continent| |city.code,country.code,country
+for the countries founded before 1930, what is the total number of distinct official languages?| | | | | | | | | | | | | | | | | | | | | | | | |
+|city,country,countrycode,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2| |city,country,countrycode,continent,region,surfacearea,indep
+|countrycode,countryname,area| |:---|:---|:---| |DE,Germany,357,000|IT,Italy,301,338|FR,France,303,000| |GB,United Kingdom,243,000|ES,Spain,205,342|NL,
+
+
+
+
+foreign_keys = [country.code = countrylanguage.countrycode] primary_keys = [country.code = countrylanguage.countrycode] foreign_keys = [country.code = countrylanguage.countrycode] primary_keys = 
+return the country codes for countries that do not speak english. 
+foreign_keys = [country.code = countrylanguage.countrycode] primary_keys = [country.code = countrylanguage.countrycode] foreign_keys = [country.code = countrylanguage.countrycode] primary_keys = 
+foreign_keys = [country.code = countrylanguage.countrycode,countrylanguage.name = countrylanguage.localname] primary_keys = [country.code = countrylanguage.countrycode,countrylanguage.name = countrylanguage.localname] foreign_
+foreign_keys = [country.code = countrylanguage.countrycode,countrylanguage.countrycode = country.code] primary_keys = [country.code = countrylanguage.countrycode,countrylanguage.countrycode = country.code] foreign_keys 
+table country, columns = [*,code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2] table countrylanguage, columns = [*,countrycode,language
+|city,countrycode,name,countrylanguage.percentage| |city,countrycode,name,countrylanguage.isofficial| |city,countrycode,name,countrylanguage.localname| |city,countrycode,name,countrylanguage.governmentform| |city,countrycode,name
+|city,countrycode,name,population| |city,countrycode,name,population| |city,countrycode,name,population| |city,countrycode,name,population| |city,countrycode,name,population| |city,countrycode,name,population| |
+
+return the different names of countries that are in asia and for which chinese is the official language. | | | | | | | | | | | | | | | | | | | | | | | |
+|countrycode,country,population,surfacearea,indepyear| |countrycode,country,population,surfacearea,indepyear| |countrycode,country,population,surfacearea,indepyear| |countrycode,country,population,surfacearea,indepyear| |countrycode
+|countrycode,name,population,surfacearea| |countrycode,name,population,surfacearea| |countrycode,name,population,surfacearea| |countrycode,name,population,surfacearea| |countrycode,name,population,surfacearea| |countrycode,name,population
+
+|countrycode,|name,|population,|headofstate| |:---:|:---:|:---:|:---:| |AUS|Australia|32,000,000|Prime Minister| |CHN|China|1,300,000,000|President| 
+table country, columns = [*,code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2] table countrylanguage, columns = [*,countrycode,language
+select * from countrylanguage where countrycode = 'US' and language = 'English' select * from countrylanguage where countrycode = 'US' and language = 'Spanish' select * from countrylanguage where countrycode = 'US' and
+select city.name, country.name, countrylanguage.name, country.population, countrylanguage.population, country.continent, country.code, country.name, country.continent, country.code, country.name, country.continent, country.code, country.name, country.continent
+select * from city where countrycode = 'US' and population > (select avg(population) from city where countrycode = 'US') select * from city where countrycode = 'US' and population > (select avg(population) from city where
+
+
+select country, avg(lifeexpectancy) as lifeexpectancy, avg(gnp) as gnp from countrylanguage group by country having avg(lifeexpectancy) < 72 select country, avg(lifeexpectancy) as lifeexpectancy, avg(gnp) as gnp from countrylanguage
+select countrycode, name, population, lifeexpectancy, continent, region, surfacearea, indepyear, gnp, gnpold, localname, governmentform, headofstate, capital, code2, countrylanguage.isofficial, countrylanguage.percentage from country, countrylanguage where country.
+|city.name |country.name |countrylanguage.name |country.continent |country.region |country.surfacearea |country.indepyear |country.population |country.lifeexpectancy |country.gnp |country.gnpold |country
+select name, surfacearea from country where countrycode = 'US' order by surfacearea desc limit 5 select name, surfacearea from country where countrycode = 'US' order by surfacearea desc limit 5 select name, surfacearea from country where countrycode = '
+|countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,population| |countrycode,
+return the names of the 3 most populated countries. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+table country, columns = [*,code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gnpold,localname,governmentform,headofstate,capital,code2] table countrylanguage, columns = [*,countrycode,language
+how many countries are in europe?| |how many countries are in africa?| |how many countries are in south america?| |how many countries are in north america?| |how many countries are in australia?| |how many countries are in south africa?| |how many countries are in
+count the number of countries in europe. |count the number of countries in africa. |count the number of countries in south america. |count the number of countries in north america. |count the number of countries in australia. |count the number of countries in asia. |count the number of countries
+|city,country,population| |country,countrylanguage,population| |countrylanguage,country,population| |country,countrylanguage,population,countrycode| |country,countrylanguage,population,countrycode,continent| |country,countrylanguage,population,countrycode,continent,
+|country,population| |europe,80000| |europe,80000| |europe,80000| |europe,80000| |europe,80000| |europe,80000| |europe,80000
+
+give the total population and average surface area corresponding to countries in europe that have a surface area greater than 3000. | | | | | | | | | | | | | | | | | | | | | 
+|city.population >= 160000 && city.population <= 900000| |city.population >= 160000 && city.population <= 900000| |city.population >= 160000 && city.population <= 900000| |city.population
+return the names of countries that have a population between 160000 and 900000. | | | | | | | | | | | | | | | | | | | | | | | | 
+select countrycode, name, population from countrylanguage where countrycode = 'EN' order by population desc limit 1| | | | | | | | | | | | | | | | | | | | | 
+table countrylanguage, columns = [*,countrycode,language,isofficial,percentage] | | | | | | | | | | | | | | | | | | | | | | | 
+
+select countrycode, name, population, countrylanguage.percentage from countrylanguage where countrycode = 'US' and countrylanguage.percentage > 50 order by countrycode, population limit 10 
+|countrycode,country,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,countrylanguage,countrycode,country
+table countrylanguage, columns = [*,countrycode,language,percentage] table sqlite_sequence, columns = [*,name,seq] foreign_keys = [countrylanguage.countrycode = country.code] primary_keys = [countrylanguage.countrycode
+|countrycode,countryname,countrypopulation,countrycontinent,countryregion,countrysurfacearea,countrygnp,countrygnpold,countrylocalname,countrygovernmentform,countryheadofstate,countrycapital,countrycode2,countrycode,countryisofficial,countrypercentage| |1,Spain,
+table countrylanguage, columns = [*,countrycode,language,isofficial,percentage] table sqlite_sequence, columns = [*,name,seq] foreign_keys = [countrylanguage.countrycode = country.code] primary_keys = [countrylanguage
+how many orchestras are there?|how many performances are there?|how many shows are there?|how many records are there?|how many companies are there?|how many records are there?|how many performances are there?|how many shows are there?|how many records are there?|how many companies are
+count the number of orchestras. |count the number of performances. |count the number of shows. |count the number of records companies. |count the number of years of the orchestra founded. |count the number of major record formats. |count the number of records. |count the number of
+list the names of orchestras in ascending order of year of founding. |table conductor, columns = [*,conductor_id,name,age,nationality,year_of_work] |table orchestra, columns = [*,orchestra_id,orchestra,conductor_id
+what are the names of orchestras, ordered by year of founding?|what are the names of performances, ordered by attendance?|what are the names of shows, ordered by weekly rank?|what are the names of orchestras, ordered by major record format?|what are the names of performances, ordered by official ratings?|
+
+return the names of conductors that do not have the nationality "usa" and the name "johann".|return the names of conductors that do not have the nationality "usa" and the name "johann" and the age "50".|return the names of conductors that do not have the nationality
+|orchestra_id|record_company|year_of_founded| |:---:|:---:|:---:| |1|Sony|2000| |2|Warner|2001| |3|Universal|2002| |4|EMI|200
+return the record companies of orchestras, sorted descending by the years in which they were founded. |table record_companies, columns = [*,record_company_id,name,year_of_founded] |table record_companies, columns = [*,record_company_id,name
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+return the average attendance across all shows for each orchestra. | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+return the maximum and minimum shares for performances that do not have the type "live final". 
+how many different record companies do orchestras have?| |how many different record formats do orchestras have?| |how many different performances do orchestras have?| |how many different shows do performances have?| |how many different conductors have?| |how many different orchestras have?| |
+count the number of different nationalities of orchestras. |count the number of different nationalities of performances. |count the number of different nationalities of shows. |count the number of different nationalities of records companies. |count the number of different nationalities of years of founding. |count the number of
+list names of orchestras in descending order of years of existence. |table conductor, orchestra, performance, show, conductor_id, orchestra_id, performance_id, if_first_show, result, attendance |table conductor, orchestra, performance, show, conductor_id, orchestra_id, performance_id,
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table conductor, columns = [*,conductor_id,name,age,nationality,year_of_work] |where year_of_work = (select max(year_of_work) from conductor) |limit 1 |format name |format age |format nationality
+|what is the name of the orchestra that has performed the most concerts?| |what is the name of the orchestra that has performed the most concerts in the last 10 years?| |what is the name of the orchestra that has performed the most concerts in the last 10 years?| |what is the
+show the names of orchestras and the conductors they have played with. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+|what are the names of orchestras as well as the corresonding conductors that they have performed with?| |what are the names of conductors as well as the corresonding orchestras that they have performed with?| |what are the names of orchestras as well as the corresonding conductors
+show the names of orchestras that have conducted more than one conductors. 
+what are the names of orchestras that have been conducted by more than one conductor?| 
+show the name of the orchestra that has performed the most number of shows. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+what is the name of the orchestra that has performed the most concerts?| |what is the name of the orchestra that has performed the most concerts?| |what is the name of the orchestra that has performed the most concerts?| |what is the name of the orchestra that has performed the most concerts?| |
+please show the name of the orchestra that has performed in the show with the highest attendance. 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+please show the different record companies and the corresponding number of orchestras. 
+how many performances does each orchestra have?| |how many performances does each orchestra have?| |how many performances does each orchestra have?| |how many performances does each orchestra have?| |how many performances does each orchestra have?| |how many performances does each orchestra have?| |how many
+please show the record formats of orchestras in descending order of count. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+table record_company, columns = [*,record_company_id,name] |table orchestra, columns = [*,orchestra_id,record_company_id,record_company_name] |table performance, columns = [*,performance_id,orchestra_id
+what is the record company used by the greatest number of conductors?| |what is the record company used by the greatest number of orchestras?| |what is the record company used by the greatest number of conductors?| |what is the record company used by the greatest number of orchestras?| |what is
+list the names of performances that have no orchestra. |table orchestra, performance, show| |where orchestra.orchestra_id is null| |where performance.performance_id is null| |where show.performance_id is null| |group by orchestra.orchestra_id,performance.
+
+
+
+find the number of orchestras whose record format is "cd" or "dvd". |where orchestra.record_format = "cd" or orchestra.record_format = "dvd" |count orchestra.orchestra_id |sort orchestra.orchestra_id asc
+count the number of orchestras that have cd or dvd as their record format. |count the number of orchestras that have cd or dvd as their record format. |count the number of orchestras that have cd or dvd as their record format. |count the number of orchestras that have cd or dvd as their record
+
+
+how many high schoolers are there? |select * from highschooler; |select * from highschooler; |select * from highschooler; |select * from highschooler; |select * from highschooler; |select * from highschooler;
+select count(*) from highschooler| |count the number of students who have at least one friend. |select count(*) from student| |count the number of students who have at least one friend. |select count(*) from student| |count the number of students who have at least one friend. |
+select * from highschooler; select * from likes; select * from friend; select * from student; select * from friend_likes; select * from student_likes; select * from student_friend; 
+|student_id|name|grade| |:---|:---|:---| |1|John|A| |2|Jane|B| |3|Joe|C| |4|Jim|D| |5|Jack|E| |6|Jill|F
+show all the friends of the high schoolers. |show all the likes of the high schoolers. |show all the friends of the high schoolers. |show all the likes of the high schoolers. |show all the friends of the high schoolers. |show all the likes of the high school
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+SELECT * FROM highschooler WHERE student_id = 1; |SELECT * FROM highschooler WHERE student_id = 2; |SELECT * FROM highschooler WHERE student_id = 3; |SELECT * FROM highschooler WHERE student_id = 
+return the name of the high schooler named kyle. | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+show the names of all high schoolers who are friends with a student in grade 10. |show the names of all high schoolers who are friends with a student in grade 10. |show the names of all high schoolers who are friends with a student in grade 10. |show the names of all
+what are the names of all high schoolers in grade 11?| |what are the names of all high schoolers in grade 12?| |what are the names of all high schoolers in grade 9?| |what are the names of all high schoolers in grade 10?| |
+show the id of the high schooler named kyle. 
+kyle's id is 1 |what is kyle's name?|kyle's name is kyle |what is kyle's grade?|kyle's grade is 3 |what is kyle's friend's id?|kyle's friend's id
+how many high schoolers are there in grade 9 or 10? |select * from highschooler where grade = 9 or 10| |select * from highschooler where grade = 9 or 10| |select * from highschooler where grade = 9
+select name, grade from highschooler where grade >= 9 or grade <= 10 |count the number of high schoolers in grades 11 or 12. |select name, grade from highschooler where grade >= 11 or grade <= 12 |count the number of high schoolers
+select * from highschooler where grade = '10' select * from highschooler where grade = '11' select * from highschooler where grade = '12' select * from highschooler where grade = '9'
+select * from highschooler where grade = '10'| |how many high schoolers are in each grade?| |select * from highschooler where grade = '10'| |how many high schoolers are in each grade?| |select * from highschool
+select * from highschooler where student_id in (select student_id from friend) group by student_id having count(*) > 1 order by count(*) desc limit 1 select * from highschooler where student_id in (select student_
+return the grade that has the greatest number of high schoolers. 
+select * from grades where grade >= 4 and count(student_id) >= 4 and count(student_id) >= 4 and count(student_id) >= 4 and count(student_id) >= 4 and count(student_
+SELECT * FROM grades WHERE grade >= 4 AND COUNT(student_id) >= 4 SELECT * FROM grades WHERE grade >= 4 AND COUNT(student_id) >= 4 SELECT * FROM grades WHERE grade >= 4 AND COUNT(student
+SELECT * FROM student_friends; SELECT * FROM student_likes; SELECT * FROM student_likes; SELECT * FROM student_likes; SELECT * FROM student_likes; SELECT * FROM student_likes; SELECT
+select * from highschooler where student_id in (select student_id from friend) and student_id in (select student_id from likes) and student_id in (select student_id from friend) and student_id in (select student_id from likes
+SELECT * FROM highschooler SELECT * FROM friend SELECT * FROM likes SELECT * FROM highschooler SELECT * FROM friend SELECT * FROM likes SELECT * FROM highschooler SELECT * FROM friend SELECT * FROM
+|student_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_id|friend_
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table highschooler, columns = [*,id,name,grade] table likes, columns = [*,student_id,liked_id] foreign_keys = [highschooler.id,likes.student_id] primary_keys = [likes.
+SELECT * FROM highschooler WHERE friend_count >= 3; SELECT * FROM highschooler WHERE friend_count >= 3 ORDER BY name; SELECT * FROM highschooler WHERE friend_count >= 3 ORDER BY name DESC; SELECT * FROM
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+show the names of all of the high schooler kyle's friends. 
+return the names of friends of the high school student kyle. 
+select * from highschooler where student_id = 1 | | | | | | | | | | | | | | | | | | | | | | | | | | 
+select * from highschooler where name = 'kyle'|select * from friend where student_id = 'kyle'|select * from likes where student_id = 'kyle'|select * from highschooler where student_id = 'kyle
+select * from students where not exists (select * from friends where student_id = students.id) select * from students where not exists (select * from friends where student_id = students.id) select * from students where not exists (select 
+
+select * from highschooler where student_id not in (select student_id from friend) select * from highschooler where student_id not in (select student_id from friend) select * from highschooler where student_id not in (select student_
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+select * from highschooler where student_id in (select student_id from friend where friend_id in (select friend_id from likes where liked_id in (select liked_id from likes where liked_id in (select liked_id from likes where liked_id in (
+
+select * from student where student_id in (select student_id from friend) and student_id in (select student_id from likes) and student_id in (select student_id from highschooler) select * from student where student_id in (select student_
+
+select * from likes where student_id =? |count the number of friends for each student id. |select * from friend where student_id =? |select * from highschooler where student_id =? |select * from likes where liked_id
+SELECT * FROM likes WHERE student_id = 1 SELECT * FROM likes WHERE student_id = 2 SELECT * FROM likes WHERE student_id = 3 SELECT * FROM likes WHERE student_id = 4 SELECT * FROM likes WHERE
+select * from highschooler where name = 'John Doe' select * from highschooler where name = 'Jane Doe' select * from highschooler where name = 'Jane Doe' select * from highschooler where name = 'Jane Doe
+select * from highschooler where student_id in (select student_id from likes) select * from highschooler where student_id in (select student_id from likes) select * from highschooler where student_id in (select student_id from likes
+
+table student, columns = [*,id,name,likes] table likes, columns = [*,student_id,liked_id] foreign_keys = [student.id,likes.student_id] primary_keys = [student.name = 
+SELECT * FROM students WHERE (likes.student_id IN (SELECT student_id FROM likes WHERE liked_id = 2)) SELECT * FROM students WHERE (likes.student_id IN (SELECT student_id FROM likes WHERE liked_id = 2))
+
+select * from students where grade > 5 and count(student_id) >= 2 select * from students where grade > 5 and count(student_id) >= 2 and count(student_id) >= 2 select * from students where grade
+
+how many friends does kyle have?| |kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||kyle||k
+table highschooler, columns = [*,id,name,grade] table likes, columns = [*,student_id,liked_id] foreign_keys = [highschooler.id,friend.student_id,likes.student_id] primary_keys 
+select avg(grade) from student where friend in (select student_id from friend where student_id = 1) select avg(grade) from student where friend in (select student_id from friend where student_id = 2) select avg(grade) from student where
+|select avg(grade) from likes where student_id in (select student_id from highschooler where name = 'John')| |select avg(grade) from likes where student_id in (select student_id from highschooler where name = 'John')| |
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+table owners, professionals, states, columns = [*,owner_id,professional_id,state] | | | | | | | | | | | | | | | | | | | | | | 
+what is the average weight of the dogs who have gone through any treatments?| |what is the average age of the dogs who have gone through any treatments?| |what is the average weight of the dogs who have gone through any treatments?| |what is the average age of the dogs who have gone through any treatments
+select the average age of the dogs who went through treatments. 
+
+
+which dogs have not cost their owner more than 1000 for treatment? list the dog names. 
+
+
+table professionals, owners, dogs, treatments, breeds, sizes, treatment_types | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+SELECT * FROM professionals WHERE NOT EXISTS (SELECT * FROM treatments WHERE professional_id = professionals.professional_id) SELECT * FROM professionals WHERE NOT EXISTS (SELECT * FROM treatments WHERE professional_id = professionals.professional_id) SELECT * FROM professionals WHERE
+which professional has the most dogs? list the professional id, first name and last name. | | | | | | | | | | | | | | | | | | | | | | | | |
+table dogs, columns = [*,owner_id,breed_code,size_code,name,age,date_of_birth,gender,weight,date_arrived,date_adopted,date_departed] | | | | | | | 
+
+
+what is the name of the breed with the most dogs?| |what is the name of the breed with the most dogs?| |what is the name of the breed with the most dogs?| |what is the name of the breed with the most dogs?| |what is the name of the breed with
+which breed do the most dogs have? give me the breed name. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+
+what is the description of the treatment type that costs the most money in total?| |what is the description of the treatment type that costs the least money in total?| |what is the description of the treatment type that costs the most money in total?| |what is the description of the treatment type that costs the
+SELECT * FROM treatments WHERE treatment_type_code = '1' ORDER BY cost_of_treatment DESC LIMIT 1 SELECT * FROM treatments WHERE treatment_type_code = '2' ORDER BY cost_of_treatment DESC LIMIT 1 SELECT * FROM
+
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+|first_name|last_name|cost| |:---|:---|:---| |John|Doe|1000| |Jane|Doe|2000| |John|Doe|3000| |Jane|Doe|4000| |John|D
+which dogs have been abandoned? give me the first names and last names of the owners. | | | | | | | | | | | | | | | | | | | | | | | | |
+table treatments, columns = [*,treatment_id,treatment_type_code,date_of_treatment,first_name] | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table treatments, columns = [*,treatment_id,treatment_type_code,treatment_type_description] | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list each professional's first name, last name, and the size of his or her dog. |list each treatment's treatment type code, the date of treatment, and the cost of treatment. |list each treatment's treatment type code, the date of treatment, and the cost of treatment. |list each
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table dogs, columns = [*,dog_id,owner_id,abandoned_yn,breed_code,size_code,name,age,date_of_birth,gender,weight,date_arrived,date_adopted,date_departed] | | 
+what are each owner's first name and their dogs's name? |what are each owner's first name and their dogs's name? |what are each owner's first name and their dogs's name? |what are each owner's first name and their dogs's name? |
+table dogs, columns = [*,dog_id,breed_code,size_code,name,date_of_birth,date_of_treatment,date_of_departure] | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+which dogs are owned by someone who lives in virginia? list the owner's first name and the dog's name. | | | | | | | | | | | | | | | | | | | | |
+|find the first names of owners living in virginia and the names of dogs they own. | | | | | | | | | | | | | | | | | | | | | | | |
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+
+list the last name of the owner owning the oldest dog. |list the last name of the owner owning the youngest dog. |list the last name of the owner owning the oldest dog. |list the last name of the owner owning the youngest dog. |list the last name of the owner owning the oldest dog.
+who is the owner of the dog with the largest breed? give me his or her first name. |who is the owner of the dog with the largest breed? give me his or her last name. |who is the owner of the dog with the largest breed? give me his or her first name. |who is
+table professionals, columns = [*,professional_id,email_address] | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+table arrivals, columns = [*,arrival_date,departure_date] |list the arrival date and the departure date for all the dogs. |list the arrival date and the departure date for all the dogs. |list the arrival date and the departure date for all the dogs. |list
+select count(*) from treatments where treatment_type_code ='spay' and treatment_type_code = 'neuter' and treatment_type_code = 'vaccine' and treatment_type_code = 'dental' and treatment_type_code = 'heart
+select count(*) from treatments where treatment_type_code ='spay' and treatment_id = 1 |count| |---| |1| || || || || || || || || || ||
+select count(*) from treatments where treatment_type_code in (select treatment_type_code from treatment_types where treatment_type_code ='spay') |count| |---| |1| || || || || || || 
+select * from professionals where professional_id in (select professional_id from treatments where dog_id = dogs.dog_id) | | | | | | | | | | | | | | | | | | |
+which dogs are abandoned? list the dog's breed, size, name, age, date_of_birth, gender, weight, date_arrived, date_adopted, date_departed. | | | | | | | | | | | 
+find the number of dogs that have been adopted in the last 3 months. |where (dogs.abandoned_yn = 'no') |where (dogs.breed_code = 'labrador') |where (dogs.breed_code = 'gold
+table owners, columns = [*,owner_id,first_name,last_name,email_address] | | | | | | | | | | | | | | | | | | | | | 
+table owners, columns = [*,owner_id,first_name,last_name,street,city,state,zip_code,email_address,home_phone,cell_number] |where state = 'north' |limit 1 |format first_name,last_name
+SELECT COUNT(*) FROM dogs WHERE age < (SELECT AVG(age) FROM dogs) | | | | | | | | | | | | | | | | | | | | | | | 
+table dogs, columns = [*,dog_id,owner_id,abandoned_yn,breed_code,size_code,name,age,date_of_birth,gender,weight,date_arrived,date_adopted,date_departed] |count the number
+how much does the most recent treatment cost?| |how much does the most recent treatment cost?| |how much does the most recent treatment cost?| |how much does the most recent treatment cost?| |how much does the most recent treatment cost?| |how much does the most recent treatment cost
+show me the cost of the most recently performed treatment for each dog. | | | | | | | | | | | | | | | | | | | | | | | | | | |
+SELECT COUNT(*) FROM dogs WHERE NOT EXISTS (SELECT * FROM treatments WHERE dog_id = dogs.dog_id AND treatment_type_code = 'TREATMENT_TYPE_CODE') | | | | | | | | | | |
+
+how many dogs are adopted by owners?| |how many dogs are adopted by professionals?| |how many dogs are adopted by owners?| |how many dogs are adopted by professionals?| |how many dogs are adopted by owners?| |how many dogs are adopted by professionals?| |how many
+select count(*) from owners where not exists (select count(*) from dogs where dogs.owner_id = owners.owner_id) | | | | | | | | | | | | | | | | | | | 
+
+select *, count(*) as num_professionals from professionals where num_dogs = 0; | | | | | | | | | | | | | | | | | | | | | | |
+table dogs, columns = [*,dog_id,owner_id,abandoned_yn,breed_code,size_code,name,age,date_of_birth,gender,weight,date_arrived,date_adopted,date_departed] | | 
+
+what is the average weight of all the dogs?| |what is the average age of all the dogs?| |what is the average weight of all the dogs?| |what is the average age of all the dogs?| |what is the average weight of all the dogs?| |what is the
+compute the average weight of all the dogs. |compute the average age of all the dogs. |compute the average weight of all the dogs. |compute the average age of all the dogs. |compute the average weight of all the dogs. |compute the average age of all the dogs. |compute the
+what is the age of the oldest dog?| |what is the age of the oldest dog?| |what is the age of the oldest dog?| |what is the age of the oldest dog?| |what is the age of the oldest dog?| |what is the age of the oldest dog
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+how much does each treatment type costs? list both treatment type and amount. | | | | | | | | | | | | | | | | | | | | | | | | | | 
+table charge_types, columns = [*,charge_type_code,charge_amount] |list each treatment type and its amount. |table treatment_types, columns = [*,treatment_type_code,treatment_amount] |list each breed and its number of dogs. |table
+how much does the most expensive treatment cost?| |how much does the most expensive treatment cost?| |how much does the most expensive treatment cost?| |how much does the most expensive treatment cost?| |how much does the most expensive treatment cost?| |how much does the most expensive treatment cost
+what is the charge amount of the most expensive charge type?| |what is the charge amount of the most expensive charge type?| |what is the charge amount of the most expensive charge type?| |what is the charge amount of the most expensive charge type?| |what is the charge amount of the most
+list the email, cell phone and home phone of all the owners. |list the email, cell phone and home phone of all the owners. |list the email, cell phone and home phone of all the owners. |list the email, cell phone and home phone of all the owners. |list the email,
+what are the email, cell phone and home phone of each owner?| |table| |table| |table| |table| |table| |table| |table| |table| |table| |table| |table| |table| |table| 
+|breed_code|breed_name| |:---|:---| |A|Labrador Retriever| |B|German Shepherd| |C|Poodle| |D|Chihuahua| |E|Beagle| |F|Cocker Spaniel| 
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+list the first name of all the professionals along with the description of the treatment they have done. |list the first name of all the professionals along with the description of the treatment they have done. |list the first name of all the professionals along with the description of the treatment they have done. |list the first name of
+|what are the names of the dogs that have been adopted?| |what are the names of the dogs that have been abandoned?| |what are the names of the dogs that have been euthanized?| |what are the names of the dogs that have been treated?| |what are the names
+| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what is the count of songs?| |singer|singer_id|name|birth_year|net_worth_millions|citizenship| |---|---|---|---|---|---| |1|1|John|1970|0|US| |2|
+table singers, columns = [*,singer_id,name,net_worth_millions] |singer_name, net_worth_millions | |-----------------------------| |John Lennon, $1.5 billion | |Michael Jackson, $1.2 billion
+
+select * from singer where singer.singer_id = 1 and singer.name = 'Elvis Presley' and singer.birth_year = 1935 and singer.citizenship = 'American' select * from song where song
+select * from singer; select * from song; select * from singer; select * from song; select * from singer; select * from song; select * from singer; select * from song; select * from singer;
+table singers, columns = [*,singer_id,name,birth_year,net_worth_millions,citizenship] table songs, columns = [*,song_id,title,singer_id,sales,highest_position] foreign_keys = [singer
+
+show the name of songs whose title is "The Sound of Silence" and whose sales are greater than 1000000?| 
+
+
+what is the name of the song that has sold the most?| 
+select * from singers where citizenship = 'American' order by citizenship, name select * from singers where citizenship = 'British' order by citizenship, name select * from singers where citizenship = 'Canadian' order by citizenship, name 
+for each country, how many singers are from that country?| | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+
+select * from song where singer.citizenship = 'American' order by net_worth_millions desc limit 10; select * from song where singer.citizenship = 'British' order by net_worth_millions desc limit 
+for each song, what is the maximum net worth?| 
+select * from titles select * from singers select * from titles where singer_id = 1 select * from titles where singer_id = 2 select * from titles where singer_id = 3 select * from titles where singer_id =
+select * from song where title = 'I'm Yours' and singer_id = 1 select * from song where title = 'I'm Yours' and singer_id = 2 select * from song where title =
+
+
+select * from singers where singer.singer_id in (select singer_id from songs) order by singer.name select * from songs where song.singer_id in (select singer_id from singers) order by song.title select * from
+
+select * from singers select * from songs select * from singers select * from songs select * from singers select * from songs select * from singers select * from songs select * from singers select * from songs select
+for each song title, what is the total sales for their songs?| 
+table singer, columns = [*,singer_id,name,birth_year,net_worth_millions,citizenship] table song, columns = [*,song_id,title,singer_id,sales,highest_position] foreign_keys = [singer
+
+show the citizenship shared by songs with sales before 1945 and after 1955. 
+
+how many available features are there in total?| |how many available features are there in total?| |how many available features are there in total?| |how many available features are there in total?| |how many available features are there in total?| |how many available features are there in total
+what is the feature type name of feature balcony?| |what is the feature type name of feature balcony?| |what is the feature type name of feature balcony?| |what is the feature type name of feature balcony?| |what is the feature type name of feature balcony?| |what is the
+show the property type descriptions of properties belonging to that code. | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+what are the names of properties that are either houses or apartments with more than 1 room?| |table other_available_features, columns = [*,feature_id,feature_type_code,feature_name,feature_description]| |table other_property_features, columns = [
