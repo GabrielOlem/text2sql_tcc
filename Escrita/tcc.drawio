@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" modified="2023-08-19T00:15:31.298Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="c6d-bEoAWQOyQsvE3G2P" version="21.6.8" type="device">
+  <diagram name="Página-1" id="dhui5BxycArQX6qq9pKe">
+    <mxGraphModel dx="1872" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-45" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="555" y="325" width="370" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-44" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="620" width="370" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-1" target="i5Zh0rknJEzuyfcSs6rx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-1" value="Carrega o Dataset Spider" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-3" target="i5Zh0rknJEzuyfcSs6rx-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-3" value="Definição do bitsandbytes" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-5" target="i5Zh0rknJEzuyfcSs6rx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-5" value="Definição do Lora Config" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-7" target="i5Zh0rknJEzuyfcSs6rx-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-7" value="Carrega Modelo e Tokenizer" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-9" target="i5Zh0rknJEzuyfcSs6rx-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-9" value="Criação do DialogueDataCollator" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-11" target="i5Zh0rknJEzuyfcSs6rx-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-11" value="Definição dos parametros de treinamento" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-13" target="i5Zh0rknJEzuyfcSs6rx-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-13" value="Definição do Trainer" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-15" target="i5Zh0rknJEzuyfcSs6rx-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-15" value="Avaliação pre treinamento" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-17" target="i5Zh0rknJEzuyfcSs6rx-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-17" value="Treinamento" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-19" target="i5Zh0rknJEzuyfcSs6rx-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-19" value="Avaliação pos treinamento" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-21" value="Salva no huggingface" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-24" target="i5Zh0rknJEzuyfcSs6rx-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-24" value="Carrega o Dataset Spider" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-25" target="i5Zh0rknJEzuyfcSs6rx-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-25" value="Preprocessa dataset para inferencia" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-27" target="i5Zh0rknJEzuyfcSs6rx-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-27" value="Definição do bitsandbytes" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-29" target="i5Zh0rknJEzuyfcSs6rx-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-29" value="Definição do Lora Id (modelo finetunado)" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-31" target="i5Zh0rknJEzuyfcSs6rx-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-31" value="Carrega Modelo e Tokenizer" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-33" target="i5Zh0rknJEzuyfcSs6rx-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-33" value="Observa a distribuição percentil do comprimento da resposta" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-35" target="i5Zh0rknJEzuyfcSs6rx-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-35" value="Define Pipeline" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-37" value="Realiza inferencia" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-39" target="i5Zh0rknJEzuyfcSs6rx-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-39" value="Define parametros para avaliação" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i5Zh0rknJEzuyfcSs6rx-40" target="i5Zh0rknJEzuyfcSs6rx-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-40" value="Cria mapeamento de chave estrangeira a partir das tabelas" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i5Zh0rknJEzuyfcSs6rx-42" value="Inicia avaliação&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1500" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
