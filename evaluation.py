@@ -474,7 +474,7 @@ def print_scores(scores, etype, file_save):
         for type_ in partial_types:
             this_scores = [scores[level]['partial'][type_]['f1'] for level in levels]
             file_save += "{:20} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f}\n".format(type_, *this_scores)
-    with open('spider/result7b_normal.txt', 'w') as f:
+    with open('C:/Users/GODZILLA/Desktop/Faculdade/TCC/spider/result7b_instruct_normal.txt', 'w') as f:
         f.write(file_save)
 
 def evaluate(gold, predict, db_dir, etype, kmaps):
@@ -500,7 +500,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
             scores[level]['partial'][type_] = {'acc': 0., 'rec': 0., 'f1': 0.,'acc_count':0,'rec_count':0}
 
     eval_err_num = 0
-    for p, g in zip(plist, glist):
+    for i, (p, g) in enumerate(zip(plist, glist)):
         p_str = p[0]
         g_str, db = g
         db_name = db
@@ -583,7 +583,6 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
                 'exact': exact_score,
                 'partial': partial_scores
             })
-
     for level in levels:
         if scores[level]['count'] == 0:
             continue
