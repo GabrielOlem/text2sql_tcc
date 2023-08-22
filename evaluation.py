@@ -474,7 +474,7 @@ def print_scores(scores, etype, file_save):
         for type_ in partial_types:
             this_scores = [scores[level]['partial'][type_]['f1'] for level in levels]
             file_save += "{:20} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f}\n".format(type_, *this_scores)
-    with open('spider/result7b_normal.txt', 'w') as f:
+    with open('C:/Users/GODZILLA/Desktop/Faculdade/TCC/spider/result7b_instruct_normal.txt', 'w') as f:
         f.write(file_save)
 
 def evaluate(gold, predict, db_dir, etype, kmaps):
@@ -500,7 +500,11 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
             scores[level]['partial'][type_] = {'acc': 0., 'rec': 0., 'f1': 0.,'acc_count':0,'rec_count':0}
 
     eval_err_num = 0
-    for p, g in zip(plist, glist):
+    indexs = {'easy': [],
+              'medium': [],
+              'hard': [],
+              'extra': []}
+    for i, (p, g) in enumerate(zip(plist, glist)):
         p_str = p[0]
         g_str, db = g
         db_name = db
@@ -508,6 +512,8 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
         schema = Schema(get_schema(db))
         g_sql = get_sql(schema, g_str)
         hardness = evaluator.eval_hardness(g_sql)
+        indexs[hardness].append(i)
+        continue
         scores[hardness]['count'] += 1
         scores['all']['count'] += 1
 
@@ -583,7 +589,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
                 'exact': exact_score,
                 'partial': partial_scores
             })
-
+    return indexs
     for level in levels:
         if scores[level]['count'] == 0:
             continue
@@ -866,5 +872,10 @@ if __name__ == "__main__":
     assert etype in ["all", "exec", "match"], "Unknown evaluation method"
 
     kmaps = build_foreign_key_map_from_json(table)
+    import random
 
-    evaluate(gold, pred, db_dir, etype, kmaps)
+    a = evaluate(gold, pred, db_dir, etype, kmaps)
+    print('easy', random.sample(a['easy'], 25))
+    print('medium', random.sample(a['medium'], 25))
+    print('hard', random.sample(a['hard'], 25))
+    print('extra', random.sample(a['extra'], 25))
