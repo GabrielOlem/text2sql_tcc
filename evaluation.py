@@ -500,10 +500,6 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
             scores[level]['partial'][type_] = {'acc': 0., 'rec': 0., 'f1': 0.,'acc_count':0,'rec_count':0}
 
     eval_err_num = 0
-    indexs = {'easy': [],
-              'medium': [],
-              'hard': [],
-              'extra': []}
     for i, (p, g) in enumerate(zip(plist, glist)):
         p_str = p[0]
         g_str, db = g
@@ -512,8 +508,6 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
         schema = Schema(get_schema(db))
         g_sql = get_sql(schema, g_str)
         hardness = evaluator.eval_hardness(g_sql)
-        indexs[hardness].append(i)
-        continue
         scores[hardness]['count'] += 1
         scores['all']['count'] += 1
 
@@ -589,7 +583,6 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
                 'exact': exact_score,
                 'partial': partial_scores
             })
-    return indexs
     for level in levels:
         if scores[level]['count'] == 0:
             continue
@@ -872,10 +865,5 @@ if __name__ == "__main__":
     assert etype in ["all", "exec", "match"], "Unknown evaluation method"
 
     kmaps = build_foreign_key_map_from_json(table)
-    import random
 
-    a = evaluate(gold, pred, db_dir, etype, kmaps)
-    print('easy', random.sample(a['easy'], 25))
-    print('medium', random.sample(a['medium'], 25))
-    print('hard', random.sample(a['hard'], 25))
-    print('extra', random.sample(a['extra'], 25))
+    evaluate(gold, pred, db_dir, etype, kmaps)
