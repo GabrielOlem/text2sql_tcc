@@ -474,7 +474,7 @@ def print_scores(scores, etype, file_save):
         for type_ in partial_types:
             this_scores = [scores[level]['partial'][type_]['f1'] for level in levels]
             file_save += "{:20} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f}\n".format(type_, *this_scores)
-    with open('C:/Users/GODZILLA/Desktop/Faculdade/TCC/spider/result7b_instruct_normal.txt', 'w') as f:
+    with open('C:/Users/GODZILLA/Desktop/Faculdade/TCC/spider/resultllama7b_ft.txt', 'w') as f:
         f.write(file_save)
 
 def evaluate(gold, predict, db_dir, etype, kmaps):
