@@ -442,7 +442,7 @@ def isValidSQL(sql, db):
     return True
 
 
-def print_scores(scores, etype, file_save):
+def print_scores(scores, etype, file_save, file_path):
     levels = ['easy', 'medium', 'hard', 'extra', 'all']
     partial_types = ['select', 'select(no AGG)', 'where', 'where(no OP)', 'group(no Having)',
                      'group', 'order', 'and/or', 'IUEN', 'keywords']
@@ -474,10 +474,10 @@ def print_scores(scores, etype, file_save):
         for type_ in partial_types:
             this_scores = [scores[level]['partial'][type_]['f1'] for level in levels]
             file_save += "{:20} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f}\n".format(type_, *this_scores)
-    with open('C:/Users/GODZILLA/Desktop/Faculdade/TCC/spider/resultfalcon7b_6ep_ft.txt', 'w') as f:
+    with open(file_path, 'w') as f:
         f.write(file_save)
 
-def evaluate(gold, predict, db_dir, etype, kmaps):
+def evaluate(gold, predict, db_dir, etype, kmaps, file_path):
     with open(gold) as f:
         glist = [l.strip().split('\t') for l in f.readlines() if len(l.strip()) > 0]
 
@@ -609,7 +609,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps):
                         2.0 * scores[level]['partial'][type_]['acc'] * scores[level]['partial'][type_]['rec'] / (
                         scores[level]['partial'][type_]['rec'] + scores[level]['partial'][type_]['acc'])
 
-    print_scores(scores, etype, file_save)
+    print_scores(scores, etype, file_save, file_path)
 
 
 def eval_exec_match(db, p_str, g_str, pred, gold):
@@ -854,6 +854,7 @@ if __name__ == "__main__":
     parser.add_argument('--db', dest='db', type=str)
     parser.add_argument('--table', dest='table', type=str)
     parser.add_argument('--etype', dest='etype', type=str)
+    parser.add_argument('--path', dest='path', type=str)
     args = parser.parse_args()
 
     gold = args.gold
@@ -861,9 +862,10 @@ if __name__ == "__main__":
     db_dir = args.db
     table = args.table
     etype = args.etype
+    file_path = args.path
 
     assert etype in ["all", "exec", "match"], "Unknown evaluation method"
 
     kmaps = build_foreign_key_map_from_json(table)
 
-    evaluate(gold, pred, db_dir, etype, kmaps)
+    evaluate(gold, pred, db_dir, etype, kmaps, file_path)

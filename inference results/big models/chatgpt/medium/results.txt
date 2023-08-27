@@ -1,0 +1,72 @@
+
+medium pred: SELECT transcript_date, other_details  FROM transcripts  WHERE transcript_id = (SELECT transcript_id                         FROM transcript_contents                         LIMIT 1)
+medium gold: SELECT transcript_date ,  other_details FROM Transcripts ORDER BY transcript_date ASC LIMIT 1
+neval_err_num:1
+medium pred: SELECT teacher.name, course.course FROM teacher INNER JOIN course_arrange ON teacher.teacher_id = course_arrange.teacher_id INNER JOIN course ON course_arrange.course_id = course.course_id
+medium gold: SELECT T3.Name ,  T2.Course FROM course_arrange AS T1 JOIN course AS T2 ON T1.Course_ID  =  T2.Course_ID JOIN teacher AS T3 ON T1.Teacher_ID  =  T3.Teacher_ID
+nmedium pred: SELECT COUNT(*)  FROM flights  WHERE sourceairport = (SELECT airportcode FROM airports WHERE airportname = 'aberdeen')
+medium gold: SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  "Aberdeen"
+nmedium pred: SELECT COUNT(*)  FROM flights  JOIN airports ON flights.destairport = airports.airportcode  WHERE airports.airportname = 'aberdeen'
+medium gold: SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.City  =  "Aberdeen"
+nmedium pred: SELECT country.name, countrylanguage.language  FROM country  JOIN countrylanguage ON country.code = countrylanguage.countrycode  WHERE countrylanguage.percentage = (     SELECT MAX(percentage)      FROM countrylanguage      WHERE countrylanguage.countrycode = country.code     )
+medium gold: SELECT LANGUAGE ,  CountryCode ,  max(Percentage) FROM countrylanguage GROUP BY CountryCode
+neval_err_num:2
+medium pred: SELECT templates.template_id FROM templates WHERE templates.template_type_code IN ('pp', 'ppt')
+medium gold: SELECT template_id FROM Templates WHERE template_type_code  =  "PP" OR template_type_code  =  "PPT"
+neval_err_num:3
+medium pred: SELECT COUNT(DISTINCT c.continent)  FROM country c JOIN countrylanguage cl ON c.code = cl.countrycode WHERE cl.language = 'Chinese'
+medium gold: SELECT COUNT( DISTINCT Continent) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "Chinese"
+nmedium pred: SELECT highschooler.name  FROM highschooler  JOIN likes ON highschooler.id = likes.student_id  GROUP BY highschooler.id  HAVING COUNT(likes.liked_id) >= 2
+medium gold: SELECT T2.name FROM Likes AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id GROUP BY T1.student_id HAVING count(*)  >=  2
+neval_err_num:4
+medium pred: SELECT cartoon.production_code, cartoon.channel FROM cartoon INNER JOIN tv_channel ON cartoon.channel = tv_channel.id ORDER BY cartoon.original_air_date DESC LIMIT 1;
+medium gold: select production_code ,  channel from cartoon order by original_air_date desc limit 1
+nmedium pred: SELECT teacher.name FROM teacher JOIN course_arrange ON teacher.teacher_id = course_arrange.teacher_id GROUP BY teacher.name HAVING COUNT(course_arrange.course_id) >= 2
+medium gold: SELECT T2.Name FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID  =  T2.Teacher_ID GROUP BY T2.Name HAVING COUNT(*)  >=  2
+nmedium pred: SELECT players.first_name, players.country_code FROM players WHERE players.birth_date = (SELECT MIN(players.birth_date) FROM players)
+medium gold: SELECT first_name ,  country_code FROM players ORDER BY birth_date LIMIT 1
+nmedium pred: SELECT COUNT(documents.document_id) FROM documents JOIN templates ON documents.template_id = templates.template_id WHERE templates.template_type_code = 'ppt'
+medium gold: SELECT count(*) FROM Documents AS T1 JOIN Templates AS T2 ON T1.Template_ID  =  T2.Template_ID WHERE T2.Template_Type_Code  =  'PPT'
+neval_err_num:5
+medium pred: SELECT hand, COUNT(*) AS count_players  FROM players  GROUP BY hand
+medium gold: SELECT count(*) ,  hand FROM players GROUP BY hand
+nn                    easy                 medium               hard                 extra                all                 
+count                0                    25                   0                    0                    25                  
+=====================   EXECUTION ACCURACY     =====================
+execution            0.000                0.560                0.000                0.000                0.560               
+====================== EXACT MATCHING ACCURACY =====================
+exact match          0.000                0.480                0.000                0.000                0.480               
+
+---------------------PARTIAL MATCHING ACCURACY----------------------
+select               0.000                0.900                0.000                0.000                0.900               
+select(no AGG)       0.000                0.900                0.000                0.000                0.900               
+where                0.000                0.615                0.000                0.000                0.615               
+where(no OP)         0.000                0.615                0.000                0.000                0.615               
+group(no Having)     0.000                1.000                0.000                0.000                1.000               
+group                0.000                0.000                0.000                0.000                0.000               
+order                0.000                0.000                0.000                0.000                0.000               
+and/or               0.000                0.960                0.000                0.000                0.960               
+IUEN                 0.000                0.000                0.000                0.000                0.000               
+keywords             0.000                0.800                0.000                0.000                0.800               
+---------------------- PARTIAL MATCHING RECALL ----------------------
+select               0.000                0.720                0.000                0.000                0.720               
+select(no AGG)       0.000                0.720                0.000                0.000                0.720               
+where                0.000                0.667                0.000                0.000                0.667               
+where(no OP)         0.000                0.667                0.000                0.000                0.667               
+group(no Having)     0.000                0.500                0.000                0.000                0.500               
+group                0.000                0.000                0.000                0.000                0.000               
+order                0.000                0.000                0.000                0.000                0.000               
+and/or               0.000                1.000                0.000                0.000                1.000               
+IUEN                 0.000                0.000                0.000                0.000                0.000               
+keywords             0.000                0.632                0.000                0.000                0.632               
+---------------------- PARTIAL MATCHING F1 --------------------------
+select               0.000                0.800                0.000                0.000                0.800               
+select(no AGG)       0.000                0.800                0.000                0.000                0.800               
+where                0.000                0.640                0.000                0.000                0.640               
+where(no OP)         0.000                0.640                0.000                0.000                0.640               
+group(no Having)     0.000                0.667                0.000                0.000                0.667               
+group                0.000                1.000                0.000                0.000                1.000               
+order                0.000                1.000                0.000                0.000                1.000               
+and/or               0.000                0.980                0.000                0.000                0.980               
+IUEN                 0.000                1.000                0.000                0.000                1.000               
+keywords             0.000                0.706                0.000                0.000                0.706               

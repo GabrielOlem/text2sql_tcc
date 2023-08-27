@@ -1,4 +1,5 @@
-SELECT AVG(earnings) FROM poker_player; SELECT SUM(population) FROM city WHERE district = "gelderland";
+SELECT AVG(earnings) FROM poker_player; 
+SELECT SUM(population) FROM city WHERE district = "gelderland";
 SELECT COUNT(DISTINCT governmentform) FROM country WHERE continent = "Africa";
 SELECT COUNT(*) FROM flights WHERE destairport = "ATO";
 SELECT abbreviation FROM airlines WHERE airline = "JetBlue Airways";
