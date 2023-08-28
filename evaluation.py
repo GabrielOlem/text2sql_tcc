@@ -474,14 +474,14 @@ def print_scores(scores, etype, file_save, file_path):
         for type_ in partial_types:
             this_scores = [scores[level]['partial'][type_]['f1'] for level in levels]
             file_save += "{:20} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f} {:<20.3f}\n".format(type_, *this_scores)
-    with open(file_path, 'w') as f:
+    with open(file_path, 'w', encoding="utf8") as f:
         f.write(file_save)
 
 def evaluate(gold, predict, db_dir, etype, kmaps, file_path):
     with open(gold) as f:
         glist = [l.strip().split('\t') for l in f.readlines() if len(l.strip()) > 0]
 
-    with open(predict) as f:
+    with open(predict, encoding="utf8") as f:
         plist = [l.strip().split('\t') for l in f.readlines() if len(l.strip()) > 0]
     # plist = [("select max(Share),min(Share) from performance where Type != 'terminal'", "orchestra")]
     # glist = [("SELECT max(SHARE) ,  min(SHARE) FROM performance WHERE TYPE != 'Live final'", "orchestra")]

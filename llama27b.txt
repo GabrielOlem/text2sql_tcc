@@ -1,0 +1,1034 @@
+# Constraight?
+select concerts from concerts where year > 2015\end{code}
+select concerts where concert_id in ( select concert_id from concert) order by year desc limit 10;\end{code}
+select concerts from concerts\end{select concert_id,count(*) as count from concert group by concert_id;|select concert_id,count(distinct year) as count from concert group by concert_id;|select distinct concert_id from ( select concert
+select avg(avg\end{\end\begin{code}\end{code}Comment: I'm not sure if this will help you but it might be worth looking at https://www.postgresql.org/docs/current/sql-altertable.
+select avg(avg\end{\end{code}
+ the oldest singer.|\end{/}# 10.2.3### Exercise:Write an SQL query to find all songs that were released in 1985 or later.# 10.3.1### Ex
+ the song is released in the youngest song ever sungest the youngest song ever sungest the youngest song ever sungest song ever sungest song ever sungest song ever sungest song ever sungest song ever sungest song ever sungest song ever sungest song ever s
+select concerts are all distinct countries of singers above age 20 are from?select * from concert;\end{code}
+select concerts from concerts in country usa\end{code}
+select concerts from concerts in each country\end{code}
+select concerts = select concerts where year > 2015select count(distinct concert_id) as number of concerts in 2016\end{code}
+select concerts\end{/
+\end{code}Comment: I'm not sure if this is correct but it seems to work for me...Answer: \begin{blockquote}I have 3 tables in my database that i want to join together using sql queries. The first one has the following columns:\end
+#!\end
+?select concerts?\end\begin{code}\end{code}
+?I have tried to use this but I's not working for me..Comment: You need to show us your code so we can help you fix it!Answer: \begin{code}SELECT max(a.max), min(b.min) FROM ( SELECT MAX(c.
+ me?\sComment:Answer:\begin{code}SELECT avg(capacity) as capacity FROM stadium;\end{code}
+ me!\s this?I't this is a very simple question to answer if you know how to use foreign keys in MySQL.The first thing we need to do is create our tables:```sqlCREATE TABLE `concert` (  `concert_id` int(1
+ me!\n this is it?
+\end{code}Comment: I'm not sure what you mean with "how to get all concerts that have at least one male performer" - do you want to find out which singers performed on those concerts (and then filter for males)? Or is it enough if you just know about the
+ 2016?\end{code}Comment: I'm not sure what you mean with "how to get all the data from this table". Do you want to retrieve all rows of your tables (and their foreign keys)? Or do you just need some specific information about them? If so
+select concert.\end{\end\end{code}
+\endЉ###
+select concert.\end{\end\end{code}
+ the name of the stadiums?\end{\begin{code}\end{code}
+select concert.\end{/}\begin{code}\end{code}Comment: I'm not sure what you are asking for here...Answer: You can use `GROUP BY` to get all years with at least one concert in it (and
+select concert.\end{\begin{code}\end{code}Comment: I'm not sure if this will help you but it might be worth looking at the `group by` function in MySQL to see how it works with your data set.
+#############################################################
+ the name of the stadiums?\end{\begin{code}\end{code}}Comment: I'm not sure if this is an appropriate place to ask for help with homework but it seems like you have some basic knowledge about relational databases so maybe someone can point out where your
+select concerts where a singer in concert is not null and a singer is not null;\end{code}
+\end{code}Comment: I'm not sure what you mean with "show names" but if it is to list the tables involved then that would be `select * from concert;` or whatever your actual tables are called...?
+\end{code}Answer:\begin{pre}SELECT DISTINCT s.* FROM ( SELECT * FROM `stadium` ) AS t INNER JOIN ( SELECT * FROM `soccer_team` WHERE year=2013) AS u ON t.`stadium_id`
+select concert_id from concert where year > 2015 limit 3;\end{code}
+?select concerts\end\begin{}\end{code}
+?\endComment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:
+select concert.\end{\begin{code}\end{code}
+|\end{code}# Constraight### Table: concert| Column | Type | Description | Nullable | Default Value | Extra Info || ----- | ---- | ----------- | -------- | -------------- | ------------ || concert_id |
+\end{code}Answer:\begin{pre}SELECT s.* FROM Singer AS s WHERE EXISTS ( SELECT * FROM Concert AS c JOIN SingerInConcert AS sc ON c.StadiumId=sc.SingerId AND c.Year=2014
+\end{code}Answer:\begin{pre}SELECT s.* FROM Singer AS s WHERE CONCAT(s.`name`," he") LIKE "%he%";\end{pre}
+\end{code}Answer:\begin{pre}SELECT s.* FROM Singer AS s WHERE (s.name LIKE '%hey%') AND (s.country NOT IN ('USA', 'UK'));\end{pre}
+ the singers who performed at these concerts.|\end\end{code}
+\end{code}Answer:\begin{pre}SELECT DISTINCT s.stadium_id FROM ( SELECT distinct concert.stadium_id as stadium_id from concert where year between '2014' AND '2015') AS c INNER JOIN (
+   me!\n this is a lot of concerts?Comment:Answer: \begin{code}SELECT COUNT(*) FROM ( SELECT * FROM concert WHERE year > 1980 AND year < 2005) AS ctWHERE EXISTS(SELECT * FROM singer INNER
+?select concerts\end\begin{}\end{code}
+|select count(*) from pets where pet_age > 2;\end{code}
+\end{#> SELECT * FROM students WHERE stuid IN (SELECT petid FROM pets) AND age > 25;#> SELECT * FROM students WHERE stuid IN (SELECT petid FROM pets);#> SELECT * FROM students WHERE stuid IN (SELECT petid FROM p
+|\end{\end{code}Comment: I'm not sure what you are asking for here? You have a `SELECT` clause in your code that is returning all rows from both tables (and it looks like you want to return only one row). What do you expect this code to do
+\end{# The following is an example of using the "from" clause to specify which tables are included in the join:|select * from students as s left outer join grades g on (s.gnum=g.gnum) where grade>70;# The following is
+select max(weight) as'max',type from pets group by type;|#>```
+\end{The above code is an example of how to use the foreign key constraint in PostgreSQL. It creates two tables: one called "has_pet" that contains information about students who have pets (the primary keys are stuid from the student table and petid from the pets table), and
+|select stu.* from student as s left join has_pet on (s.stuid=hps.stuid) where hps.petid in( select petid from pets where age>21);\end{code}
+|\endselect count(*) from (    select * from has_pet where stuid > 20) as t1;\end{code}
+|select count(distinct stuid) from has_pet where pettype='dog' and sex= 'F';\end{code}
+select count(distinctable) from (    select stuid as distable, petid as inctable from student join pets on student.stuid=pets.petid where sex='F')group by distable;|\end{code}
+|select count(distinct) from ( select stuid, pettype from has_pet group by stuid ) as t1;\end{code}
+|select count(distinct) from ( select distinct stuid as distict_stuid, petid as distinct_petid from has_pet ) as t1;\end{code}
+|select stuid from student where major='CS' order by age desc limit 10;# 2) Write an SQL query to get all the information about each student in the class that is not a CS major.# 3) Write an SQL query to get all the information about each student in the
+|select stuid from student where major='CS' order by age;\end{code}
+\end{#!/usr/bin/python3"""import osfrom sqlalchemy import create_enginefrom sqlalchemy.orm import sessionmakerfrom sqlalchemy.ext.declarative import declarative_basefrom sqlalchemy.sql
+\end{#> SELECT stu.* FROM student AS s JOIN (SELECT * FROM pet WHERE type='dog') AS d ON s.stuid=d.stuid;#> 10 rows selected from 2 tables in 35ms\end{code}
+\end{# 1. Create a new table called "students" with the following columns: stuid (string), lname(string), fname(string), age(integer), sex(string), advisor(string).# 2. Add two foreign keys to this table that reference
+select stuid from student where sex!= 'M' or age > 20;|\end{code}
+\end{# 1. Create a new table called "students" with these fields: stuid (int), lname(string), fname(string), age(integer), sex(string), major(string), advisor(string).# 2. Add another column to this table
+\endselect stu.* from student s join has_pet h on (s.stuid=h.stuid) where petid is null;|select * from student;|select * from has_pet;|select * from pets;|select *
+select stu.* from student s join has_pet h on (s.stuid=h.stuid) where h.catid is null;|\end{code}
+|\end{\end{\end{\end{code}
+\end{The above code is an example of how to use the foreign key constraint in PostgreSQL. It creates two tables: one for students (with primary keys) and another for their pets (also with primary keys). The third table contains information about which students have what kind of pets; this table
+\end{# The following code will be executed when you run 'yarn test':import { expect } from "chai";import { HasPet } from "./HasPet";const Student = require("../Student");describe('Has Pet', () => {  describe
+|\endselect stu.* from student as s left join ( select * from has_pet where pet_age > 0) h on s.stuid=h.stuid;\end{code}
+|\endselect stu.* from student as s left join ( select * from has_pet where age > 1) h on s.stuid=h.stuid;\end{code}
+|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=
+|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|
+|select avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg.avg
+select avg.avg.avg.avg.avg.avgg from (select stuid,avg(weight) as avg from pets group by pettype order by avg desc limit 10);|\end{code}
+select stuid, lname, fname from student where major='CS' order by advisor;|\end{code}
+\end{# 1. Create a new file called "query.sql" in your working directory with this content:SELECT stuid FROM student WHERE major='CS' AND age>20;# 2. Run the following command to create an empty database named "test":$ sqlite
+|select stu.* from student as s left join has_pet on (s.stuid=hps.stuid) where hps.petid='123456' limit 0,1;\end{code}
+\end{\end{\end{\end{code}
+|select stu.* from student as s left join ( select * from has_pet where stuid=s.stuid) h on 1;\end{code}
+\end{code}Comment:Answer: \begin{blockquote}how to get the number of pet per student?  I want to know that if there is one or more than two pets in this case it will return true else false.\end{blockquote}
+\end{# The following code is an example of how to use the generated SQL statements in your application:##   import java.sql.*;#   #   try {#     Class.forName("com.mysql.jdbc.Driver");#      Connection con = DriverManager
+\end{\end{\end{\end{code}
+\endselect stu.* from student as s left join ( select * from has_pet where pettype='cat' ) as h on s.stuid=h.stuid;\end{code}
+\end# The following code block shows how to use the "from" clause in a SELECT statement:select * from students where stuid=10;|# The following code block shows how to use the "where" clause in an INSERT or UPDATE statement:insert into students (stuid
+|=\end{\end{\end{code}
+|=|\end{\end{\end{lstlisting}\caption{\label{fig:sql-query}Example of an SQL query.}\vspace{-10pt}\end{figure*}The first step in our approach to generating SQL queries from natural
+?\end{\begin{\end{\end{\end{code}
+\end{/}\begin{\end{code}
+ what is the country id, country has more than one country in which continent are they located?|### 2) Write an SQL query to find all the models that were made between 1980-1995 with less than 6 cylinder engines.```sqlSELECT * FROM cars
+|select * from continents, countries where country = 10\end{code}
+ how many cars are made in the number of cars that have been sold since 1980?|### 2) Write an SQL query to find all models with more than one country where the average mpg is less than or equal to 35.|### 3) Write
+| country |
+ maker produces 1000000000000000000000000000000000000000000000000000000000000000
+?|\strong>
+ the country is in Europe or not?\end{select * from cars where mpg < 20;|select * from cars where cylinders > 4;|select * from cars where weight <= 3500 lbs.;|select * from cars where
+ the make of the car_car_the_car_car_car_with_the_smallest_amount_of_horsepower_and_the_largest_amount_of_acceleration_and_the_lowest_fuel_economy_and_the_highest_
+select cars_average_belowavgivenumber_of_the_weight_of_the_car_whose_weight_is_below_the_average_weight_of_all_the_cars\end{code}
+ the car_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg_avg
+\end{code}Answer:\begin{pre}SELECT DISTINCT(t2.`name`) AS `Maker`, t3.`Model` FROM ( SELECT * FROM `car_makers` ) as t1 INNER JOIN ( SELECT * FROM `car_models` WHERE (`
+ what are all the models that were made in 2008?|\end{code}
+ the number of cars with 1980|\end{code}
+ the car produced in the earliest year and what year was it produced in the earliest year?|### 2) What are all possible combinations for the following tables:table car_makes, columns = [*,id,make,fullname,country]table car_models, columns = [*,id
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+ the different models of the different models!|\end{/}
+|select * from car_makers where country = 'USA' order by mpg desc limit 10;\end{code}
+select * from car_makers\end{select * from car_makes where country=10;|select * from car_makers where make='Ford' or make='Chevrolet';|select * from car_makers where make not like '
+|\end{code}Answer:\begin{blockquote}The answer is 10 (Ford). The following queries will help you to find out this information:\end{blockquote}\strong{\em{Query #1}}\begin{pre
+ the most popular car in the most popular car?|select count(distinct make) as total from (    select distinct make from cars_data where year > 1980 group by make having sum(distinct cylinders)>25 or sum(distinct horsepower)>300;
+?select * from the maker is a car_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_makers_
+ maker and what is the country where does it produce its cars have more than 10 cylinder engines or less then 4?|### 2) Write an SQL query to find all the cars with horse power greater than 350 hp (horses per second).|
+ sportabout (sw)\end{\end\end{code}
+ sportabout (sw)\end\begin{    \section{        \subsection{            \subsubsection{                \paragraph{                    \textbf{How to use this tool}                    1. Enter your data in the form below:                        2. Click on "
+|\end{\begin{\end{code}
+\end{code}Comment: I've added some more details to my answer below. Hope it helps! :)
+|select count(cars_produced|\end{code}
+select * from cars_produced_by_state where country=us;|\end{code}
+| || || || || || || || || || || || || || || || || || || || || || |
+|\end{code}Answer:\begin{blockquote}120.539768 mpg\end{blockquote}
+ the car produced in 200000000000000000000000000000000000000000000000000000000000000
+\end{code}Comment: I've added some more details to my answer below. Hope it helps! :)
+\end{/}\begin{\end{code}
+\end{/}\begin{\end{code}
+select * from car maker?\end{select * from car_makes where country=10;select * from car_makes where country not in (2);select * from car_makes where country is null;select * from car_m
+ me!\endComment:Answer:\begin{code}SELECT * FROM ( SELECT DISTINCT country AS cntry, continent AS con, makeID as mID, modelName as mn, id as iD) AS t1 JOIN (SELECT distinct(country), make
+\end{code}Comment: I've never seen this before...Answer: You can use `group by` to get all rows that have same value for some column (here - `horsepower`). Then you need to filter out those rows where your condition holds true (`> 150
+select cars_greater than 200select * from cars where mpg > 30;|select * from cars where cylinders < 4;|select * from cars where weight >= 3000;|select * from cars where year <=
+select cars_by_sql\end{||||||||||||||
+|\end me!|||||||||||||||||||||||||||
+select * from cars?\end{\begin{code}\end{code}
+select * from car_manufacturer_from_european_countries where make in (select distinct(make) from cars_data group by make);|### 2.1.4.5.1.1.1.1.1.1.1.1.1.
+|select * from cars where mpg > 20 and cylinders < 4;\end{code}
+\end{code}Comment: I's not working because you have to use `=` instead of `<` in your foreign key constraints (and also remove the trailing comma).
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#
+?select * from cars!\end{\begin{code}\end{code}
+ the cars after 2000000000000000000000000000000000000000000000000000000000000000
+ me?\endmeComment:Answer:\begin{code}SELECT AVG(horses) FROM ( SELECT * FROM cars WHERE year < 1980 ) AS t;\end{code}
+ the cars of model?\end{\begin{    \begin{code}    SELECT DISTINCT        c.id AS id,        c.mpg AS mpg,        c.cylinders AS cylinders,        c.displacement AS disp
+?select mpg?\end{\begin{code}\end{code}
+#>\end{```sqlselect * from cars_data where mpg < 20;select * from cars_data where year > '1985';select * from cars_data where horsepower >= 300;select * from cars_data
+select * from cars_all_the_different_cylinders\end{code}
+|select count(*) from cars_data where make = '*'\end{code}
+select * from cars have the same make as many models are made in the US?|select count(*) from cars where cylinders > 4;select max(cylinders) from cars group by year desc limit 10;select min(cylinders),max(
+  |\end{code}#include <http://www.sqlservercentral.com/articles/T-SQL+Queries/68237/>select count(*) from cars_data where cylinders > 4;#include <http://www.w3schools
+\end{code}Comment: I've added some comments to your code so you can see where it might be wrong (I think).Answer: You have an error in this line:\begin{blockquote}`SELECT * FROM cars WHERE mpg > 20 AND horse
+|##############################
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+?select * from you!\end{\begin{code}\end{code}
+ car_makers.\end\end\end\end{code}
+|select * from car_models where make=car_makers.id in ( select distinct(car_makers.id) from cars_data group by car_makers.id);\end{code}
+\end{code}Comment: I've added some comments to your code so you can see where it is wrong (and why). Please read them carefully before asking for help again!
+ maker is the same as the full name of the weight of the full name of the car?select * from cars_data where mpg > 21;| select * from cars_data where cylinders < 4;| select * from cars_data where edispl >= 89;|
+ the car manufacturer is the car manufacturers that have been in business for less than ten years?|### Example:```sqlSELECT * FROM cars WHERE weight > 1200 AND cylinders < 4;```
+ cars were produced?\n cars were produced?|
+ what is the average mpg?\end{\begin{code}\end{code}
+ the horsepower of the car with the largest accelerate?\end{code}Comment: I'd suggest you to use `SELECT` instead of `WHERE`.Answer: You can do this using `GROUP BY`:\begin{blockquote}what is the horsepower of the car that
+ the horsepower of the car with the greatest accelerate?\end{code}Comment: I'd suggest you to use `SELECT` instead of `WHERE`.Answer: You can do this using `GROUP BY`:\begin{blockquote}what is the horsepower of the car that
+select * from cars_volvo\endselect count(*) as total_cars from cars where make= 'Volvo' group by year having min(total_cars) > 10;|select max(cylinder),min(cylinder)from cars_data
+select * from cars!\end{\begin{code}\end{code}
+\end{code}Comment: I's a lot of work to do here...Answer: \begin{blockquote}how can i get all the data from this table in one single line?  like this :  1980-2005, 34
+select cars_with_greater_than_the_one_with_most_horsepower = ( select id from cars_data where mpg < 20 order by horsepower desc limit 1)\end{code}
+\end{code}Comment: I've added some comments to your code so you can see what it does.Answer: \begin{blockquote}how many countries has more than one car manufacturer?\end{blockquote}You could use `COUNT` with an aggregate function
+\end{code}Comment: I've added some comments to your code so you can see where it goes wrong (and why).Answer: You have two problems here:\begin{itemize}\item Your `SELECT` clause doesn't include all the tables that are involved in this
+|\end{code}#include <http://www.sqlservercentral.com/articles/T-SQL+Queries/78943/>select count(*) as 'Cylinder Count' from cars_data where cylinders > 0;#|<http
+w\end{code}#> select * from cars_data where mpg > 20;|#> select * from cars_data where year < 1985;|#> select * from cars_data where weight <= 3000;|#>
+select cars_with_1000000000000000000000000000000000000000000000000000000000000
+|select mpg, which model has the highest mileage per gallon?|select * from cars where make is not null;|select * from cars where year > 1980;|select * from cars where weight < 3500 lbs.;|
+ horsepower, which ones do not have more than 3 cylinder? list the car makeid and make name.|### Exercise: Create a new table called `cars_by_color` that contains all of the data from the `cars_data` table except for the color column. The
+ the models that were made in the cars that had more than 10 mpg?|select id from cars_data where year < '2005' order by weight desc limit 3;\end{code}
+ car?\end{Comment: I's a question mark at the end of your comment.Answer: \begin{code}SELECT * FROM ( SELECT id, mpg, cylinders, edispl, horsepower, weight, accelerate, year, makeid, modelid,
+select * from cars where makeid in ( select id=2) and year<1980;|\end{code}
+|\end{code}Comment: I have no idea what you mean here...Answer: \begin{blockquote}I want to know how many of these cars were made in each year from 1984-2007 (the years that Ford was making them).\
+|\end{code}Comment: I've added some more details to my answer below. Hope it helps! :)
+#> select * from the number of rows in the country has more than one make?|select count(*) as cnt from (  select distinct(distinct(car_makers.country)) as mkr from car_makers) as t1;#> 2017-
+\end{code}Comment: I've added some more details to my answer below. Hope it helps! :)
+#>\end\begin{
+  \end{code}Answer:\begin{code}SELECT * FROM ( SELECT DISTINCT cn.*, cm.*, ml.*, cd.*, co.*, cu.*, cl.*, cc.*, ct.*, cm.id AS id1,cm.country
+|\end{code}Answer:\begin{pre}SELECT * FROM ( SELECT DISTINCT country AS cntry, COUNT(DISTINCT make) as mks FROM cars WHERE year > 1980 GROUP BY country ) AS t1 JOIN ( SELECT DISTINCT
+?select * from the id's and name of the ids of the tables in the database?select * from car_makers where country= 'USA';| select * from car_makers;select * from car_makers where make='Fiat'; | select * from car_m
+|\end{code}Comment:Answer: \begin{blockquote}Which country does JetBlue Airways belong to?  I'm not sure if this is what you are looking for but here goes...\end{blockquote}\strong{\em{[J
+|select airlines = [jetblue,airways,affiliation]#>\end{code}
+|select airway?\end{\end{\end{\end{code}
+|select airway|\end{\end{code}
+|select airline,airline,airline,airline,abbrev from airlines where country='us' order by uid;\end{code}
+ what is the country code of the city name for each airport?|select airlines.* from airlines where airline like 'AA%' or airline like '%US' order by uid;\end{code}
+|\end{/}\end{\end{\end{\end{code}
+|select airline,airline,airline,airline,flightno from flights where sourceairport='LAX' or destairport='SFO';\end{code}
+|select count(count)\end{\begin{code}\end{code}}Comment: I'm not sure what you are asking for here...Answer: You can use `COUNT` to get number of rows in each group (in this case, it
+ what are all possible combinations of airports that can be used as source or destination for each flight?|### 2019-05-30#### Problem Statement:Given an array A consisting of N integers where every element appears exactly twice except one which occurs only once, find
+|#>\end{\begin{    \section{        \subsection{Airplanes}            \subsubsection{Flights}                \paragraph{Destination}                    \textbf{How to get all destinations?}                        \textbf{
+  |\end{\end{\end{\end{code}
+|\end{\begin{\end{\end{\end{code}
+|>\end{#!/usr/bin/python3"""This is an example of how to use the sqlalchemy-to-sql module in Python 3.x. It uses the same syntax as the original version for Python 2.7 but with some minor changes
+\end{code}Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:
+|\end{/}Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:
+select count(distinctsfrom flights where airline in (select distinct airline from flights) group by airline having sum(count(*)) > 1;|select distinct airline from flights order by airline desc limit 50;|\end{code}
+|\end{#!/usr/bin/python3"""import osfrom sqlalchemy import create_enginefrom sqlalchemy.orm import sessionmakerfrom sqlalchemy.ext.declarative import declarative_basefrom sqlalchemy
+|\end{/\begin{\end{\end{code}
+|#>\end{#>#>#>#>#>#>#>#>#>#>#>#>#>#
+\end{pre}Comment:Comment:Comment:Comment: |||||||||||||||||||||
+|#>
+|\end{code}Comment:Answer: \begin{blockquote}I have a table with 3 columns (uid, airline, flight no) in which I want to create an index on uid column only if there is another row that has same value for airline but different
+\end{code}Comment:Answer:\begin{itemize}\item \strong{\em{[Aberdeenshire](http://www.scotland-for-visitors.com/places/aberdeenshire/)}} is one word (with an "
+\end{code}Comment:Comment: I have tried to use this code but it is not working for me..I am getting error as "Error in parse(text, stop) : unexpected symbol"...Can you please help me out with this??
+|#>\end{\end{\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end
+select count(flights have both source and dest?\end{blockquote}
+|\end{\end{\end{code}Comment: I'm not sure what you are asking for here?  You have an example that is valid SQL but it doesn't seem to be related to your question...Answer: \begin{blockquote}
+|select count(flights that depart Aberdeen?\end{code}
+|select count(distances from aberdeen.\end{code}Comment: I'm not sure what you are asking here?  You have an error in your code that is preventing it from running at all...Answer: The problem with this line `from airports join flights
+|select count(flights from flights where flights.destairport=airports.airportcode and flights.arrivaldate between '2017-05-31' and '2018-06-04') as "Arrived"from flights
+|>\end|||||||||||||||||||||||||||||
+select count(*) as 'aberdeen' and have destination city 'ashley'?|select * from flights where sourceairport='ABR';select * from flights;\end{code}
+|select count(flights that fly between aberdeen to ashley?\end{blockquote}
+|\end{\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\
+|\end{code}\end{\end{code}Comment: I'm not sure what you are asking for here?  You have an example that is working fine but it doesn't seem to be related to your question at all...Answer: \begin{blockquote
+select count(distinct from flights where sourceairport='asx') as asycount,from flights;|\end{code}
+select airlines from airports where airlines.uid=airports.airportcode;\end{code}
+select count(distinct airlines.flights where airlines.uid=aircrafts.airline) as "number of flights" from aircrafts join airlines on (airplanes.airlineid=airlines.uid);|\end{code}
+|\end{code}\end{code}\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\vspace{-10pt}\end{figure*}The first step is to parse the input file in order to extract all
+select count(*) from flights where sourceairport='aberdeen';|\end{code}
+|select airlines.* from flights where sourceairport = 'ABZ' order by flightno desc limit 10;\end{code}
+select count(distinct from airports where airline has most number of flights to this destination?|select airports.*,count(*) as num_of_arrivals from airports join flights on (airports.airportcode=flights.sourceairport) group by airports.
+|select count(distinct from airports where airports.airportcode in (select distinct sourceairport from flights) group by airports.city having max(count(*)) over () > 1;\end{code}
+select count(distinct from airports where airline = 'AA' group by destairport order by desc limit 10;|\end{code}
+|select count(distinct from airports where airports.airportcode in (select distinct destairport from flights) group by airports.city order by count desc limit 1;\end{code}
+\end{code}\end{python}\end{code}
+\end{pre}Answer:\begin{code}SELECT DISTINCT destairport FROM flights;\end{code}
+\end{code}\end{python}\end{code}
+select flights from flights where flights.destairport = 'LHR' order by flights.destairport;\end{code}
+select count(distinct from flights where airline=<|>\end{code}
+select count(distincts) as distinct_count from flights where airline in (select uid from airlines group by uid having sum(flightno)>0);|\end{code}
+| || || || || || || || || || || || || || || || || || || || || || |
+|\end{\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\end{figure*}The first step to generating an SQL query from a given schema is to determine which tables are
+\end{pre}\end{/query}\end{sql}\end{blockquote}
+select from flights\end{\begin{code}\end{code}Comment: I'm not sure what you are asking for here...Answer: You can use `JOIN` to join two tables together based on their common column values. In your case it
+\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in \texttt{SQLite}}\vspace{-10pt}\end{figure*}The main goal is to find all
+select from airlines\end{\begin{    select * from airlines where uid in (1034)}\end{code}
+|> select uid,airline,airport,airline,flightno,sourceairport,destairport || 1023456789,AAL,123456789,APG,CVO || 102
+select airlines where airlines that are not in the same as the ones above?|select airlines.*,count(distinct flights.destairport) as num_dests, count(distinct flights.sourceairport) as num_srcs from airlines left join flights on
+ to airport 'cvo' but do not fly between 'apg' and 'cvo'.|select distinct on (airlines) uid,airline,abbreviation,countryfrom airlines left join flights using(airline) where destairport <> sourceairport;\end{
+  select airlines where airlines that are both departing from apg airports?|select airlines.*,count(distinct flights.destairport) as num_departure_airports from airlines left join flights on (airlines.uid=flights.airline) group
+|\end{code}\end{code}\end{pre}Comment: I'm not sure what you mean with "the first one is wrong". The second one works fine for me (I use PostgreSQL).Answer: You can do this in two steps:
+|select airlines from airlines where airlines.length() > 10;\end{code}
+|\end{pre}\end{/sql}\end{code}
+|\end{/}\end{\end{\end{\end{code}
+?|\end?\begin{
+  |select flights from flights where flights.flightno in ( select distinct(flights.flightno) from flights);\end{code}
+\end{pretty|\begin{\end{\end{\end{code}
+\end{code}\end{code}\end{code}Comment: I'm not sure what you mean with "the code is too long to post here". You can always edit your question if it gets longer than 30 lines (and then use the `{}` button).
+\end{pretty|\begin{\end{\end{\end{code}
+select flights where sourceairport = 'apg' and destairport in ('lhr', 'lax') order by departuredate desc limit 10;\end{code}
+ to city "london?|\end{\begin{itemize}\item \strong{\em{[1]}:}\end{itemize}}\section{Solution 2: Using `JOIN`s in MySQL}The following solution uses JOINs instead of subqueries
+|\end{code}\end{/code\end{code}Comment: I'm not sure what you mean with "the code is too long to post here". You can always use https://pastebin.com/.Answer: \begin{blockquote}I have a problem
+select flights where flights arriving in city "aberdeen"?\end{blockquote}
+ flights departing from aberdeen to london|\end{code}
+\end{code}| Aberdeen | Abilene  ||:------:|---------:|| 1      |  0       || 2      |  3       || 3      |  4       || 4      |  5      
+select count(*) from flights where sourceairport = 'aberdeen' group by destairport;|\end{code}
+|select airports where airports.airportname is null;\end{code}
+select airports where airports that are both departures?select airports from airports where airports.airportcode in (select distinct(airports.airportcode) from flights);|### 10.2.3.4.1.1.1.1.
+ what is their average age?,|\end{code}Comment: I'm not sure if this will work for you but have you tried using `SELECT` instead of `WHERE`?Answer: You can use `GROUP BY`:\begin{blockquote}The GROUP BY clause allows us to
+|\end{code}\end{code}\end{lstlisting}\caption{\label{fig:example-sql}Example of an SQL script.}\vspace{-1em}\end{figure*}The first step is to extract all the information from the input
+|\end{code}\end{python}\end{code}
+|\end{code}\end{lstlistinglese}\end{code}
+|select count(distinct city) as num_employees from employee group by city;what are the top 3 cities with most employees?select city,count(*) as total_num_of_employees from employee group by city order by total_num_of_employees desc limit
+|\end{code}The above code is not working as expected. I am getting an error:\begin{blockquote}"Error in if (length(x) == 0 & length(y) == 0): stop("No data to plot") :    missing value
+|\end{code}Comment: I'm not sure what you mean with "cities" here...Answer: You can use `group by` to get all employees who are younger then 30 in each city (or district).\begin{blockquote}\strong
+|select city from employee where year_awarded > 2015 group by city having count(employee_id) >= 2;\end{code}
+|select count(distinct from shop where district=:district) as num_shops,    sum((select count(*) from hiring where start_from <= :date)) as num_employees,    (sum((select bonus from evaluation where year_awarded >= :date)))
+ what is the average age of employees at each store?|\end{code}
+|# 1. Create a new file called "sql_queries.py" in this directory with your code.# 2. Write a function that takes two arguments: (1) A dictionary containing the names of tables you want to use for queries; and (2) The names of the fields from
+|select * from shop where number_of_products > ( select max(number_of_products) from shop);| || || || || || || || || || |
+|# 1. Create a new table called "shops" that contains information about each store in your company. The shops table should have two fields: name (string) and location (string).# 2. Add another field to the employees table named year_offered (integer), which is
+|# 1. Create a new file called "sql-queries/02-minimum-and-maximum-of-products" in this directory with your solution to the above question.# 2. Run the following command:#   $ python3 sql-queries/02
+|# 1. Create a new file called "sql_queries.py" with this code:#   import sqlalchemy as sa#   from sqlalchemy import create_engine#   engine = create_engine('sqlite:///data.db')#   # Create
+|# 1. Create a new file called "data.csv" with the following data:##|employee_id | name | age | city | year_awarded | bonus |#|----------- | ---- | --- | ----- |------------- |-------|#|2
+|\end{code}\end{python}\end{code}
+|\end{code}Comment:\begin{code}SELECT * FROM employee WHERE age > 25;\end{code}Answer: You can use `EXISTS` to check if there are any rows in your tables that match certain criteria (in this case
+|\end{code}\end{lstlisting}\end{document}
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have 4 tables (employee, evaluation, hiring, shop) with foreign keys to each other. The primary key of the employee is also used as a foreign
+|# 1. Create a new file called "data.txt" in your project folder with this content:##   CREATE TABLE IF NOT EXISTS `employee` (#     `employee_id` int(6) unsigned zerofill DEFAULT NULL COMMENT 'Employee ID',#
+|\end{code}\end{code}\end{lstlisting}\caption{\label{fig:sql-example}Example of an SQL query.}\vspace{-10pt}\end{figure*}The first step is to extract the data from the source documents
+|\end{code}\end{python}\end{code}
+|# 1. Create a new file called "data.csv" in your project folder with this content:## employee,year_awarded,bonus# 203456789,2015-01-01,,$100
+| || || || || || || || || || || || || || || || || || || || || || |
+|\end{code}\end{python}\end{code}
+|\end{code}\end{lstlistinglese}\end{document}
+|# 1# 2# 3# 4# 5# 6# 7# 8# 9# 10# 11# 12# 13# 14
+|\end{code}\end{python}\end{code}
+|# 1. Create a new file called "sql-to-python.py" in this directory with the following content:# 2. Write code that reads from stdin (the console) and writes to stdout (also the console). The input will be one line per row, where each column
+|# 10# 2# 3# 4# 5# 6# 7# 8# 9# 10# 11# 12# 13# 14
+|# 10000000000000000000000000000000000000000000000000000000000000
+|\end{code}\end{rstuff}\end{code}
+|\end{code}Comment:\begin{pre}select * from employee;+-------------+-------+----------+--------------------+| employee_id | name  | age      | city               ++-------------+-------+----------+--------------------+|          1
+|################################
+|\end{code}\end{pre}\end{code}
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have 3 tables in my database that i want to join together using sql queries but when i try it gives me an error saying "no such column" even though
+|\end{code}Comment: I'm not sure what you mean here? Do you want to know how many unique values there are in each column or something else?Answer: You can use `distinct` for this purpose.\begin{blockquote}SQL> select
+|\end{/}Comment:Comment: I'm not sure what you mean with "how to get the number of rows in each table". Do you want to know which tables contain more data or something else?Answer: You can use `COUNT` function for this purpose.
+ count of paragraphs in each document.|\end{pre}\end{code}
+\end{pre}Comment: I'd like to see some code please!Answer: You can use `GROUP BY` with an aggregate function (either SUM or AVG) on your column of interest in order to get one value per group.  In this case you want to sum up the
+ what is the name of each document_id?|\end{code}
+\end{pre}Comment:select * from documents where document_name like '%w%' or document_description like '%w%';|Answer: \begin{blockquote}what is the document name for document with description with the letter w in it?\end{blockquote
+\end{pre}Comment: I'm not sure what you mean here? Do you want to know how many times "w" appears in each document or something else?Answer: \begin{blockquote}I have 3 tables (documents, paragraphs, ref_template_types
+ me?\endme!Comment: I'd like to see some code please...Answer: You can use `JOIN` in your queries as follows :\begin{blockquote}SELECT * FROM TABLE1 JOIN TABLE2 ON (TABLE1.ID=TABLE2.ID)
+|\end{pre}Comment: I'm not sure what you mean here? Do you want to know how many rows are in each of these tables or something else? If so, please be more specific about your question.
+!#
+|\end{pretty|#!/bin/sql/create-tables.sql## Create tablesCREATE TABLE `documents` (  `document_id` int(10) unsigned NOT NULL AUTO_INCREMENT,  `document_name` varchar(2
+|\end{pre}Comment: I have no idea what you mean here...Answer: \begin{blockquote}I am trying to write an sql query that will return all of the rows in my tables where there is at least one row from each table that has a foreign key relationship to another
+ count the number of paragraphs in each document that uses this template type.|\end{code}
+select * from templates?\end{Comment: I'm not sure what you mean with "I want to get the list of all document ids that use this particular template". Do you have an example input/output in mind?Answer: You can do it like below :\
+select * from documents\end{\begin{code}\end{code}
+\end{pre}Comment:Answer: \begin{blockquote}what is the id and type of the template that was used in the majority of the documents?\end{blockquote}You can use `group by` to get this information:\begin{code
+\end{pre}Comment: I'm not sure what you mean with "the id and type of the template". Do you want to know which document has been created from this template? Or do you just need the ID of the template itself (which can be found in the `SELECT` clause)?
+## 1. Create a new table called "Documents" with these fields:#   - id (int)#   - name (varchar(250))#   - description (varchar(4096))#   - created_at (datetime)#   - updated
+ what is the name of each template type code?|\end{code}
+#> select * from templates where template_id in (select count(*) as total)#> 1024976358\end{code}
+\end{pre}Comment:Comment: I'm sorry but this is too vague to be answered properly. What do you mean "not used"? Do you want all of them or just some of them? How many should there be? Please provide more details about your problem so we can help better
+|\end{/}#!/bin/#!/usr/local/bin/perl -wTuse strict; use warnings;my $dbh=DBI->connect("dbi:mysql:database=$ENV{'MYSQL_DATABASE'};host=$ENV{'MY
+\end{\begin{    \section{        \subsection{            \subsubsection{                \paragraph{                    \item[1]{}                    \item[2]{}                    \item[3]{}                    \item[4]{}
+#>\end########################################################
+#>\end########################################################
+select * from templates?select * from templates where templates.template_type_code in ( select distinct(template_type_codes) from templates )\end{code}
+|\end{\begin{\end{\end{code}
+\end{pre}Comment:Answer: You can use `JOIN` to join two tables together in one query. In your case you need to JOIN `documents`, `paragraphs` and `templates`.You should also add an alias for each table so that it is easier to
+\end{pre}Comment: I'm not sure what you mean with "the id of the template". Do you want to get all the rows in your table where the column `template_id` is equal to 1? If so then just use `SELECT * FROM templates WHERE template_id=1
+ me!\endComment: I'tComment:Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |
+\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in \texttt{SQL}. The query is written using the \texttt{pg\_catalog} library.}\vspace{-1em}\
+select * from templates where templates.template_id=10;\end{code}
+\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in \texttt{SQL}. The query is written using the \texttt{pg\_catalog} library.}\vspace{-10pt}
+|#>\end{/}
+|\end{pretty|Comment: I'm not sure if this is an appropriate question for SO or not but it seems like you have some basic knowledge of SQL already so maybe we can help you out here.  What exactly do you want to know about your data?  Do you just need to see
+select * from templates\end{\begin{code}\end{code}Comment: I'm not sure what you are asking for here...Answer: You can use `group by` to get the count per group (in this case, each unique value in
+|\end{pre}\end{lstlistinglespace}\end{code}
+select * from templates.\end{/}\end{code}
+ what is the number of rows in each table?|\end{pre}Comment: I'm not sure if this will help you but it might be worth looking at the `count` function to get an idea how many records there are for each type.Answer: You can use the following code snippet to
+select * from templates\end{Comment: I'm not sure if this is an appropriate place to ask for help with my homework but here goes...I have been given 2 tables (documents & paragraphs) which are related via foreign keys in another table called 'templates'. The
+\end{pre}Comment: I'Comment:Comment: IComment:Comment: |||||||||||||||||
+|\end{pretty|Comment: I'm not sure if this question makes sense to you or anyone else but it does make perfect sense to me!Answer: \begin{blockquote}what is the template type code for data base?\end{blockquote}The `
+|\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in the \texttt{SQLQueryParser}}\vspace{-10pt}\end{figure*}The parser generates an abstract
+select * from documents\end{Comment: I'm not sure what you mean here? Do you want to know how many times each of these tables is referenced in your queries? If so, use `EXPLAIN` on any given query (either through phpMyAdmin or directly via
+\end{pre}Comment:||||||||||||||||||||||||||||
+select * from templates\end{\begin{code}\end{code}
+select * from templates?\end{Comment: I'm not sure if this is an appropriate place to ask for help with my homework but here goes...I have been given 2 tables (documents & paragraphs) which contain data about documents and their associated paragraphs. The tables
+|\end{pre}Comment:Answer: \begin{blockquote}I have a table called "document" with 20 rows in it. I want to know how many times each row has been referenced from another document (using the foreign key).\end{blockquote}
+|\end{pre}\end{/sql}\end{code}
+select * from templates where template_type_code in ( select distinct template_type_codes from documents) order by template_type_desc;|\end{code}
+ what is the number of documents that use this type?|\end{code}
+select * from templates\end{select * from templates where document_id in (1024)select * from templates where date_effective_from between '2015-03-09' and '2016-07-08';
+select * from templates?\end{\begin{code}\end{code}Comment: I'm not sure if this is an appropriate place to ask but can you help me with my question here https://stackoverflow.com/questions/5081726
+select * from templates\end{select * from templates where template_type_code="AD" limit 1;|select * from templates where version_number=0 or date_effective_from='' or date_effective_to='';|select * from
+\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in \texttt{SQL}. The query is written for the \texttt{MySQL} database.}\vspace{-10pt}\
+\end{pre}Comment: I'm not sure if this is correct or not but it seems to work so far...Answer: You can use `JOIN` in your case as follows :\begin{blockquote}SELECT * FROM TABLE1 JOIN TABLE2 ON (TABLE1
+|\end{pre}\end{\end{/sql}\end{code}
+|select * from templates.\end{select * from templates where date_effective_from is null;\end{code}
+\end{pre}\begin{sql}select distinct template_type_code from templates where date_effective_between('2015-06-30', '2017-04-30');|%|\end{{code}
+?\end{Comment: I'm not sure if this is correct or not but it seems to work for me...Answer: You can use `JOIN` in your case like below :\begin{blockquote}SELECT * FROM TABLE1 JOIN TABLE2 ON (TABLE1.
+\end{pre}Comment: I'm not sure what you are trying to do here but it looks like you have some syntax errors in your code.  You should also use `SELECT` instead of `return`.
+|\end{/}Comment:Comment: I'm not sure what you mean with "how to get the number of rows for each table". Do you want to know how many records are there in your tables or do you need some other information about them (like their structure)? If it is
+#################################
+|\end{pretty|Comment: I have no idea what you are trying to do here but it looks like you want to use `JOIN` instead of `INNER JOIN`.Answer: You can try this one :\begin{blockquote}SELECT * FROM ( SELECT D
+
+
+\end{pre}\end{/sql}\end{r}\end{code}
+
+select * from paragraphs where document_id='welcome-ny';|\end{code}
+
+\end{pre}\end{/sql}\end{rst}\end{code}
+\end{pre}\end{sql}\end{code}
+\end{pre}\end{/sql}\end{code}
+|\end{pre}Comment: I'm not sure what you mean with "the number of paragraphs" - do you want to know how many rows are returned when executing `SELECT * FROM paragraphs`? If so, then this is just one row (one record) because there is only 1 column
+\end{pre}Comment:<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML> <HEAD
+select * from documents!\end{Comment: I'm not sure what you mean here? You want to get all rows where there are 2 or more `paragraps`?Answer: \begin{blockquote}I have a table called "document" which has fields like
+\end{pre}Comment:<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML> <HEAD
+select * from documents.documet\end{Comment: I'm not sure if this will help you but it might be worth looking at using a `JOIN` to combine your tables together rather than having multiple queries.  You can then use an aggregate function such as `COUNT()` or `
+\end{pre}\end{/sql}\end{r}\end{code}
+|select * from documents.doc_id,count(select count(*) as cnt from documents where doc_id=?)\end{code}
+\end{pre}\end{/sql}\end{r}\end{code}
+\end{pre}Comment:Comment: I'm not sure if this will help you but it might be worth trying to use the `IN` operator in your queries instead of using `=` as that may make them more efficient (and possibly faster).
+select * from documents that have at least 2 paragraphs.|\end{code}
+select * from documents.\end{\end{code}
+\end{pre}Answer:\begin{blockquote}\begin{itemize}  \item The first document is `1` (the id of the template)  \item The second document is `2`, which contains both `brazil` and `ireland`.
+|\end{# 10.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22
+select * from ( select distinct(teachers) as tcount from course_arrange ) as ct;|select * from course where grade > 80 |select * from course order by staring_date desc limit 15 |select * from course arrange where
+\end{\end{\end{\end{code}
+|select * from ( select t1.*,t2.*  ) as t3 where t3.teacher_id in(select distinct t4.teacher_id from course_arrange c join teacher t on c.teacher_id=t.teacher_id) order by t3
+|select * from course where course_id in (1023456789) order by grade desc limit 1;select * from course_arrange where course_id=1023456789 or course_id=102345
+|select * from course where course_id in (1023456789) order by grade;\end{code}
+|\end{code}#!/usr/bin/python3import syssys.path.append('../') # add path to project folderfrom sql import *def main():    db = get_db()        # create tables if they don't exist yet
+|# 1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22.23.24
+|\end{# The following code is an example of how to use the `sql` function in R Markdown:``` rlibrary(dplyr)data <- data %>% group_by(year) %>% summarize()print(data$total_students[1
+|select * from teacher where age in (32,33)\end{code}
+# 1. 2019-03-17# 2. 2018-04-15# 3. 2016-04-15# 4. 2018-04-15#
+|\end{# 10.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22
+|\end{code}\end{lstlisting}\end{document}
+|\end{code}\end{lstlisting}\end{document}
+\end{\begin{code}\end{code}}\section{Output:}\begin{blockquote}\strong{\em{[1]} 2018-05-30 16:47:09.999 [
+  |select * from ( select distinct(t1) as t1, count(*) as cnt  from course_arrange group by grade ) as t where t.cnt > 2;select * from course_arrange order by course_id desc limit 50;\end{code
+\end{code}# 10.2.3### 10.2.3.1```sqlselect * from course where grade > 'A' or age < 45;```| grade | name | age | hometown ||
+|\end{|||||||||||||||||||||||||||||
+\end{# 1. Create a new file called "main.py" in this directory with the following code:#   import pandas as pd#   df = pd.read_csv("data/courses.txt")#   print(df)#   df2 =
+| || || || || || || || || || || || || || || || || || || || || || |
+\end{code}\end{pre}\end{code}
+Answer:\begin{code}SELECT t1.* FROM ( SELECT * FROM teacher ORDER BY age ASC ) AS t1 JOIN ( SELECT * FROM course_arrange WHERE grade >= 90 AND grade <= 120)AS t2 ON t1.teacher_id=t
+\end{code}# 10.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17.18.19.20.21.22
+|||||||||||||||||||||||||||||||||
+\end{code}\end{pre}\begin{code}\end{code}Comment: I'm not sure what you mean with "the number of courses". Do you want to count how many times each name appears in `courses` or do you just need
+|||||||||||||||||||||||||||||||||
+|\end{code}\end{python}\end{code}
+# 1. Create a new file called "sql_queries/02-many-to-one" in this directory with your solution to the above problem.|### 3. Many To One Relationships (SQL)#### Problem:Write an SQL query that returns
+\end{code}#!/usr/bin/env python3"""@author: 吴晓辉(Wu Xiaohui)@contact: wuxiao1208@gmail.com@file: sql_to_python.
+\end{code}\end{python}\end{code}
+select count(v) from visit where v.visitor_id in ( select id from visitor where level_of_membership < 30 ) group by v.museum_id;|\end{code}
+\end{code}```### Example:```sqlSELECT * FROM visitor WHERE id IN (102356789) AND age > 20;```
+select avg.avg(v) from (values select v.*,(select count(*) as g from visitor where level_of_membership <= 4)) v group by v;|
+\end{code}\end{lstlisting}\section{Example 2: Generate an SQL statement for a join operation.}The following example shows how to use \texttt{generate\_sql()} function in order to generate an SQL statement that joins two tables together based on some conditions
+|=\end{\begin{code}\end{pre}Comment: I've never seen this syntax before... is it valid SQL or something else?Answer: \strong{\em{[SQL Fiddle](http://sqlfiddle.com/#!2/50
+\end{code}\end{lstlisting}\end{document}
+|=|\end{### 10.2.3```sqlSELECT * FROM museum WHERE name='plaza' AND open_year>2015;```### 10.2.4```sqlSELECT * FROM museum
+|\end{code}\end{pre}\end{code}Comment: I've tried to run this code but it doesn't work for me...Answer: \begin{blockquote}I want to know how many museums are there in the world?\end
+|\end{code}\end{lstlisting}\end{document}
+|\end{code}Comment: I've added some formatting to your code block so it is easier for people reading this question to understand how you want things formatted. Please feel free to edit my changes if they don't match exactly with what you intended.
+select count(distinct) as num from ( select * from visit where visitor_id in (select distinct visitor_id from visit)) group by museum_id;|primary_keys = [visit.visitor_id = visitor.id,visit.museum_id = museum.museum_id
+\end{\end{code}Comment: I've added an answer to your question here http://stackoverflow.com/questions/12075483/how-to-get-the-first-row-in-a-sql-query-with-mysql/1
+\end{code}\end{pre}\end{code}
+|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=
+select sum(visit) from ( select v.*, count(*) as it from visitor join member on visitor.member_id=member.id group by v.id ) v where v.level_of_membership='1'\end{code}
+# Solution:# The solution to this problem can be found at the bottom of this page.## Table SchemaCreate a new table called `visitors` with two columns: id (int) and level_of_membership(string). Create another table called `memberships`. This will
+#!/usr/bin/python3import syssys.path.append('../') # add path to project folderfrom sql import *def main():    db = Database()        # get all tables in the database    tables = db.getTables(db)
+\end{code}Answer:\begin{blockquote}how many museums were opened in 2014?\end{blockquote}
+|\end{pre}\end{codeblock}\end{code}
+\end{pre}Comment: I'm not sure what you mean with "how to get all the data from the tables". Do you want to know which fields of each table contain information about the player? Or do you just need an example on how to use the `JOIN` keyword in MySQL? If
+|\end{pre}\end{p}\end{code}
+|\end{\end{\end\endgroup\makeatother```
+|\end{code}\end{code}\end{code}Comment: I'd recommend using `SELECT` instead of `FROM`.  It makes it easier to see what you are doing in your queries.
+|select * from players where country_code='us' order by last_name;\end{code}
+|\end{\begin{document}\end{code}
+|select avgam from (  select player_id as winner_id, age(now()) - birth_date::int as winner_age  , player_id as loser_id, age(now()) - birth_date::int as loser_agefrom players) pjoin
+|\end{pre}\end{lstlisting}\end{document}
+select avg(rank) as winner from (  select player_id,avg(ranking) as ranking from rankings where tours=1 group by player_id ) as rjoin players on players.player_id = r.player_id;|select avg(ranking
+|\end{pre}\end{lstlisting}\end{document}
+select player_id from (  select winner_id as player_id,    sum(case when match_type='win' then 1 else 0 end) as wins,    sum(case when match_type='loss' then 1 else 0 end) as losses,    av
+|\end{pre}\end{/sql}\end{code}
+#
+|\end{\begin{document}\end{code}
+|\end{\end{\end\end{\end{code}
+\end{pre}Comment: I'm not sure what you mean with "find out which tournaments have more than one match". Do you want to know all tournaments where there are two or more matches? Or do you just need to get the id for such a tournament (so you can use it in
+\end{pre}Comment: I'm not sure if this is correct but it seems to work for me...Answer: \begin{blockquote}what are the names of all the tables in my database?\end{blockquote}You can use `SHOW TABLES`
+|\end{pre}\end{lstlistinglespace}\end{code}
+\end{pre}Answer:\begin{blockquote}\strong{[Jonathan](https://www.reddit.com/r/learnprogramming/comments/74589u/sql_query_to_find_the_names_of_all_people
+|\end{pre}\end{document}\end{code}
+\end{pre}Comment: I'm not sure what you mean with "how to get the number of matches that have been played between two years". Do you want all matches from one year (e.g., 2015) vs another year (e.g., 201
+?Answer:\begining\end{code}
+|select player_names\end{select * from matches where winner_id in ( select player_id from rankings where ranking > 10) order by match_num desc limit 5;select * from matches where loser_id in ( select player_id from rank
+|\end{pre}\end{/code}\end{code}
+|\end{pre}\end{/query}\end{code}
+|\end{pre}\end{/sql}\end{code}
+\end{pre}\end{rstuff}\end{code}
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\end{figure*}The example above is an extract from our implementation of the \texttt{SQL2CSV}\xspace tool (
+  \end{pre}\end{rstuff}\end{code}
+|\end{pre}\end{/sql}\end{code}
+\end{pre}\end{/sql}\end{code}
+|\end{\begin{code}\end{code}Comment: I'm not sure what you are trying to do here but it looks like you have some syntax errors in your code.  You should post an example of data from each table so we can see how they relate together
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-query}Example of a query in the \texttt{SQLite} format.}\end{figure*}The first line contains the name of the file that will be
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\end{figure*}The first step is to extract the information from the input file (Figure~\ref{fig:example-
+|select * from matches where winner_id=12345678901234567890123456789012345678901234567890123456
+|\end{code}\end{code}\end{code}
+|select player_id from players where country_id = 103;\end{code}
+|\end{code}\end{code}\end{code}Comment: I'm not sure what you mean here? Do you want to get all the rows from `matches` where both player ids are present in `players`? If so then just use an inner join on those two
+\end{pre}Answer:\begin{blockquote}The name of the player that won is "Jonathan" (the first name) and the last name is "Metzger". The name of the player that lost is "John" (the first name) and the last
+|\end{code}Comment: I'm not sure what you mean here? Do you want to know how many times a certain hand has been played in a match or something like that? If so then it would be better if you could provide some sample data as well as an example of what output you are
+|\end{pre}\end{/query}\end{code}
+|\end{pre}\end{/\end{code}Comment: I'm not sure what you are trying to do here but it looks like you have some syntax errors in your code.  You should post this as an answer instead of editing my question.
+|\end{pre}\end{/query}\end{code}
+\end{pre}\end{/sql}\end{code}
+|\end{code}\end{code}\end{code}
+\end{pre}Comment: I'm not sure what you mean with "the code of the country". Do you want to know which country is most represented in the data? If so, then this should be easy enough using `group_by` + `count`.Answer: You can use `
+\end{pre}Answer:\begin{blockquote}The United States has 1027936 registered members in the BBO database as of today (June 4th). The second largest number of members are from Germany at 58777 followed closely
+|\end{\begin{code}\end{code}Comment: I'm not sure what you are asking for here? Do you want to know how many people from each country play pokerstars or do you just need help with your code?Answer: You can use
+\end{pre}Comment: I'm not sure if this is correct but it seems to work for me...Answer: \begin{blockquote}what are the codes of countries that have more than 100 players in their national ranking list?\end{blockquote}
+|\end{code}Comment: I'm not sure what you mean here? Do you want to know how many times a player has won in a given year or something else?Answer: You can use `group by` with `count()` function as follows :\begin{blockquote}
+|\end{\end{\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end
+|\end{code}\end{pre}\end{code}
+|\end{code}\end{code}\end{code}
+|\end{pre}\end{/query}\end{code}
+|select * from matches where winner_id in (select winner_id from matches order by year desc limit 3)\end{code}
+|#
+|\end{pre}\end{document}
+|\end{pre}\end{/sql}\end{code}
+|select * from players.\end{\end{code}
+|\end{code}\end{code}\end{code}
+|\end{\end{\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end
+\end{||||||||||||||||||||||||||||||
+|\end{code}\end{pre}\end{code}Comment: I'm not sure what you are asking here... You have a `SELECT` clause that selects all rows from your tables (and joins them together). What do you want to change?Answer: \begin{
+  |\end{code}\end{lstlisting}\end{document}\end{code}
+|# 10000000000000000000000000000000000000000000000000000000000000
+select count(death) as avg_injury from death group by killed;|\end{code}
+\end{select * from death where killed in ( select id from ship where lost_in_battle=10) or injured in ( select id from ship where lost_in_battle=2);|\begin{code}+-------+----------+-----------------+--------------+|
+|select * from battle where bulgarian_commander <> "boril" order by date desc limit 10;\end{code}
+|\end{code}\end{r}\end{code}
+\end{code}\end{pre}\begin{code}SELECT DISTINCT ON (battles.id) * FROM battles JOIN deaths USING(caused_by_ship_id);\end{code}Comment: I'm not sure
+select * from ship where killed > 0 order by injured desc limit 1;|\end{code}
+select * from battle where (bulgarian_commander='kaloyan') or (latin_commander='baldwin i');|what is the number of battles in which bulgarians won against latins?|select count(*) as total_wins from battle where bul
+|select count(*) as total from battle where date between '1805-06-24' and '1807-03-09';\end{code}
+\end{code}select * from ship where lost_in_battle is null;|\begin{pre}+----+-----------+-----+--------------+----------------------+---------+| id | name      | tonnage | ship_type    | location            | disposition_of_ship
+|\end{code}\end{pre}\end{code}Comment: I think you need to add some more details about what is not working for you in your question.Answer: You can use `JOIN` with `ON`:\begin{blockquote}The
+|\end{code}\end{pre}\end{code}Comment: I'm not sure what you mean here - do you want to get all rows from `ships` where there is an entry for that row in both tables? Or are you trying to find out which entries in one table
+\end{select * from death where note like '%east%' order by date desc limit 10;|\end{code}
+|\end{/}\end{p}\end{code}
+\end{/}Comment:Answer:\begin{blockquote}what is the first and last name of all students who have attended at least one course in the past 5 years that has been taught by professor XYZ?\end{blockquote}
+\end{/}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have 4 tables that contain data about my university (their names are above). How can i get all of them to display on one page with each row being a different
+\end{\begin{\begin{itemize}\item \textbf{Course 1:}\begin{itemize}[no itemsep,topsep=0pt]\item Course Name: "Introduction to Programming"\item Instructor: "Pro
+\end{/}############################################
+\end{/}Comment: I's this a good question to ask yourself before you start writing code is "what does it do?" If you can answer that then you have your first step in figuring out how to write the code.Answer: You need to use `JOIN` clause with
+|\end{/}\end{\end{document}
+\end{/}Comment: I's this a good question to ask yourself when you are writing your queries. It will help you avoid many common mistakes in SQL syntax.
+\end{/}\end{/}\end{code}
+\end{/}\end{\end{\end{\end{code}
+?\end{/}Comment:Answer: You have to use `JOIN` in your queries for this kind of thing.  The following should work (I've added some comments):\begin{code}SELECT DISTINCT department_id FROM departments; // returns
+?\end{Comment:\begin{itemize}\item 100% of the time, I'm not sure what you mean when you say "how many different departments" or "how many different degrees".\item If it is just one department that offers all
+?\end{Comment:\begin{itemize}\item \em{How to get all the data from a table?}\item \em{What is the best way of getting data out of a table in MySQL?}\item \em{How do I select multiple tables
+\end{/}\begin{\begin{itemize}[noitemsep,topsep=0pt,parsep=4pt]\setcounter{enumiv}{-1}\setlength{\parskip}{\baselineskip}\item[*]{How many of these tables
+?\end{Answer:\begin{= 4}
+?\end{Comment:Answer:\begin{blockquote}how many degrees does the university of california at berkeley offer in computer science?  \strong{\em{[0]}  1974-06-05  \
+|\end{/}select * from address_lines where line_1 like 'Line 1' or line_2 like 'Line 2' or line_3 like 'Line 3';select * from address_lines;select * from address_lines where line_1 not
+\end{/}Comment: I's this a good question or not?Answer: \begin{blockquote}I have a table called "Address" with 4 fields (address_id, line_1, city, zip). Another table is called "Student", which has two foreign
+\end{pre}\end{/}\end{code}
+|\end{Comment: I'm not sure if this is correct or not but it seems to work for me...Answer: \begin{blockquote}I have a table called "Course" that has two foreign keys (one pointing to another table)\end{blockquote}
+\end{/list\end{\end{\end{\end{code}
+\end{/}\end{/}\end{code}
+|\end{pretty|}\end{/query}\end{code}
+|\end{\end{\end{\end{document}
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql-query}Example SQL Query}\end{figure*}The first step in our approach to generating an equivalent SQL query from a given Datalog program is to
+|\end{/}\end{\end{document}\end{code}
+\end{document}\end{tabularxlist}{@startuprowcolors}{@color[rgb]{0.95686274,0.46666667,0.18039216}%\rowcolors{2}{}{}%
+|\end{pre}\end{document}\end{code}
+|\end{precedil}\end{/sql}\end{code}
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example of an SQL query.}\end{figure*}The \texttt{SQLQueryGenerator}\xspace is implemented as a Java class that takes a set of
+\end{pre}\end{document}\end{code}
+|\end{\end{\end{\end{lstlisting}\end{document}
+\end{document}\end{tabularxlist}\end{code}
+|\end{pre}\end{document}\end{code}
+|\end{pre}\end{document}\end{code}
+\end{document}\end{pre}\end{code}
+\end{/}\end{\end{/}\end{code}
+|\end{pretty|}\end{/query}\end{code}
+|\end{/}Comment: I'm not sure if this is correct or not but it seems to work for me...Answer: \begin{blockquote}I want to know how many times each name appears on any given row (i.e., how often does "John" appear
+\end{pretty}\end{/}\end{code}
+|\end{/}\end{\end{document}\end{code}
+|\end{pretty|}# 4.5.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+|\end{\end{\end{\end{document}\end{code}
+\end{prettyttt}\end{/\end{document}}\end{code}
+\end{/}\end{/}\end{document}
+\end{/}\end{/}\end{code}
+|\end{/}\end{\end{document}\end{code}
+\end{\end{\end{\end{\end{code}
+|\end{/}\end{\end{document}\end{code}
+|\end{/}\end{\end{document}\end{code}
+|\end{\end{\end{\end{lstlisting}\end{document}
+|\end{\end{\end{\end{\end{code}
+|\end{tabular}\end{document}
+|\end{pre}\end{document}\end{code}
+\end{/}\end{\end{/}\end{code}
+\end{pre}Answer:\begin{blockquote}The answer to this question depends on how you define "most". If we are talking about number of people enrolled in each course then it would be the department that has the highest average number of students per class (i.e.,
+\end{/}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have a table that has 4 foreign keys to other tables in my database. The problem is that there are some records where one of those four fields is null or empty (
+  \end{/}Comment: I's this a good question for SO or SuperUser?Answer: \begin{blockquote}I have a table with 500 rows of data in it (the table has about 40 fields). The first field contains a string that looks like
+|\end{\end{\end{\end{document}
+|\end{document}\end{p}\end{verbatim}\end{code}
+\end{/}Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment
+\end{/}Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment
+\end{/}Comment: I's a bit of an overkill for this question but it does work!Answer: You can use `GROUP BY` to get all rows with same values in one row. Then you can use `MAX()` or any other aggregate function on that group.
+\end{/}Comment:\begin{pre}select * from address where address_id in ( select address_id from address where address_id not in ( select address_id from address where address_id is null ) );| select * from address |+
+|\end{\end{\end{\end{document}\end{code}
+|\end{pre}\end{/query}\end{code}
+|\end{pre}\end{document}\end{code}
+|\end{/}Comment: I'm not sure if this question makes sense to you or anyone else but it does make perfect sense to me!Answer: \begin{blockquote}what is the date with the least number of results?\end{blockquote}The answer
+|\end{/}\end{\end{document}
+|\end{p}\end{/query}\end{code}
+?\end{Comment:Answer:\begin{blockquote}how many different addresses does each student have (i.e., permanent address vs current address)?  how many different degrees are offered in this university?  how many different departments offer these degrees?
+?\end{Comment: I'sAnswer: \begin{itemize}\item You can use `JOIN` to combine two or more tables in one query.\item The syntax for JOIN is as follows -\end{itemize}\strong{`FROM TableA
+\end{/}\end{/}\end{document}\end{code}
+\end{/}Comment:Answer: \begin{itemize}\item The `what` keyword is used to ask for information on how many rows are returned from each of your tables (and their respective foreign keys).\item You're using the wrong syntax with the `where`
+|\end{/#include "../sql-queries/create-tables"
+\end{/}\end{\end{\end{\end{code}
+ the first name of the first name the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the first name of the
+?\end{Comment:Answer:\begin{blockquote}\strong{[Jonathan Leffler](https://stackoverflow.com/users/446551/jonathan-leffler)}\end{blockquote}
+|\end{code}\end{rstuff}\end{code}
+|select distinct title from tv_series where channel in (select id from tv_channel) order by title;\end{code}
+|\end{sql}\end{rstata}\end{code}
+select distinct c.title from tv_channel tc join tv_series ts on (tcs.id=ts.channel) left outer join cartoon ca on (ca.channel=tc.id) where ca.director='benjones' order by title;|primary_keys = [tv
+|\end{table}# 20.0.0.0# 2.0.0# 3.0.0# 4.0.0# 5.0.0# 6.0.0#
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\end{figure*}The example in Figure~\ref{fig:example-sql} shows how to use the \texttt{
+  |\end{code}\end{code}\end{code}Comment: I've never seen this syntax before... what is it?Answer: You can use `GROUP BY` to get one row per director/writer combination for each episode of that series (assuming you have
+|select tv_series.* from tv_series left join tv_channel on (tv_channel.id=tv_series.channel) where tv_channel.id in(select id from tv_channel order by air_date desc limit 50);\end{code}
+|\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example of an SQL query in \texttt{SQLite}}\vspace{-0.5cm}\end{figure*}The first step is
+|select distinct title from tv_cartoon where directed_by in ('benjones', 'brandonvietti') order by title;\end{code}
+|# 20000000000000000000000000000000000000000000000000000000000000
+|select count(distinct from tv_channel where channel in (select distinct id from tv_channel group by id) as total_channels;\end{code}
+|\end{lstlisting}\end{lstlisting}\end{lstlisting}\caption{\label{fig:example-sql}Example of an SQL script generated from a UML diagram.}\vspace{-0.5cm}\end{figure*}The
+|\end{pre}\end{/sql}\end{code}
+|\end{code}Comment: I've never seen this syntax before...Answer: You can use `JOIN` to do that in MySQL (and other RDBMS).For example if you have two tables like below :Table 1 - \strong{`users`}
+select * from tv_series where channel in ( select id from tv_channel) order by air_date desc limit 5;|select * from tv_series where episode between '0' and '23';|\end{code}
+|\end{\end{\end{\end{\end{code}
+|select tv_series.* from tv_series where tv_series.channel in ( select id from tv_channel where channel like'sky radio') order by rating desc limit 5;\end{code}
+|select count(distinct from tv_series where tv_channel.language='english' group by tv_channel.language) as 'howmany'\end{code}
+|select count(distinct from tv_series where channel=tv_channel.id) as "english"from tv_channel join tv_series on (tv_channel.id = tv_series.channel);\end{code}
+|select tv_series.* from tv_series where tv_channel in ( select id from tv_channel group by country) order by share desc limit 50;\end{code}
+|select count(distinct from tv_series where tv_series.language in (select distinct language from tv_channel)) as langs,count(*) as num_channels from tv_channel group by language order by langs desc limit 5;#|#|#
+|#|#|\end{#|\end{code}
+|select count(distinct tv_series) as series from tv_series where channel in ( select distinct id from tv_channel group by country )group by language;\end{code}
+|\end{text}\end{sql}\end{lstlisting}\caption[SQL query to find out which TV channels show \textit{The Rise Of The Blue Beetle!}]{\label{fig:query-find-out-which-TV-channels-show-
+|\end{text}\end{sql}\end{code}
+|\end{code}\end{code}\end{code}
+|\end{query}\end{sql}\end{code}
+|\end{code}\end{rstuff}\end{code}
+|select tv_series.* from tv_series left join ( select * from tv_channel where series_name in ('South Park', 'Family Guy') ) as tc on tv_series.channel=tc.id order by rating desc limit 5;\end{code}
+|select tv_series.* from tv_series where tv_series.id in ( select id from tv_series order by weekly_rank desc limit 5)\end{code}
+|select tv_series.* from tv_series where tv_series.id not in ( select id from tv_channel) order by rating desc limit 5;\end{code}
+|# 20000000000000000000000000000000000000000000000000000000000000
+|select tv_series.* from tv_series where tv_series.channel=tv_channel.id order by weekly_rank desc limit 5;\end{code}
+|\end{lstlisting}\end{lst}\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\vspace{-0.5cm}\end{figure*}The first step in our approach to generating queries from natural language
+|\end{select tv_series.* from tv_series where channel=tv_channel.id order by air_date desc limit 5;| 20 | 2017-03-26 00:00:00 | 201
+|\end{code}\end{code}\end{code}
+|\end{pre}\end{rstuff}\end{code}
+|select tv_series.* from tv_series where tv_series.id=?;\end{code}
+\end{||||||||||||||||||||||||||||||
+|\end{code}\end{code}\end{code}
+|\end{pre}select * from tv_series where channel=203;select * from tv_series where id in ( select distinct(id) from tv_series);select * from tv_series where title like 'the%';select * from tv_series
+|select count(distinct from tv_series where channel=tv_channel.id group by directed_by) as "Director"from tv_series join tv_channel on (tv_channel.id = tv_series.channel);\end{code}
+|select tv_series.id as series_id, count(distinct tv_channel.id) as channel from tv_series left join tv_channel on (tv_channel.id=tv_series.channel) group by tv_series.id;\end{code}
+|\end{code}Answer:\begin{pre}SELECT DISTINCT ON (tvs.channel) tvs.* FROM tv_series AS tvs JOIN tv_channel USING(channel);\end{pre}
+|\end{\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example of an SQL query in \texttt{SQLite}}\vspace{-0.5cm}\end{figure*}The first step
+|\end{lstlisting}\end{rstuff}\end{code}
+|select tv_series.* from tv_series where tv_channel.high_definition_tv=true;\end{code}
+|\end{pre}\end{rstata}\end{code}
+|\end{}\endgroup\endinput\end{code}
+|select tv_series.* from tv_series where tv_channel in ( select id from tv_channel where directed_by is null or written_by is null) order by air_date desc limit 50;\end{code}
+select tv_series.* from tv_series where tv_channel in ( select id from tv_channel where directed_by=2 or written_by=3) order by air_date desc limit 50;|\end{code}
+|\end{code}\end{code}\end{code}
+select tv_series_series_and_channels_playing_cartoons_directed_by_benjones_and_michaelchangfrom tv_channel c join tv_series s on (c.id=s.channel) where (c.director='Ben Jones'
+|select tv_channel.* from tv_channel where country!= 'USA' order by share desc limit 50;\end{code}
+|select tv_series.* from tv_series where tv_channel.id in ( select id from tv_channel where language!= 'eng') group by tv_channel.id having count(*) > 0;\end{code}
+|\end{pre}\end{lstlistinglese}\end{code}
+|\end{#>#>#>#>#>#>#>#>#>#>#>#>#>#>#>#>#>#>#>#
+|\end{pre}\end{code}Comment: I've added an answer to your question with some code samples for you to try out. Hope this helps!
+|select tv_series.* from tv_series where tv_channel in ( select id from tv_channel where directed_by=2 or written_by=3) order by air_date desc limit 50;\end{code}
+|\end{pre}\end{lstlistinglese}\end{document}
+|select tv_channel.* from tv_channel where tv_channel.id!= 203567;\end{code}
+select count(distinct) from poker_players;|create table tournaments (tournament_id int primary key autoincrement not null, name varchar(256), date datetime);insert into tournaments values (1,'WPT Bay 104'), (2,'WSOP
+|\end{code}Comment: I've tried this but it doesn't work for me...I get an error saying "The type or namespace name 'Table' could not be found (are you missing a using directive or an assembly reference?)"Answer: You can use LINQ to do that
+\end{code}\end{document}\end{code}
+select pokerings from poker_players order by ernings desc;|#>```### 2.1.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+\end{code}\end{document}\end{code}
+|||||||||||||||||||||||||||||||||
+select avgrossavgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgrossavrgross
+select avgross(avgross) from ( select sum(earnings), count(*) as cnt from poker_players group by people_id ) as t;|\end{code}
+|||||||||||||||||||||||||||||||||
+\end{code}### 10.2.3| Version | Date       | Comments                               || ------- | ---------- | ---------------------------------------- || 10.2.3 | 2019/05/28 | Add
+|\end{code}Answer:\begin{blockquote}13\end{blockquote}
+\end{code}### Example:```sqlSELECT MAX(final_tables) FROM ( SELECT * FROM poker_players WHERE money < 150000 ) AS t;```
+|select name from poker_players where final_table_made=1;\end{code}
+select poker_players.* from poker_players as er_players left join people on (er_players.people_id=people.people_id) where er_players.people_id is not null;|# Create a new table called "games" with
+select * from poker_players where money_rank > 300000;|\end{code}
+\end{code}\end{pre}\begin{code}SELECT * FROM poker_players WHERE money_rank > 300000;\end{code}
+\end{\endgroup\endinput```### 2.1.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+|||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||
+\end{code}\end{document}\end{code}
+select pokerings from poker_players where final_table_made=1 order by best_finish desc limit 5;|\end{code}
+\end{code}\end{document}\end{code}
+select avgross_avgross_avg from (select avg(earnings) as gross_avg from poker_players where nationality='US' group by final_table_made having count(*) >1 ) as t;|\end{code}
+select avgive from poker_players where height > 200 group by avarage(earning) order by avarage desc limit 1;|\end{code}
+select poker_players from poker_player where final_table_made=1;|order by money_rank desc limit 50;\end{code}
+|\end{code}Comment: I've tried this but it doesn't work for me...I get an error saying "The name 'people' does not exist in the current context"Answer: You can use `select` to select from multiple tables at once (and you don't
+|select distinct(people.nationality) as nationality, count(*) as cnt from people join poker_player on people.people_id=poker_player.people_id group by nationality;||||||||
+select count(distinctable) from ( select distinct people_id as distable from people where nationality='French') as f;|primary_keys = [poker_player.people_id = people.people_id]primary_keys = [poker_player.people_id
+select count(distinct) from ( select distinct people_id from poker_players group by people_id ) as t1 join ( select distinct people_id from people group by people_id ) as t2 on t1.people_id=t2.people_id;|
+select nationalities from people where count(*) > 1 group by nationality having max(count(*)) as n;|\end{code}
+select distinct(people.nationality) from people where people.people_id in ( select people_id from poker_players group by people_id having count(*) > 1);|primary_keys = [poker_player.people_id = people.people_id]
+select distinct(people.nationality) from people where count(*) > 1;|\end{code}
+|||||||||||||||||||||||||||||||||
+select name from people where nationality!= 'US' limit 10;|primary_keys = [poker_player.people_id = people.people_id];|primary_keys = [poker_player.people_id = people.people_id];|primary
+select name from people where nationality!= 'Russian' limit 10;|#>```
+select * from people where nationality!= 'Russian' order by name;|# 2017-05-31 16:49:08.177# 2017-05-31 16:49:08
+\end{code}\end{document}\end{code}
+|||||||||||||||||||||||||||||||||
+|select count(distinct) from ( select * from people group by nationality ) as t;create table tournaments, columns = [*,tournament_id,year,location], foreign_keys = [] primary_keys = [];create table results, columns = [*,results_id,
+|\end{\endcode}Comment: I've added an example to my answer that should work for you.
+\end{#!/usr/bin/python3"""import osfrom sqlalchemy import create_enginefrom sqlalchemy.orm import sessionmakerfrom sqlalchemy.ext.declarative import declarative_basefrom sqlalchemy.
+|\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query in \texttt{SQL}. The query is written using the \texttt{SQL} syntax.}\vspace{-1em}\end
+|\end{pre}\end{rstuff}\end{code}
+|select distinct area_codes from area_code_states where area_code is not null;\end{code}
+\end{code}Comment: Try to use `last()` instead of `max()`.Answer: You can try this code :\begin{blockquote}SELECT DISTINCT vote_id FROM votes WHERE (state='CA') AND (contestant_number=1) ORDER BY
+|\end{code}\end{python}\end{code}
+|select distinct state from votes where created between '2016-03-05 08:47' and '2016-03-09 08:47';\end{code}
+Answer:SELECT DISTINCT CONTESTANT_NUMBER FROM VOTES WHERE STATE IN (SELECT AREA_CODE FROM AREA_CODE_STATE) AND CONTESTANTS.CONTESTANT_NUMBER=VOTE.CONTENTSTANT_NUMBER GROUP BY CONTESTANT_NUMBER
+|# 100000000000000000000000000000000000000000000000000000000000000
+select count(*) as total_counts from ( select * from votes where vote_id in ('123456789', '1011') ) t group by state;|>\end{code}
+|\end{code}Comment: I'm sorry but this is just too vague to be answered properly. What do you mean "how can i find out who didn't vote for anyone"? Do you want to know which people have no votes at all or are there some other criteria that we don't
+Answer: 41235|\end{code}
+\end{pre}Answer:\begin{itemize}\item \strong{\em{[`SELECT`](https://www.postgresql.org/docs/current/static/sql-select.html)}}\item \strong{\em{[`FROM`](https://www.postgresql.org/
+?Answer:\begin{\section{\subsection{\subsubsection{\paragraph{}}}}}}}}}}}}
+#!/bin/bash#!/bin/sh#!/usr/bin/env bash#!/bin/zsh\end{code}
+|\end{pre}\end{/query}\end{sql}\end{code}
+|\end{code}\end{sql}\end{lstlisting}\caption{\label{fig:example-query}Example query.}\end{figure*}The example query in Figure~\ref{fig:example-query} is written using the \texttt{sqlite3
+|\end{code}Comment:Answer: \begin{blockquote}how can I get the number of rows in each column for all tables combined?  (I'm using SQLite)\end{blockquote}You cannot do this with `sqlite3`. You need
+|\end{pre}Answer: 10
+select sum(surfacearea from country where continent=caribbean group by code;|select distinct country.code as countrycode, population from country where lifeexpectancy>60 group by countrycode order by population desc limit 15;|\end{code}
+|select sum(\end{\begin{\end{code}
+|\end{select * from city where id=1;select * from country where code='US';select * from countrylanguage where language='English' or 'French';select seq from sqlite_sequence where name like '%sqlite%';select * from city where population
+\end{pre}Answer:\begin{blockquote}European Union (EU)\end{blockquote}
+|\end{select * from city where name='kabul' limit 1;select * from country where code= 'AF';select * from countrylanguage where language="Dari";select seq from sqlite_sequence where name like "city%";select * from
+|\end{select * from city where name like 'Kabul' or district like 'Kabul';select * from country;select * from countrylanguage;select * from sqlite_sequence;select * from city;select * from city where id=
+select count(distinct(countrylanguage.language) as lang from countrylanguage group by lang order by lang desc limit 1;|\end{code}
+\end{pre}\end{/sql}\end{code}
+|select * from city where id=10;\end{code}
+|\end{code}Comment: I'm not sure what you mean with "brazil" here? Do you want to get all countries that have Brazil as their capital or something like this?Answer: You can use `JOIN` for this purpose.\begin{blockquote}
+select * from city where id=10;|\end{code}
+|select * from city where id in ( select max(population) from city);\end{code}
+\end{pre}\end{/sql}\end{rstuff}\end{blockquote}
+|\end{pre}\end{/sql}\end{text}\end{code}
+\end{code}\end{sql}\end{pre}Comment: I'm not sure if this will work for you but have you tried using `SELECT DISTINCT` to get only one row with all the values from your tables?Answer: You can use `GROUP BY
+|\end{code}\end{sql}\end{pre}Comment: I'm not sure what you mean here - do you want to get all countries where population is less than 10 million? Or are you trying to find out which country has the smallest population (and thus the
+select count(distinct from city where name like 'as%') as pop, max(gpn) from city group by continent;|select distinct country.code,county.name,countrylanguage.language,countrylanguage.percentage from country join county on (country.code=county.country
+|\end{pre}\end{/sql}\end{rstuff}\end{code}
+|\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example of a query with foreign keys.}\end{figure*}The first step to solve this problem consists in finding all the tables involved in our example
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I want to know how many people live in each district of every city that has more than 10 million inhabitants (in Africa).\end{blockquote}
+select sum(surfaceareasiasurfaceareaeurope from continent where code='Asia' or code='Europe')|>|\end{code}
+|select sum(surfacearea) from country where continent='asia' group by continent;\end{code}
+|\end{code}Comment: I'm not sure what you mean with "how to get the number of rows that match this condition". Do you want to know if there are any matches at all or do you just need an integer value for each row where it is true (i.e., `count
+|\end{pre}Answer: 103597468
+|select country.\end{\begin{    select * from country where code='us' order by name;}\end{code}
+|\end{code}Comment: I'm not sure what you want to do with this data? Do you have any specific questions about it or how to use it in your code?
+select count(distinct from countrylanguage where language!= 'English' group by language) as langs;|\end{code}
+select count(distinct from countrylanguage where language!= 'English' group by language order by population desc limit 10;|\end{code}
+|select count(distinct from country where continent='africa') as "count"from country;\end{code}
+|\end{pre}\end{/sql}\end{lstlisting}\caption{\label{fig:example-query}Example query.}\end{figure*}The first step is to parse the input file (Figure~\ref{fig:example-input}) using
+select count(distinct language) from countrylanguage where code=aruba;|>\end{code}
+\end{pre}Answer: 10
+|\end{code}Comment: I'm not sure what you mean with "how to get the number of rows in each column" - do you want to know which tables contain more data or something else?Answer: \begin{blockquote}I am trying to write an sql script that
+\end{pre}Answer: 10
+\end{pre}Answer:\begin{code}SELECT DISTINCT c1.* FROM ( SELECT * FROM city WHERE population > 50000 ) AS c1 JOIN ( SELECT * FROM country WHERE code <> 'US' AND percentage >=.9) AS c2 ON
+\end{code}\end{sql}\end{lstlisting}\caption{\label{fig:example-query}Example query.}\end{figure*}The \texttt{sqlite\_sequence} table is used to store information about the sequence numbers for each table in our
+|\end{code}\end{/code\end{code}Comment: I'm not sure what you mean with "the most diverse". Do you want to know how many different languages are spoken in each of the continents or do you just want to see if there is any correlation between
+|\end{code}Comment: I'm not sure what you mean with "which continent speaks the most languages?" - do you want to know how many different languages are spoken on each continent or something else?Answer: \begin{blockquote}Which Continents Speak The
+|\end{code}Comment: I'm not sure what you mean with "how to get the number of rows in each column" - do you want to know which tables have more than one row or something else?Answer: You can use `COUNT` function for this purpose.For
+\end{pre}Comment: I'm not sure if this question makes sense to you or me...Answer: \begin{blockquote}what is the number of nations that use English as their official language?  What about Dutch?\end{blockquote}I don'
+\end{pre}Comment: I'm not sure if this is correct but it seems to work for me...Answer: \begin{blockquote}what are the names of nations that speak both English and French?\end{blockquote}I think you mean "countries"
+|\end{pre}select * from city where name in ( select distinct(name) from city);select * from country;select * from countrylanguage;select * from sqlite_sequence;select * from city;select * from city where population > 1
+|\end{pre}Comment: I'm not sure if this is on-topic for SO or not (I don't know much about databases), but it seems like you could use `UNION` to get all rows that have either English OR French as an "official" language...
+|\end{pre}Comment: I'm not sure what you mean here? Do you want to know how many cities have more than one language in their name or something else?Answer: You can use `group_concat` function for this purpose.\begin{blockquote}
+select count(distinct continent, population from countrylanguage.language = 'chinese' group by continent;|\end{code}
+|\end{code}Comment: I'm not sure what you mean with "how to get the number of rows in each table". Do you want to know which tables have more than 1000 records or do you just need an overview about all your data? If it is the latter then
+ what is the population of each region in 1980?|>\end{code}
+|\end{code}Comment:Answer: You can use `sqlite3` to get this information from your DB file directly (assuming you have it in `./db/`):\begin{blockquote}\strong{`sqlite3 db/yourDBfile`}  \
+|\end{code}Comment: I'm not sure if this question makes sense to you but it does for me :)Answer: You can use `EXISTS` with an `INNER JOIN`:\begin{code}SELECT * FROM cities c INNER JOIN countrylanguages cl ON
+|\end{pre}Comment: I'm not sure what you mean with "which countries have either English or Dutch as an official language?" Do you want to know all countries where both languages are spoken (i.e., they are listed in the `countrylanguage` table)? Or do you just want to
+select count(distinct(countrylanguage.language) from countrylanguage where countrylanguage.countrycode in ( select distinct country.code from country))from countrylanguage left join country using (country.code);|\end{code}
+select countrylanguage from countrylanguage where population > 100000000 order by percentage desc limit 5;|\end{code}
+|\end{pre}Comment: I'm not sure what you mean with "which languages are spoken by only one country"? Do you want to know all countries where there is no other language than English (or whatever)? Or do you just want to know how many of them there are? If it's
+|\end{pre}Comment: I'm not sure if this is on-topic for SO or not (I think it might be off topic), but you can use `sqlite3` to do all of that in one command line call.  It will also give you an error message when something doesn'
+\end{code}\end{sql}\end{r}\end{code}
+\end{pre}Comment: I'm not sure if this will work for you but it might be worth trying to see how far you get with it before giving up on it completely.Answer: You can use `sqlite3` command line tool in Linux or Mac OS X (or any other Unix
+|select city.name, city.population, city.lifeexpectancy from city where city.countrycode='JP' order by city.population desc limit 1;\end{code}
+ what is the capital of that country?|\end{Comment: I'm not sure if this will help you but it might be worth looking at the `sqlite3` command line tool to see how queries can be constructed in SQLite.  It may give some insight on how to construct your own queries using Python
+|\end{pre}\end{/sql}\end{text}\end{code}
+|\end{pre}\end{/sql}\end{rstuff}\end{code}
+|\end{pre}Comment: I'm sorry but this question doesn't make any sense to me... What are you trying to achieve with it?Answer: You can get all countries where English isn't spoken using `SELECT * FROM country WHERE language!= 'English'`
+|\end{code}Comment: I'm sorry but this is just too vague to be answered properly. What exactly are you trying to achieve here? Do you want to know which languages have more than 50% of their population speaking English as first language or something else entirely? Please provide some clarification
+|\end{pre}\end{/sql}\end{code}Comment: I'm not sure if this will help you but it might be worth mentioning that the `=` sign can also mean "is equal to" or "equals".  So your first line could read as follows:
+|\end{pre}Comment:select * from city where code='NLD' or code='BEF';Answer: \begin{blockquote}what is the official language used in the country the name of whose head of state is Beatrix?\end{blockquote}
+|\end{code}Comment: I'm not sure if this question makes sense to you or me... but it does make sense to me!Answer: \begin{blockquote}what is the total number of unique official languages spoken in the countries that are founded before 1930
+|select count(distinct countrylanguage.countries.total) as total from (    select sum(distinct language) as total from countrylanguage where year < 1930;    ) as |countriesfoundbefore1930| union all     with (        select sum
+select country from country where continent = 'europe' order by population desc limit 10;|\end{code}
+|select country from country where continent=europe;\end{code}
+select * from city where id not in ( select max(id) from city);|\end{code}
+select country from cities where population < 100000000;|\end{code}
+\end{code}Answer:\begin{blockquote}\strong{[103]}  \em{(Afghanistan)}\end{blockquote}
+select * from city where population > 100000000;|>
+|\end{code}Comment: I'm sorry but this is just too vague to be answered properly. What exactly does "doesn't work" mean in your case? Do you get an error message or something else? Please provide more details about how it doesn't work (and also some sample
+|\end{pre}Comment: I'm sorry but this is just too much code to read through in order to understand what you are trying to achieve...Answer: You can use `UNION` with `DISTINCT`:\begin{blockquote}The UNION operator returns all
+|\end{pretty|Comment: I'm not sure if this is on-topic for SO or not (I think it might be off topic), but you can get some help from here http://meta.stackoverflow.com/questions/305961/how-to-ask-
+|\end{pre}Comment: I'm sorry but this is just too much code to read through...Answer: You can use `UNION` with `DISTINCT`:\begin{blockquote}The UNION operator returns all rows from each of its operands where at least
+|\end{code}Comment: I'm not sure if this is correct but it seems to work for me...Answer: \begin{blockquote}what are the codes of the countries that do not speak English and whose governments form is not Republic?\end{blockquote}
+\end{code}Comment: I'm trying to get the code of all countries where the language is not English (and the government form is not Republic) but it doesn't work...Answer: You can use `not in` with an array as follows:\begin{blockquote}
+|\end{code}Comment: I'm sorry but this question doesn't make any sense to me... What do you mean with "which cities are in european countries"? Do you want to know all the cities that have an entry in your `sqlite` file? Or something else? Please explain what
+\end{pre}Comment: I'm sorry but this question doesn't make any sense to me...Answer: \begin{blockquote}what are the names of cities in Europe where English isn't an offical language?\end{blockquote}I don't
+|\end{code}Comment: I'm not sure what you mean with "asian" here? Do you want to filter for all countries that have China or Japan (or both) as an official language? Or do you just want to know if there exists any such combination of countries at all?
+\end{code}Answer:\begin{blockquote}[China](http://www.sqlite.org/cgi-bin/src/doc/examples/zipcodes.sql), [Hong Kong](http://www.sqlite.org/cgi-bin/src/doc
+ what is the largest district in that has the highest life expectancy for this country?|\end{code}
+|\end{\end{\end{\end{\end{lstlisting}\caption{\label{fig:example-sql}Example SQL query.}\end{figure*}The example in Figure~\ref{fig:example-sql} is an actual query
+\end{pre}Answer:\begin{code}SELECT * FROM country WHERE surfacearea > 100000;\end{code}
+select country from country where surfacearea > (select max(surfacearea) from country);|\end{code}
+|\end{code}Comment: I'm not sure what you mean with "the number of languages" - do you want to count how many different language codes are in `countrylanguage`? Or is it just the total number of rows?Answer: \begin{blockquote}I have a
+\end{code}Answer:\begin{pre}SELECT DISTINCT c1.* FROM ( SELECT * FROM cities ) AS c1 LEFT JOIN ( SELECT * FROM country WHERE code IN ('US', 'GB') AND language > 2) AS c2 ON c1.countrycode
+|\end{pre}Answer:\begin{blockquote}SELECT DISTINCT(DISTRICT) FROM CITY WHERE POPULATION > (SELECT AVG(POPULATION) FROM CITY);\end{blockquote}
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}how can i get the number of districts with more than 10% of their total population being overweight or obese?\end{blockquote}You
+|\end{code}Comment: I'm not sure what you are asking here? Do you want to know how to write this in Python or do you have an error message that needs fixing? If it's the latter then please post your code so we can help with any errors/problems.
+|\end{pre}\end{/sql}\end{rstuff}\end{code}
+|\end{code}Comment: I'm not sure what you are asking here...Answer: \begin{blockquote}I have two tables in my SQLite database that contain data about countries (one with all of their information, another one just containing the name). The first table has many foreign
+|\end{code}Comment: I'm not sure if this is on-topic here or at SO... but it looks like you want us to write some code for you. While many users are willing help and explain, please resist the temptation to ask people to write your program for you! Instead,
+|select name from country where population > 1000000000000000000000000000000000000000000000000000000000
+|\end{pre}Answer:\begin{blockquote}\strong{[SQLite](https://www.sqlite.org/)} is an in-memory relational database management system (RDBMS) that provides all the features of a full-featured RDBMS but with
+|\end{pre}\end{/\end{/}\end{code}
+\end{code}Answer:\begin{blockquote}United States United Kingdom China\end{blockquote}
+\end{pre}\end{/sql}\end{rstuff}\end{blockquote}
+|\end{code}Answer:\begin{blockquote}United States (USA)\end{blockquote}
+|\end{#> SELECT * FROM country WHERE code IN ('JP', 'CN') AND lifeexpectancy > 70;SELECT * FROM country WHERE code IN ('JP','CN') AND lifeexpectancy > 70;#> SELECT * FROM country WHERE population < 
+|\end{select * from city where population > 100000;select * from country where code!= 'AF';select * from countrylanguage where language == "Chinese";select * from sqlite_sequence where name like "%_%";select
+\end{pre}Answer:\begin{blockquote}SELECT DISTINCT c.* FROM cities AS c JOIN foreign_key_constraints fk ON (c.countrycode=fk.country) WHERE fk.country IN ('FR','DE') AND c.population
+|\end{pre}\end{sql}\end{python}\end{code}
+|select * from city.\end{\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\
+|select country.\end{\begin{    select * from country where continent='North America' and life expectancy>75;}\end{code}
+|select * from city?\end{\begin{code}\end{code}}Comment: I'm not sure if this will help you but it might be worth looking at using `sqlite3` to connect directly with your SQLite DB rather than trying to use Python for everything.
+?\end{code}Comment: I'sorry for my bad english!Answer: You can use `IN` clause in your where condition to get all rows which are having values from given list.\begin{blockquote}SELECT * FROM TABLE WHERE COLUMN IN ('value
+\end{code}\end{sql}\end{pre}Comment: I'm not sure what you mean with "the largest number". Do you want to know how many languages are spoken in each country or do you just want to count all languages that have more than one country as their
+select name from city where population > 10000000;|> select id,name,countrycode,district,population from city;|> select code,name,continent,region,surfacearea,indepyear,population,lifeexpectancy,gnp,gn
+\end{pre}\end{/sql}\end{rstuff}\end{blockquote}Comment: I'm not sure if this will help you but it might be worth mentioning that the `sqlite3` command line tool can also parse `.sql` files (and other
+|\end{pre}Answer:\begin{code}SELECT DISTINCT c1.* FROM city AS c1 JOIN foreign_key(c1) ON (c1.countrycode=country.code);SELECT DISTINCT cl.* FROM countrylanguage AS cl JOIN foreign_
+\end{pre}Answer:\begin{code}SELECT * FROM ( SELECT DISTINCT c.*, cl.*  ) AS t1 WHERE EXISTS(SELECT 1 FROM countrylanguage WHERE countrylanguage.countrycode=t1.country AND language='Spanish') GROUP BY t1
+|\end{code}Comment: I'm not sure what you mean with "spanish" here? Do you want to check if there are any cities in Spain where Spanish isn't the most common language (i.e., it has less than 50% speakers)? Or do you just
+\end{pre}Answer:\begin{blockquote}The primary key for this question would be the combination of `country` and `countrylanguage`. The foreign keys in this case will be `city`, which has no effect on the answer since it's not part of the primary key
+|\end{pre}Comment: I'm not sure what you mean with "the codes" in your last line...Answer: You can use `group by` to get all combinations that satisfy the condition (in this case, the combination `(country, language)`). Then you can filter out those
+?select *
+|###############################
+select * from orchestra where year_of_founded > 1950;|### 2.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1
+select * from orchestra where year_of_founded > 1950 order by year_of_founded desc limit 2;|select * from orchestra where name like 'London%' |select * from orchestra where type='symphony' |select * from
+?select * from the conductorchestra_conductors_whose_names_are_not_usas_and_their_nationalities_are_not_usaselect * from orchestra where year_of_founded > 1950;| select * from orchestra
+select * from conductorchestra_id where nationality "usa"select * from orchestra where name like "%usa%"\end{code}
+|select orchestra from orchestra where year_of_founding_year < 1950 group by year(year_of_founded) order by year(year_of_founded);\end{code}
+select from orchestra where year_of_founded < 1950 order by year_of_founded descending;|### 2.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.
+select * from show_average_attendances_by_shows where year(show) between 2015 and 2017 group by show order by week desc limit 3;|# 4. Create a new table called "artist" with two foreign keys: one to
+select * from show?\end{\end{code}
+#
+?Comment:D?Answer:\begin{code}SELECT DISTINCT(MAX(IFNULL((CASE WHEN result='1' THEN attendance ELSE 0 END) * 100 / IFNULL(SUM(attendances),0))))) AS max_score FROM
+!####
+select_columns = [*]#
+\end{code}\end{pre}\end{verbatim}\end{document}\end{code}
+select from orchestra_conductors, where orchestra_id in (10) order by year_of_work descending;|### 2.3.4.5.1.1.1.1.1.1.1.1.1.1.1.1
+select_columns = [*]order_by = [year_of_work desc]limit = 10offset = 5# Create a new table called "artist" that contains all the data from the "albums" table except for the artist column.| table albums
+ what are the top 100000000000000000000000000000000000000000000000000000000000000
+ the name of the shows they have performed in.|\end{code}Comment: I'm not sure what you mean with "their" here? Do you want to get all performances where the conductor has been involved as well (i.e., both sides)? Or do you just want to know
+select from orchestra_conductorsons that have been performed in the same shows with the same performances?|select * from performance where if_first_show is true;|select * from performance where result is not null;|select * from performance where attendance > 100
+select * from orchestra has conducted more than one orchestra?select count(*) as total_shows from show where if_first_show=1;|select count(distinct) as distinct_shows from show where if_first_show=0;|select sum(
+  select * from orchestra has conducted for which orchestra has conducted at least two orchestras?|select count(*) as nbr_orchestras from ( select distinct(orchestra) from orchestra where conductor_id in (select distinct(conductor_id)) ) group by orchestra;
+ show the top 10 shows with the highest attendance rate in the last year.|### 2.3.4.5.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+ what are the top 100000000000000000000000000000000000000000000000000000000000000
+\end{code}\end{code}\end{code}Comment: I'm not sure what you mean with "the name of an orchestra". Do you want to know which orchestra was founded in 1975? Or do you just need to find all orchestras
+select from orchestra_conductors_who_have_conducted_orchestras_after_the_year_2008\end{code}
+||
+!####
+\end{code}\end{code}\end{code}Comment: I'm not sure what you mean with "the format". Do you want to sort them alphabetically? Or do you have some other criteria for sorting that is not covered by `ORDER BY`?Answer: You
+select orchestra_formats from orchestra where year_of_founded < 1980 order by year_of_founded desc limit 5;|select * from orchestra where if_first_show is null order by year_of_founded asc limit 3;|
+select_columns = [*]order_by = [orchestra.year_of_founded desc]limit = 10offset = 5# Create a new table called "artist" with the following columns:| artist, columns = [*,artist_id,
+ the greatest number of performances in the greatest number of shows?|select count(*) from ( select distinct(orchestra) as orchestra, sum(count(*)) as total_number from performance group by orchestra ) where total_number > 10;\end{code}
+# 201###### 20### 30
+#############################################################
+select * from orchestra_record_companies where year_of_founded < 1950;\end{code}
+ are there any shows in which of the major record formats (CDs) were released by both orchestras founded before 2003 and those founded after 2003?|### 15.4.1.1.1.1.1.1.1.1.1.
+select * from orchestra where major_record_format = 'cd'|'dvd';\end{code}
+select * from orchestra where year_of_founded > 1950;|\end{code}
+#
+ what are orchestras with at least one performance in 2015?|### 3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1
+ how many friends do they have|\end{code}Comment: I'm not sure what you mean with "I want to get all of them". Do you just need to print out the names or something else?Answer: You can use `GROUP BY` in your case like this :\
+|\end{code}\end{lstlisting}\end{document}
+|\end{code}\end{pre}\end{code}
+|\end{code}\end{pre}\end{code}
+|\end-- -------------------------------------------------------------- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |-- |
+|\end{code}Answer:\begin{blockquote}The grade of each student in High School is 10 or higher.\end{blockquote}
+|\end{\endgroup\makeatletter\begindata[columns=l]{/usr/share/texlive/2019/texmf-dist/tex/latex/base/article.cls}\makeatother\usepackage{booktabs}\newcol
+|\end{code}```
+|\end{code}\end{pre}\end{document}\end{code}
+|\end{code}\end{pre}\begin{code}SELECT * FROM highschooler WHERE id IN ( SELECT student_id FROM friend WHERE friend_id=highschooler.id) AND name='Jane' OR name='John';\end{code}
+\end{code}```
+|\end{#> 10\end{code}
+|\end{code}Comment: I'm not sure what you mean here...Comment: @JonathanLeffler I think he means that if we have two tables with foreign keys to each other (e.g., `students` has a foreign key to `courses`, which
+|\end{#> SELECT * FROM student;#> +-----------+-----+------+#> | id        | name | grade |#> +-----------+-----+------+#> | 2         | John |  8    |#> | 3         | Mary |
+|\end{code}\end{pre}\end{code}
+|\end{code}\end{lstlisting}\end{document}\end{code}
+|select count(distinct) as total from ( select distinct student_id from highschooler ) hs where exists ( select 1 from likes l where liked_id=hs.student_id );\end{code}
+\end{code}#> SELECT * FROM student;#+----+-----------+-------------+-------+#| id | name       | grade        | gender  |#+----+-----------+-------------+-------+#|  1 | John Doe   | A           | M      |
+|\end{code}\end{pre}\end{code}
+|\end{#> SELECT * FROM friends WHERE (friend_id IN(SELECT student_id FROM highschooler)) AND (friend_id NOT IN(SELECT liked_id FROM likes));#> | student_id | name   | grade    |#> +-----------+---------+--------
+|\end{code}\end{r}\end{code}
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}how do i get the number of students who like themselves in the likes table?  (i know that it is one) but how can i write this as an
+|\end{code}\end{r}\end{code}
+|\end{code}\end{pre}\end{code}
+\end{code}\end{pre}\begin{code}SELECT student_id FROM ( SELECT DISTINCT student_id FROM highschooler) AS t1 WHERE EXISTS(SELECT 1 FROM likes WHERE liked_id=t1.student_id AND LIKE_ID IN
+|\end{code}```
+|\end{code}\end{pre}\end{code}
+\end{Answer:\begin{code}SELECT * FROM highschooler WHERE id IN ( SELECT student_id FROM friend GROUP BY student_id HAVING COUNT(*) >= 3) OR id IN ( SELECT liked_id FROM likes GROUP BY liked_id HAVING COUNT(*)
+|\end{code}\end{pre}\end{document}\end{code}
+\end{code}```
+|\end{code}\end{pre}\end{code}
+|\end{code}\end{document}\end{code}
+|\end{code}\end{pre}\end{code}
+|\end{code}Answer:\begin{pre}SELECT * FROM student WHERE id NOT IN ( SELECT DISTINCT(friend.student_id) AS `ids`  FROM friend JOIN highschooler ON friend.student_id=highschooler.id ) AND id NOT
+|\end{code}\end{pre}\end{code}
+ what is the name of student with most number of friends?|\end{code}
+|\end{code}\end{lstlisting}\end{document}\end{code}
+|\end{code}Comment: I'm not sure if this is correct but it seems to work for me.Answer: \begin{blockquote}what are the IDs of students that both have friends AND are liked?  (I know how to do one or the other)
+|\end{code}\end{pre}\end{code}
+\end{code}Answer:\begin{pre}SELECT * FROM ( SELECT student_id AS id, name  FROM highschooler ) HS WHERE EXISTS( SELECT * FROM ( SELECT student_id AS id, name  FROM highschooler ) F WHERE EXISTS( SELECT * FROM
+|\end{code}Comment: I'm not sure what you mean here?Answer: You can use `GROUP BY` to get all students who have more than one like (and then filter out those that don't):\begin{code}SELECT * FROM likes WHERE
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}how can i get all students who have more than 10 friends in their list of friends?\end{blockquote}You could use `GROUP BY`
+|\end{code}\end{r}\end{code}
+|#|#|\end{code}Comment: I'm not sure if this is an appropriate question for SO - it seems more like something you should ask on http://dba.stackexchange.com/ or maybe even at https://codereview.stackexchange.com/.  But since
+\end{code}```
+\end{code}```
+|\end{code}\end{pre}\end{code}
+\end{Answer:\begin{code}SELECT student_id FROM likes WHERE liked_id IN ( SELECT id FROM highschooler GROUP BY id HAVING COUNT(*) >1) AND student_id NOT IN( SELECT id FROM highschooler);\end{code}
+|\end{code}```
+\end{#> SELECT * FROM student WHERE id IN (SELECT DISTINCT(student_id) FROM like WHERE liked_id=10 AND LIKE_ID IS NOT NULL);#> SELECT * FROM student WHERE id IN (SELECT DISTINCT(student_id) FROM like WHERE liked_
+|\end{code}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}how do i get the number of friends that each student has in common with another student (i.e., if two students are both friends with john they will be counted
+\end{code}```
+|\end{code}\end{pre}\end{code}
+select avg from ( select student_id, sum(grade) as g from highschooler group by student_id having count(*) > 1 ) as t where exists (select * from like l join highschooler h on l.student_id=h.id where l.liked_id=t
+\end{code}Answer:\begin{blockquote}10th Grade\end{blockquote}
+|\end{code}\end{/code}\end{code}
+\endComment:Dog\end\begin{code}SELECT * FROM owners WHERE owner_id IN ( SELECT owner_id FROM dogs ) AND first_name LIKE 'M%' OR last_name LIKE '%og' ;\end{code}Answer
+\endComment:DoggComment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment
+select from dogs where\end{select from dogs d join owners o on dog.owner_id=o.owner_id;select * from dogs;select * from owners;select * from breeds;select * from charges;select
+\end{pretty\end{/\end{\end{\end{code}
+\end{pre}\end{/sql}\end{code}
+\end{code}\end{/code}\end{code}Comment: I'm not sure what you are asking for here?  You want to know how many times each professional has treated a dog with a specific size code?Answer: \begin{blockquote}I
+select from dogs where dogs have not cost over $100 for treatment?\end{blockquote}
+select * from dogs\end{Comment: I'm sorry but this is just too vague to be answered properly. What do you mean "spending over $100"? Do you want to know how much money each dog spends on average? How many times they have been treated in total
+\end-Comment: I'tComment:Comment:|Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |
+\end{pre}\end{/pre}\end{code}
+select from dogs\end{\begin{    select * from dogs where owner_id=1;}\end{code}
+ЉЋ Đ (I'm\end\begin{code}\end{code}
+\end{pretty\end{pretty\end{\end{pretty\end{code}
+\end{pre}Comment: I'm not sure what you mean here? Do you want to know how many times each dog is adopted or something else?Answer: \begin{blockquote}I have 2 tables in my database that are related through foreign keys. The first one contains information
+select treatment_professionals_have_done_two_treatments = select * from treatments where dog_id in (select owner_id from dogs) group by professional_id having count(dog_id)>1;\end{code}
+select * from dogs,\end{select * from dogs where owner_id in (select owner_id from owners)\end{code}
+?#
+...\end the most\begin{}\end{code}
+select owners.\end{\begin{    select owner_id from owners where first_name='John' order by owner_id;}\end{code}
+\end{code}The above code will return all rows from the `dogs` table where the sum of costs for each dog is greater than 100 dollars (the maximum cost allowed). The result set would look like this:| owner | first_name   | last_name    |
+\end{pretty\end{/\end{\end{\end{code}
+ the description of the description of the description of the lowest.|\end{pre}Comment: I't not clear what you are asking for here?  You have a list of all the tables in your DB with their primary keys (and foreign key constraints).  What do you want to know about them
+select from dogs where owner_id = 12\end{code}
+|\end{pre}\end{/pre}\end{code}
+##
+\end me?\end\begin{}\end{code}
+select * from dogs?\end{Comment: I'm not sure if this is an appropriate question for SO but it seems like you need to learn how to use JOINS in your queries.  You can find plenty of examples online or just google "SQL join".
+select treatment_operators\end{Comment: I'm not sure what you mean with "theor"...Answer: \begin{blockquote}I want to know how many times each professional has performed this type of operation on their patients (i.e., how often they
+\end\end that?Comment:Answer: You can use `GROUP BY` to get all distinct values for your column. Then you can do an aggregate function on those groups (either sum or count).
+###############################
+\end\end that's the corresponding treatment types are:\begin{itemize}\item vaccinations (v)\item deworming (dw)\item flea/tick prevention (fp)\item heart worm test (hw)\
+\endComment:Dog\end\begin{blockquote}\section{The following is an example of how to use this tool.}\end{blockquote}\begin{itemize}\item Open the file `sql-to-json.py`
+\end{code}Comment: I don't know what you are trying to do here but it looks like you have some syntax errors in your code.  You should post an example that actually compiles so we can help you with this problem.
+|\end{/}Comment:|Answer: You can use `GROUP BY` to group all rows that have the same value for one column (in this case, it is `owner_id`). Then you can select only those groups with the desired values in another column (`first_name`,
+#>\endless#>#>#>#>#>#>#>#>#>#>#>#>#>#>
+\end-\begin{
+  \end\begin{\section{\subsection{\subsubsection{\paragraph{}}}}}}}}}}}}}}}}}}
+?\end\begin{\section{  \subsection{Doggy Doggies}  \subsubsection{The Dogs}    \item[1]{Doggy Doggies}      \subitem[2]{Doggy Doggies
+select owners.first_names = select owners.first_name from owners where owners.owner_id=dogs.owner_id;|\end{code}
+|\end{/\end{\end{\end{\end{code}
+#\begin!
+\end{pre}\end{/pre}\end{pre}\end{code}
+\end{pretty\end{/pretty\end{pretty\end{pretty\end{code}
+|\end{/Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have 2 tables in my database that are related to each other through foreign keys. The first is called "Dog" which has an owner id field (which references another
+|\end{code}Comment: I'm not sure what you mean here? Do you want to know how many people are from each state? If so, just use `SELECT COUNT(*) FROM <TABLE> WHERE <CONDITIONS>` where `<CONDITIONS>` is something like `WHERE
+|select * from dogs where abandoned_yn=0;\end{code}
+\end{pretty\begin{pretty\end{\end{\end{code}
+\end{/sql\end{/\end{/}\end{code}
+\end\begin\end\end{code}
+?\end\beginning\end{code}Comment: I'm not sure what you mean with "I want to create a new column in my table". Do you have an existing table or do you need to create one from scratch? If it is already
+select from dogs!\end{\begin{code}\end{code}
+ЉЋ\end?### 10.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.
+|\end{pre}\end{/pre}\end{code}
+\end-\end\begin{/em\end{code}Comment: I'm not sure what you are trying to do here but it looks like you have some sort of nested loop going on?  You should be able to get rid of all those
+?\end me!\beginners\end{code}Comment: I think you should use `SELECT` instead of `WHERE`.Answer: You can do this with a single query using an IN clause to select all rows that match any of your criteria (ass
+.\end me?\begin\end{itemize}Comment: I'm not sure what you mean with "the first name" - do you want to get all names that start with `M`? Or just one? And how about an owner who has more than
+#
+\end\begin{
+  #
+\endI't\begin{
+  \endComment:DoggoneComment:Comment:Comment:|Comment:|Comment:|Comment:|Comment:|Comment:|Comment:|
+ЉЋЏ\n with this is a dog has not receive any treatment.|### 2019-03-27 16:58:40| Query | Result || ----- | ------ || select * from charges where charge_
+ЉЋ Đ\end{\begin{    \section{}}\subsection{Doggy Dashboard}\subsubsection{The Doggy Dashboard}\begin{itemize}[leftmargin=*]\itemsep-0.5em
+ with you?\end\begin\end{pre}\end{code}
+?select from here?\end\begin{code}\end{code}
+...\end me?Comment:Dog:Comment: I'm sorry but this is just too much work for me to do in one day.  I will try to get back with you tomorrow morning (EST).
+\end{pretty|\end{pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|pretty|
+\end{pre}\end{/sql}\end{code}
+\end{/sqlComment: I'sComment:|Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |Comment: |
+\end{/sql|Dogr|||||||||||||||||||||||||||
+\end{/sqlComment:Comment: I'm not sure if this is an appropriate question for SO or not but it seems like you are trying to do something that would be better suited in another forum (like StackOverflow).  If you have any questions about how to use the site please
+\end{/sqlComment: I'tell you the age of the dog in the first row?Answer: You can use `row_number()` to get the position for each record within its group (in this case, grouped on owner id). Then you just need to select from that result set
+?\endComment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:
+\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end\end
+ type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the most expensive type of the
+?\end{Comment: I'tComment:Comment: @JonSkeet: I think you should add this to your answer as well :)Answer: \begin{blockquote}I have a list of all the dog names in my system (in
+#>\end############
+...\endI've been working on my phone!Comment: I think you should use `if` instead of `while`.Answer: You can do this with a single if-statement (and no need for nested if-statements):\begin{code}
+\end me!\begin\section{    \subsection{The problem}    The problem is that we have a lot of data in our databases but no way to easily combine it together for analysis or reporting purposes. We need some kind of tool which can take information
+\endComment:DogComment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment:Comment
+\end\end\begin\end{code}Comment: I'm not sure what you are trying to do here but it looks like you want to use `SELECT` in place of `INSERT INTO`.  You can also remove the `VALUES (...)`
+\end{/sqlComment: I don't know how to do this in sql server 2014 but i can help you with mysql or oracle if needed..Answer: You need to use `JOIN` for that purpose.Try something like below :\begin{
+  |select count(*) from songs;\end{code}
+|select count(*) from singer;primary_keys = [song.song_id = singer.singer_id];\end{code}
+|\end{\endcodeComment: I'm not sure what you mean with "the name of singers". Do you want to get all their names? Or do you just need one random name from each group (i.e., the first name for every 10th person)?
+|||||||||||||||||||||||||||||||||
+|# 19. Write a function that takes in two tables as arguments (the first argument is the name of the table) and returns all foreign keys for each row in the second table. For example:# 10. Write a function that takes in three tables as arguments (the first argument is
+|# 19023456789101112131415161718192021222324252627282930313233343
+|\endselect * from singer where net_worth_millions > 10;\end{code}
+\end```### 2.1.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+select * from singer where (birth_year between '1948' and '1950')|\end{code}
+select * from singer where year(birth_year) in (1948,1949);|\end{code}
+|||||||||||||||||||||||||||||||||
+\end```### 2.1.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+|select count(distinct singer) as "number",    sum((case when citizen="US" then 1 else 0 end)) as "us",    sum((case when citizen="UK" then 1 else 0 end)) as "uk",    sum((case when citiz
+|select count(distinct) as citizen_count from (select distinct singer_id from singer where birth_country in ('US', 'UK') group by singer_id having count(*) > 10;) tt\end{code}
+|select count(distinct) as cnt from ( select distinct singer_id from singer ) s where exists ( select 1 from song where song.singer_id=s.singer_id );\end{code}
+| || || || || || || || || || || || || || || || || || || || || || |
+|select * from singer where birth_year > 1950;\end{code}
+|# 1. Create a new file called "main.py" in this directory with your code.# 2. In main.py import the module from the previous exercise (exercise03) that contains the function you wrote to solve Exercise 4.# 3. Call
+|\end{}```### 2.3.1.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1
+|select * from songs where title like 'I%';select * from singers;\end{code}
+|\end{code}\end{pre}The result is:\begin{blockquote}[127698, "Beyonce"]\end{blockquote}
+|||||||||||||||||||||||||||||||||
+|\end{code}\end{python}\end{code}
+\end|```python# -*- coding: utf-8 -*-"""Created on Tue Jun 25 14:07:39 2019@author: johnny"""from collections import defaultdict
+|\end{}```### 2.1.3.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.
+|select sum(sales) as "total" from ( select * from song where singer_id in (select singer_id from singer)) as t1 group by singer;\end{code}
+|# 1. Create a new table called "Singer" with these fields: |#   - SINGER_ID (int)#   - NAME (string)#   - BIRTH_YEAR (date)#   - NET_WORTH_MILLIONS
+|\end{\begin{tabular}{l}\textbf{Query:} \\select * from songs where (singer_id in select distinct(singer_id) from singer);\\\textbf{Result:} \\\begin{tabular}{|c|r|}\hline\
+|\end{code}\end{pre}\end{blockquote}
+|\end{code}\end{code}Answer: \begin{blockquote}what are the citizenships that are shared by singers with a birth year between 1940-1960?\end{blockquote}You can use `group by`
+|\end{pre}Comment: I'm not sure what you mean here...Answer: \begin{blockquote}I have 4 tables that contain data about real estate listings (apartments). The first two of these tables are called "other_available_features" and "
+|\end{pre}Comment: I'm not sure if this will work for you but try to use `SELECT * FROM table WHERE column IN (value)` instead of `WHERE column=value`
+\end{pre}\end{code}Comment: I'm not sure what you are trying to do here but it looks like you have some syntax errors in your code.  You should post the exact error message(s) as well so we can help troubleshoot this for you.
+|\end{pre}\end{document}\end{code}
