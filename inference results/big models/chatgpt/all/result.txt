@@ -1,0 +1,477 @@
+
+eval_err_num:1
+medium pred: SELECT AVG(age), MIN(age), MAX(age)FROM singerWHERE country = 'France';
+medium gold: SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'
+neval_err_num:2
+medium pred: SELECT song_name, song_release_yearFROM singerORDER BY ageLIMIT 1;
+medium gold: SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1
+neval_err_num:3
+medium pred: SQL Statement:SELECT country, COUNT(*) FROM singer GROUP BY country;
+medium gold: SELECT country ,  count(*) FROM singer GROUP BY country
+nmedium pred: SELECT MAX(capacity), AVG(capacity) FROM stadium;
+medium gold: select max(capacity), average from stadium
+nhard pred: SELECT name FROM stadium WHERE stadium_id NOT IN (SELECT stadium_id                          FROM concert                          WHERE year = 2014);
+hard gold: SELECT name FROM stadium EXCEPT SELECT T2.name FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T1.year  =  2014
+neval_err_num:4
+easy pred: SELECT COUNT(*)FROM petsWHERE weight > 10;
+easy gold: SELECT count(*) FROM pets WHERE weight  >  10
+nmedium pred: SELECT weight FROM pets WHERE pettype = 'dog' ORDER BY pet_age LIMIT 1;
+medium gold: SELECT weight FROM pets ORDER BY pet_age LIMIT 1
+nmedium pred: SELECT weight FROM pets WHERE pettype = 'dog' ORDER BY pet_age LIMIT 1;
+medium gold: SELECT weight FROM pets ORDER BY pet_age LIMIT 1
+neval_err_num:5
+medium pred: SELECT MAX(weight), pettypeFROM petsGROUP BY pettype;
+medium gold: SELECT max(weight) ,  petType FROM pets GROUP BY petType
+neval_err_num:6
+medium pred: SELECT     COUNT(*)FROM     student AS t1JOIN     has_pet AS t2 ON t1.stuid = t2.stuidWHERE     t1.age > 20;
+medium gold: SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid WHERE T1.age  >  20
+neval_err_num:7
+extra pred: SELECT t1.fnameFROM student AS t1JOIN has_pet AS t2 ON t1.stuid = t2.stuidJOIN pets AS t3 ON t3.petid = t2.petidWHERE t3.pettype = 'dog' AND t1.stuid NOT IN (    SELECT t1.stuid    FROM student AS t1    JOIN has_pet AS t2 ON t1.stuid = t2.stuid    JOIN pets AS t3 ON t3.petid = t2.petid    WHERE t3.pettype = 'cat');
+extra gold: SELECT T1.fname ,  T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'dog' AND T1.stuid NOT IN (SELECT T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat')
+neval_err_num:8
+extra pred: SELECT t1.modelFROM car_names AS t1JOIN cars_data AS t2 ON t1.makeid = t2.idWHERE t2.weight < (SELECT AVG(weight) FROM cars_data);
+extra gold: SELECT T1.model FROM CAR_NAMES AS T1 JOIN CARS_DATA AS T2 ON T1.MakeId  =  T2.Id WHERE T2.Weight  <  (SELECT avg(Weight) FROM CARS_DATA)
+neval_err_num:9
+extra pred: SELECT t2.horsepower, t1.makeFROM car_names AS t1JOIN cars_data AS t2 ON t1.makeid = t2.idWHERE t2.cylinders = 3ORDER BY t2.horsepower DESCLIMIT 1;
+extra gold: SELECT T2.horsepower ,  T1.Make FROM CAR_NAMES AS T1 JOIN CARS_DATA AS T2 ON T1.MakeId  =  T2.Id WHERE T2.cylinders  =  3 ORDER BY T2.horsepower DESC LIMIT 1;
+neval_err_num:10
+hard pred: SELECT t1.modelFROM car_names AS t1JOIN cars_data AS t2 ON t1.makeid = t2.idORDER BY t2.mpg DESCLIMIT 1;
+hard gold: select t1.model from car_names as t1 join cars_data as t2 on t1.makeid  =  t2.id order by t2.mpg desc limit 1;
+neval_err_num:11
+medium pred: SELECT AVG(cars_data.edispl)FROM car_namesJOIN cars_dataON car_names.makeid = cars_data.idWHERE car_names.model = 'volvo';
+medium gold: SELECT avg(T2.edispl) FROM CAR_NAMES AS T1 JOIN CARS_DATA AS T2 ON T1.MakeId  =  T2.Id WHERE T1.Model  =  'volvo';
+neval_err_num:12
+medium pred: SELECT MAX(accelerate), cylindersFROM cars_dataGROUP BY cylinders;
+medium gold: SELECT max(Accelerate) ,  Cylinders FROM CARS_DATA GROUP BY Cylinders;
+neval_err_num:13
+hard pred: SELECT modelFROM car_namesGROUP BY modelORDER BY COUNT(*) DESCLIMIT 1;
+hard gold: SELECT Model FROM CAR_NAMES GROUP BY Model ORDER BY count(*) DESC LIMIT 1;
+neval_err_num:14
+hard pred: SELECT modelFROM car_namesGROUP BY modelORDER BY COUNT(*) DESCLIMIT 1;
+hard gold: SELECT Model FROM CAR_NAMES GROUP BY Model ORDER BY count(*) DESC LIMIT 1;
+neval_err_num:15
+easy pred: SQL statement:SELECT count(*) FROM cars_data WHERE year = 1980;
+easy gold: SELECT count(*) FROM CARS_DATA WHERE YEAR  =  1980;
+neval_err_num:16
+medium pred: SELECT c.fullname, c.id FROM car_makers cJOIN model_list m ON c.id = m.makerGROUP BY c.idHAVING COUNT(*) > 3;
+medium gold: SELECT T1.FullName ,  T1.Id FROM CAR_MAKERS AS T1 JOIN MODEL_LIST AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.Id HAVING count(*)  >  3;
+neval_err_num:17
+easy pred: SELECT DISTINCT yearFROM cars_dataWHERE weight BETWEEN 3000 AND 4000;
+easy gold: select distinct year from cars_data where weight between 3000 and 4000;
+neasy pred: SELECT DISTINCT year FROM cars_data WHERE weight < 4000 OR weight > 3000;
+easy gold: select distinct year from cars_data where weight between 3000 and 4000;
+neval_err_num:18
+medium pred: SQL Statement:SELECT airline, abbreviation FROM airlines WHERE country = "usa";
+medium gold: SELECT Airline ,  Abbreviation FROM AIRLINES WHERE Country  =  "USA"
+neval_err_num:19
+easy pred: SQL: SELECT COUNT(*) FROM airlines WHERE country = "usa";
+easy gold: SELECT count(*) FROM AIRLINES WHERE Country  =  "USA"
+neval_err_num:20
+easy pred: SQL Statement:```SELECT COUNT(*) FROM airlines WHERE country = "usa";```
+easy gold: SELECT count(*) FROM AIRLINES WHERE Country  =  "USA"
+neval_err_num:21
+medium pred: SQL Statement:SELECT city, country FROM airports WHERE airportname = "alton";
+medium gold: SELECT City ,  Country FROM AIRPORTS WHERE AirportName  =  "Alton"
+neval_err_num:22
+medium pred: SELECT COUNT(*)FROM airlines AS t1JOIN flights AS t2 ON t2.airline = t1.uidWHERE t1.airline = "united airlines" AND t2.sourceairport = "ahd";
+medium gold: SELECT count(*) FROM AIRLINES AS T1 JOIN FLIGHTS AS T2 ON T2.Airline  =  T1.uid WHERE T1.Airline  =  "United Airlines" AND T2.SourceAirport  =  "AHD"
+neval_err_num:23
+hard pred: SELECT COUNT(*) FROM flights AS t1JOIN airports AS t2 ON t1.destairport = t2.airportcodeJOIN airlines AS t3 ON t3.uid = t1.airlineWHERE t2.city = "aberdeen" AND t3.airline = "united airlines";
+hard gold: SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode JOIN AIRLINES AS T3 ON T3.uid  =  T1.Airline WHERE T2.City  =  "Aberdeen" AND T3.Airline  =  "United Airlines"
+nextra pred: SELECT t1.airline FROM airlines AS t1 JOIN flights AS t2 ON t1.uid = t2.airline WHERE t2.sourceairport = 'cvo' AND t2.sourceairport NOT IN (    SELECT t2.sourceairport FROM airlines AS t1 JOIN flights AS t2 ON t1.uid = t2.airline     WHERE t2.sourceairport = 'apg');
+extra gold: SELECT T1.Airline FROM AIRLINES AS T1 JOIN FLIGHTS AS T2 ON T1.uid  =  T2.Airline WHERE T2.SourceAirport  =  "CVO" EXCEPT SELECT T1.Airline FROM AIRLINES AS T1 JOIN FLIGHTS AS T2 ON T1.uid  =  T2.Airline WHERE T2.SourceAirport  =  "APG"
+neval_err_num:24
+medium pred: <|sql|>SELECT t1.airline FROM airlines AS t1 JOIN flights AS t2 ON t1.uid = t2.airline GROUP BY t1.airline HAVING COUNT(*) > 10;
+medium gold: SELECT T1.Airline FROM AIRLINES AS T1 JOIN FLIGHTS AS T2 ON T1.uid  =  T2.Airline GROUP BY T1.Airline HAVING count(*)  >  10
+neval_err_num:25
+easy pred: <|sql|>SELECT flightno FROM flights WHERE destairport = "apg";
+easy gold: SELECT FlightNo FROM FLIGHTS WHERE DestAirport  =  "APG"
+neval_err_num:26
+hard pred: The SQL statement corresponding to the given query and database schema is:```sqlSELECT COUNT(*) FROM flights AS t1 JOIN airports AS t2 ON t1.destairport = t2.airportcode WHERE t2.city = "aberdeen" OR t2.city = "abilene";```
+hard gold: SELECT count(*) FROM Flights AS T1 JOIN Airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.city  =  "Aberdeen" OR T2.city  =  "Abilene"
+neval_err_num:27
+hard pred: SQL statement:SELECT COUNT(*) FROM flights AS t1 JOIN airports AS t2 ON t1.destairport = t2.airportcode WHERE t2.city = "aberdeen" OR t2.city = "abilene";
+hard gold: SELECT count(*) FROM Flights AS T1 JOIN Airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.city  =  "Aberdeen" OR T2.city  =  "Abilene"
+neval_err_num:28
+hard pred: The SQL statement for the given query is:```SELECT airportname FROM airports WHERE airportcode NOT IN (SELECT sourceairport FROM flights UNION SELECT destairport FROM flights);```
+hard gold: SELECT AirportName FROM Airports WHERE AirportCode NOT IN (SELECT SourceAirport FROM Flights UNION SELECT DestAirport FROM Flights)
+neval_err_num:29
+medium pred: SELECT COUNT(*), locationFROM shopGROUP BY location;
+medium gold: SELECT count(*) ,  LOCATION FROM shop GROUP BY LOCATION
+neval_err_num:30
+medium pred: SELECT name, location, districtFROM shopORDER BY number_products DESC;
+medium gold: SELECT name ,  LOCATION ,  district FROM shop ORDER BY number_products DESC
+neval_err_num:31
+extra pred: SELECT t1.name FROM employee AS t1 JOIN evaluation AS t2 ON t1.employee_id = t2.employee_idGROUP BY t2.employee_id ORDER BY COUNT(*) DESC LIMIT 1;
+extra gold: SELECT t1.name FROM employee AS t1 JOIN evaluation AS t2 ON t1.Employee_ID  =  t2.Employee_ID GROUP BY t2.Employee_ID ORDER BY count(*) DESC LIMIT 1
+neval_err_num:32
+medium pred: SELECT COUNT(*), t2.nameFROM hiring AS t1JOIN shop AS t2 ON t1.shop_id = t2.shop_idGROUP BY t2.name;
+medium gold: SELECT count(*) ,  t2.name FROM hiring AS t1 JOIN shop AS t2 ON t1.shop_id  =  t2.shop_id GROUP BY t2.name
+neval_err_num:33
+medium pred: SELECT document_id, document_name, document_descriptionFROM documents;
+medium gold: SELECT document_id ,  document_name ,  document_description FROM Documents
+neasy pred: SELECT COUNT(DISTINCT templates.template_id) FROM documents JOIN templates ON documents.template_id = templates.template_id;
+easy gold: SELECT count(DISTINCT template_id) FROM Documents
+nhard pred: SELECT template_id FROM templates WHERE template_id NOT IN (SELECT template_id FROM documents);
+hard gold: SELECT template_id FROM Templates EXCEPT SELECT template_id FROM Documents
+nhard pred: SELECT template_id FROM templates WHERE template_id NOT IN (SELECT template_id FROM documents);
+hard gold: SELECT template_id FROM Templates EXCEPT SELECT template_id FROM Documents
+neval_err_num:34
+medium pred: SELECT t1.template_type_codeFROM templates AS t1JOIN documents AS t2 ON t1.template_id = t2.template_idWHERE t2.document_name = 'data base';
+medium gold: SELECT T1.template_type_code FROM Templates AS T1 JOIN Documents AS T2 ON T1.template_id  =  T2.template_id WHERE T2.document_name  =  "Data base"
+neval_err_num:35
+extra pred: SELECT t1.template_type_codeFROM templates AS t1JOIN documents AS t2 ON t1.template_id = t2.template_idGROUP BY t1.template_type_codeORDER BY COUNT(*) DESCLIMIT 1;
+extra gold: SELECT T1.template_type_code FROM Templates AS T1 JOIN Documents AS T2 ON T1.template_id  =  T2.template_id GROUP BY T1.template_type_code ORDER BY count(*) DESC LIMIT 1
+neval_err_num:36
+medium pred: SELECT documents.document_id, COUNT(*) FROM paragraphs INNER JOIN documents ON paragraphs.document_id = documents.document_id GROUP BY documents.document_id ORDER BY documents.document_id;
+medium gold: SELECT document_id ,  count(*) FROM Paragraphs GROUP BY document_id ORDER BY document_id
+neval_err_num:37
+hard pred: SELECT document_idFROM paragraphsGROUP BY document_idORDER BY COUNT(*) ASCLIMIT 1;
+hard gold: SELECT document_id FROM Paragraphs GROUP BY document_id ORDER BY count(*) ASC LIMIT 1
+neval_err_num:38
+hard pred: SELECT document_idFROM paragraphsGROUP BY document_idORDER BY count(*) ASCLIMIT 1;
+hard gold: SELECT document_id FROM Paragraphs GROUP BY document_id ORDER BY count(*) ASC LIMIT 1
+nhard pred: SELECT documents.document_id FROM documents JOIN paragraphs ON paragraphs.document_id = documents.document_id WHERE paragraphs.paragraph_text = 'brazil' INTERSECT SELECT documents.document_id FROM documents JOIN paragraphs ON paragraphs.document_id = documents.document_id WHERE paragraphs.paragraph_text = 'ireland';
+hard gold: SELECT document_id FROM Paragraphs WHERE paragraph_text  =  'Brazil' INTERSECT SELECT document_id FROM Paragraphs WHERE paragraph_text  =  'Ireland'
+neval_err_num:39
+easy pred: SELECT name FROM teacher WHERE hometown <> 'little lever urban district';
+easy gold: select name from teacher where hometown != "little lever urban district"
+neval_err_num:40
+hard pred: SELECT t3.name, t2.courseFROM course_arrange AS t1 JOIN course AS t2 ON t1.course_id = t2.course_id JOIN teacher AS t3 ON t1.teacher_id = t3.teacher_id ORDER BY t3.name ASC;
+hard gold: SELECT T3.Name ,  T2.Course FROM course_arrange AS T1 JOIN course AS T2 ON T1.Course_ID  =  T2.Course_ID JOIN teacher AS T3 ON T1.Teacher_ID  =  T3.Teacher_ID ORDER BY T3.Name
+neval_err_num:41
+hard pred: SELECT t3.name, t2.courseFROM course_arrange AS t1JOIN course AS t2 ON t1.course_id = t2.course_idJOIN teacher AS t3 ON t1.teacher_id = t3.teacher_idORDER BY t3.name;
+hard gold: SELECT T3.Name ,  T2.Course FROM course_arrange AS T1 JOIN course AS T2 ON T1.Course_ID  =  T2.Course_ID JOIN teacher AS T3 ON T1.Teacher_ID  =  T3.Teacher_ID ORDER BY T3.Name
+neval_err_num:42
+medium pred: SELECT museum_id, nameFROM museumORDER BY num_of_staff DESCLIMIT 1;
+medium gold: SELECT museum_id ,  name FROM museum ORDER BY num_of_staff DESC LIMIT 1
+neval_err_num:43
+medium pred: SQL statement:```sqlSELECT COUNT(*) FROM museum WHERE open_year > 2013 OR open_year < 2008;```
+medium gold: SELECT count(*) FROM museum WHERE open_year  >  2013 OR open_year  <  2008
+neval_err_num:44
+medium pred: SELECT first_name, birth_dateFROM playersWHERE country_code = 'usa';
+medium gold: SELECT first_name ,  birth_date FROM players WHERE country_code  =  'USA'
+neval_err_num:45
+easy pred: The corresponding SQL statement for the given query is:```sqlSELECT COUNT(DISTINCT country_code) FROM players;```
+easy gold: SELECT count(DISTINCT country_code) FROM players
+neval_err_num:46
+easy pred: <|sql|>SELECT COUNT(DISTINCT loser_name) FROM matches;
+easy gold: SELECT count(DISTINCT loser_name) FROM matches
+neval_err_num:47
+hard pred: SELECT DISTINCT winner_nameFROM matchesWHERE year = 2013INTERSECTSELECT DISTINCT winner_nameFROM matchesWHERE year = 2016;
+hard gold: SELECT winner_name FROM matches WHERE YEAR  =  2013 INTERSECT SELECT winner_name FROM matches WHERE YEAR  =  2016
+neval_err_num:48
+easy pred: SELECT country_codeFROM playersGROUP BY country_codeHAVING COUNT(*) > 50;
+easy gold: SELECT country_code FROM players GROUP BY country_code HAVING count(*)  >  50
+neval_err_num:49
+medium pred: SELECT SUM(tours), ranking_dateFROM rankingsGROUP BY ranking_date;
+medium gold: SELECT sum(tours) ,  ranking_date FROM rankings GROUP BY ranking_date
+neval_err_num:50
+medium pred: SELECT DISTINCT winner_name, winner_rankFROM matchesORDER BY winner_ageLIMIT 3;
+medium gold: SELECT DISTINCT winner_name ,  winner_rank FROM matches ORDER BY winner_age LIMIT 3
+neval_err_num:51
+medium pred: SELECT DISTINCT winner_name, winner_rankFROM matchesORDER BY winner_ageLIMIT 3;
+medium gold: SELECT DISTINCT winner_name ,  winner_rank FROM matches ORDER BY winner_age LIMIT 3
+neval_err_num:52
+medium pred: SELECT COUNT(DISTINCT winner_name)FROM matchesWHERE tourney_name = 'wta championships' AND winner_hand = 'l';
+medium gold: SELECT count(DISTINCT winner_name) FROM matches WHERE tourney_name  =  'WTA Championships' AND winner_hand  =  'L'
+neval_err_num:53
+hard pred: SELECT t1.first_name, t1.country_code, t1.birth_dateFROM players AS t1JOIN matches AS t2 ON t1.player_id = t2.winner_idORDER BY t2.winner_rank_points DESCLIMIT 1;
+hard gold: SELECT T1.first_name ,  T1.country_code ,  T1.birth_date FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id ORDER BY T2.winner_rank_points DESC LIMIT 1
+neval_err_num:54
+hard pred: SELECT t1.first_name,  t1.country_code,  t1.birth_dateFROM players AS t1JOIN matches AS t2 ON t1.player_id = t2.winner_idORDER BY t2.winner_rank_points DESCLIMIT 1;
+hard gold: SELECT T1.first_name ,  T1.country_code ,  T1.birth_date FROM players AS T1 JOIN matches AS T2 ON T1.player_id  =  T2.winner_id ORDER BY T2.winner_rank_points DESC LIMIT 1
+neval_err_num:55
+medium pred: The corresponding SQL statement for the given query is:```sqlSELECT name, tonnage FROM ship ORDER BY name DESC;```
+medium gold: SELECT name ,  tonnage FROM ship ORDER BY name DESC
+neval_err_num:56
+easy pred: <|sql|>SELECT AVG(injured) FROM death;
+easy gold: SELECT avg(injured) FROM death
+neval_err_num:57
+extra pred: SELECT t2.id, t2.name FROM death AS t1JOIN ship AS t2 ON t1.caused_by_ship_id = t2.idGROUP BY t2.idORDER BY COUNT(*) DESCLIMIT 1;
+extra gold: SELECT T2.id ,  T2.name FROM death AS T1 JOIN ship AS t2 ON T1.caused_by_ship_id  =  T2.id GROUP BY T2.id ORDER BY count(*) DESC LIMIT 1
+neval_err_num:58
+extra pred: SELECT t2.department_name, t1.department_idFROM degree_programs AS t1JOIN departments AS t2 ON t1.department_id = t2.department_idGROUP BY t1.department_idORDER BY COUNT(*) DESCLIMIT 1;
+extra gold: select t2.department_name ,  t1.department_id from degree_programs as t1 join departments as t2 on t1.department_id  =  t2.department_id group by t1.department_id order by count(*) desc limit 1
+neval_err_num:59
+medium pred: SELECT section_name, section_descriptionFROM sections;
+medium gold: SELECT section_name ,  section_description FROM Sections
+neval_err_num:60
+medium pred: SELECT section_name, section_descriptionFROM sections;
+medium gold: SELECT section_name ,  section_description FROM Sections
+neval_err_num:61
+hard pred: SELECT DISTINCT t1.first_name, t1.middle_name, t1.last_nameFROM students AS t1JOIN student_enrolment AS t2 ON t1.student_id = t2.student_idJOIN degree_programs AS t3 ON t2.degree_program_id = t3.degree_program_idWHERE t3.degree_summary_name = 'bachelor';
+hard gold: SELECT DISTINCT T1.first_name ,  T1.middle_name ,  T1.last_name FROM Students AS T1 JOIN Student_Enrolment AS T2 ON T1.student_id  =  T2.student_id JOIN Degree_Programs AS T3 ON T2.degree_program_id  =  T3.degree_program_id WHERE T3.degree_summary_name  =  'Bachelor'
+neval_err_num:62
+medium pred: SELECT first_name, middle_name, last_nameFROM studentsORDER BY date_left ASCLIMIT 1;
+medium gold: SELECT first_name ,  middle_name ,  last_name FROM Students ORDER BY date_left ASC LIMIT 1
+neval_err_num:63
+easy pred: SELECT first_name FROM students WHERE current_address_id <> permanent_address_id;
+easy gold: SELECT first_name FROM Students WHERE current_address_id != permanent_address_id
+neval_err_num:64
+medium pred: SELECT transcript_date, other_detailsFROM transcriptsORDER BY transcript_date ASCLIMIT 1;
+medium gold: SELECT transcript_date ,  other_details FROM Transcripts ORDER BY transcript_date ASC LIMIT 1
+neval_err_num:65
+easy pred: <|sql|>SELECT content FROM tv_channel WHERE series_name = 'sky radio';
+easy gold: SELECT Content FROM TV_Channel WHERE series_name = "Sky Radio";
+neval_err_num:66
+medium pred: SELECT cartoon.titleFROM tv_channel AS t1JOIN cartoon AS t2 ON t1.id = t2.channelWHERE t1.series_name = "sky radio";
+medium gold: SELECT T2.Title FROM TV_Channel AS T1 JOIN Cartoon AS T2 ON T1.id = T2.Channel WHERE T1.series_name = "Sky Radio";
+neval_err_num:67
+medium pred: SELECT episode, ratingFROM tv_seriesORDER BY rating DESCLIMIT 3;
+medium gold: SELECT Episode ,  Rating FROM TV_series ORDER BY Rating DESC LIMIT 3;
+neval_err_num:68
+medium pred: SELECT t1.series_nameFROM tv_channel AS t1JOIN tv_series AS t2 ON t1.id = t2.channelWHERE t2.episode = "a love of a lifetime";
+medium gold: SELECT T1.series_name FROM TV_Channel AS T1 JOIN TV_series AS T2 ON T1.id = T2.Channel WHERE T2.Episode = "A Love of a Lifetime";
+neval_err_num:69
+medium pred: SELECT COUNT(*), directed_byFROM cartoonGROUP BY directed_by;
+medium gold: SELECT count(*) ,  Directed_by FROM cartoon GROUP BY Directed_by
+neval_err_num:70
+medium pred: SELECT production_code, channelFROM cartoonORDER BY original_air_date DESCLIMIT 1;
+medium gold: select production_code ,  channel from cartoon order by original_air_date desc limit 1
+neval_err_num:71
+medium pred: SELECT production_code, channelFROM cartoonORDER BY original_air_date DESCLIMIT 1;
+medium gold: select production_code ,  channel from cartoon order by original_air_date desc limit 1
+neval_err_num:72
+medium pred: SELECT package_option, series_nameFROM tv_channelWHERE high_definition_tv = 'yes';
+medium gold: SELECT package_option ,  series_name FROM TV_Channel WHERE hight_definition_TV  =  "yes"
+neval_err_num:73
+medium pred: SQL: SELECT package_option, series_name FROM tv_channel WHERE hight_definition_tv = "yes";
+medium gold: SELECT package_option ,  series_name FROM TV_Channel WHERE hight_definition_TV  =  "yes"
+neval_err_num:74
+extra pred: SQL statement:SELECT t1.series_name, t1.country FROM tv_channel AS t1 JOIN cartoon AS t2 ON t1.id = t2.channel WHERE t2.directed_by = 'michael chang' INTERSECT SELECT t1.series_name, t1.country FROM tv_channel AS t1 JOIN cartoon AS t2 ON t1.id = t2.channel WHERE t2.directed_by = 'ben jones';
+extra gold: SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Michael Chang' INTERSECT SELECT T1.series_name ,  T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.directed_by  =  'Ben Jones'
+neval_err_num:75
+medium pred: SELECT pixel_aspect_ratio_par, country FROM tv_channel WHERE language <> 'english';
+medium gold: SELECT Pixel_aspect_ratio_PAR ,  country FROM tv_channel WHERE LANGUAGE != 'English'
+neval_err_num:76
+medium pred: SELECT pixel_aspect_ratio_par, countryFROM tv_channelWHERE language != 'english';
+medium gold: SELECT Pixel_aspect_ratio_PAR ,  country FROM tv_channel WHERE LANGUAGE != 'English'
+neval_err_num:77
+hard pred: SQL Statement: ```sqlSELECT id FROM tv_channel EXCEPTSELECT channel FROM cartoon WHERE directed_by = 'ben jones';```
+hard gold: SELECT id FROM TV_Channel EXCEPT SELECT channel FROM cartoon WHERE directed_by  =  'Ben Jones'
+neval_err_num:78
+hard pred: SELECT package_optionFROM tv_channelWHERE id NOT IN (  SELECT channel  FROM cartoon  WHERE directed_by = 'ben jones');
+hard gold: SELECT package_option FROM TV_Channel WHERE id NOT IN (SELECT channel FROM cartoon WHERE directed_by  =  'Ben Jones')
+neval_err_num:79
+easy pred: SQL Statement:SELECT earningsFROM poker_playerORDER BY earnings DESC;
+easy gold: SELECT Earnings FROM poker_player ORDER BY Earnings DESC
+neval_err_num:80
+easy pred: SELECT max(final_table_made)FROM poker_playerWHERE earnings < 200000;
+easy gold: SELECT max(Final_Table_Made) FROM poker_player WHERE Earnings  <  200000
+neval_err_num:81
+easy pred: SELECT max(final_table_made)FROM poker_playerWHERE earnings < 200000;
+easy gold: SELECT max(Final_Table_Made) FROM poker_player WHERE Earnings  <  200000
+neval_err_num:82
+medium pred: The corresponding SQL statement for the given query is:```sqlSELECT nationality, COUNT(*) FROM people GROUP BY nationality;```
+medium gold: SELECT Nationality ,  COUNT(*) FROM people GROUP BY Nationality
+neval_err_num:83
+easy pred: <|sql|>SELECT name FROM people WHERE nationality != 'Russia';
+easy gold: SELECT Name FROM people WHERE Nationality != "Russia"
+neval_err_num:84
+hard pred: <|sql|>SELECT name FROM people WHERE people_id NOT IN (SELECT people_id FROM poker_player);
+hard gold: SELECT Name FROM people WHERE People_ID NOT IN (SELECT People_ID FROM poker_player)
+neval_err_num:85
+hard pred: <|sql|>SELECT name FROM people LEFT JOIN poker_player ON people.people_id = poker_player.people_id WHERE poker_player.people_id IS NULL;
+hard gold: SELECT Name FROM people WHERE People_ID NOT IN (SELECT People_ID FROM poker_player)
+neval_err_num:86
+easy pred: SQL statement: SELECT name FROM country WHERE indepyear > 1950;
+easy gold: SELECT Name FROM country WHERE IndepYear  >  1950
+neval_err_num:87
+easy pred: <|sql|>SELECT COUNT(*) FROM country WHERE governmentform = 'Republic';
+easy gold: SELECT count(*) FROM country WHERE GovernmentForm  =  "Republic"
+neval_err_num:88
+easy pred: SELECT continentFROM countryWHERE name = "anguilla";
+easy gold: SELECT Continent FROM country WHERE Name  =  "Anguilla"
+neval_err_num:89
+easy pred: SQL statement:SELECT AVG(lifeexpectancy) FROM country WHERE region = "central africa";
+easy gold: SELECT avg(LifeExpectancy) FROM country WHERE Region  =  "Central Africa"
+neasy pred: SELECT COUNT(*) FROM   (SELECT t1.name   FROM country AS t1   JOIN countrylanguage AS t2 ON t1.code = t2.countrycode   WHERE t2.language = "english"   INTERSECT   SELECT t1.name   FROM country AS t1   JOIN countrylanguage AS t2 ON t1.code = t2.countrycode   WHERE t2.language = "dutch");
+easy gold: SELECT COUNT(*) FROM (SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "English" INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "Dutch")
+neasy pred: SELECT COUNT(*) FROM   (SELECT t1.name    FROM country AS t1    JOIN countrylanguage AS t2 ON t1.code = t2.countrycode    WHERE t2.language = "english"    INTERSECT    SELECT t1.name    FROM country AS t1    JOIN countrylanguage AS t2 ON t1.code = t2.countrycode    WHERE t2.language = "dutch");
+easy gold: SELECT COUNT(*) FROM (SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "English" INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "Dutch")
+neval_err_num:90
+extra pred: SELECT *FROM country AS t1JOIN countrylanguage AS t2 ON t1.code = t2.countrycodeWHERE t2.language = "english" AND isofficial = "t"UNIONSELECT *FROM country AS t1JOIN countrylanguage AS t2 ON t1.code = t2.countrycodeWHERE t2.language = "dutch" AND isofficial = "t";
+extra gold: SELECT * FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "English" AND IsOfficial  =  "T" UNION SELECT * FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  "Dutch" AND IsOfficial  =  "T"
+neval_err_num:91
+extra pred: SELECT t2.languageFROM country AS t1JOIN countrylanguage AS t2 ON t1.code = t2.countrycodeWHERE t1.continent = "asia"GROUP BY t2.languageORDER BY count(*) DESCLIMIT 1;
+extra gold: SELECT T2.Language FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.Continent  =  "Asia" GROUP BY T2.Language ORDER BY COUNT (*) DESC LIMIT 1
+neval_err_num:92
+medium pred: SQL Statement:SELECT t2.language FROM country AS t1 JOIN countrylanguage AS t2 ON t1.code = t2.countrycode WHERE t1.headofstate = "beatrix" AND t2.isofficial = "t";
+medium gold: SELECT T2.Language FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.HeadOfState  =  "Beatrix" AND T2.IsOfficial  =  "T"
+neval_err_num:93
+medium pred: SELECT COUNT(DISTINCT t2.language)FROM country AS t1JOIN countrylanguage AS t2 ON t1.code = t2.countrycodeWHERE t1.indepyear < 1930 AND t2.isofficial = "t";
+medium gold: SELECT count(DISTINCT T2.Language) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE  IndepYear  <  1930 AND T2.IsOfficial  =  "T"
+nhard pred: SELECT name FROM country WHERE surfacearea > (SELECT MAX(surfacearea) FROM country WHERE continent = "Europe");
+hard gold: SELECT Name FROM country WHERE SurfaceArea  >  (SELECT min(SurfaceArea) FROM country WHERE Continent  =  "Europe")
+nhard pred: SELECT countrycode FROM countrylanguage WHERE countrycode NOT IN (    SELECT countrycode FROM countrylanguage     WHERE language = "english");
+hard gold: SELECT CountryCode FROM countrylanguage EXCEPT SELECT CountryCode FROM countrylanguage WHERE LANGUAGE  =  "English"
+neasy pred: SELECT DISTINCT country.code FROM countrylanguage WHERE language != "english";
+easy gold: SELECT DISTINCT CountryCode FROM countrylanguage WHERE LANGUAGE != "English"
+neval_err_num:94
+medium pred: SELECT COUNT(t2.language), t1.nameFROM country AS t1JOIN countrylanguage AS t2 ON t1.code = t2.countrycodeGROUP BY t1.nameHAVING COUNT(*) > 2;
+medium gold: SELECT COUNT(T2.Language) ,  T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode GROUP BY T1.Name HAVING COUNT(*)  >  2
+neval_err_num:95
+medium pred: SELECT SUM(population), governmentformFROM countryGROUP BY governmentformHAVING AVG(lifeexpectancy) > 72;
+medium gold: SELECT sum(Population) ,  GovernmentForm FROM country GROUP BY GovernmentForm HAVING avg(LifeExpectancy)  >  72
+neval_err_num:96
+medium pred: SELECT SUM(population), AVG(lifeexpectancy), continentFROM countryGROUP BY continentHAVING AVG(lifeexpectancy) < 72;
+medium gold: SELECT sum(Population) ,  avg(LifeExpectancy) ,  Continent FROM country GROUP BY Continent HAVING avg(LifeExpectancy)  <  72
+neval_err_num:97
+medium pred: SELECT name, surfaceareaFROM countryORDER BY surfacearea DESCLIMIT 5;
+medium gold: SELECT Name ,  SurfaceArea FROM country ORDER BY SurfaceArea DESC LIMIT 5
+neval_err_num:98
+easy pred: <|sql|>select count(*) from country where continent = "asia";
+easy gold: SELECT count(*) FROM country WHERE continent  =  "Asia"
+neval_err_num:99
+easy pred: SQL Statement:SELECT COUNT(*) FROM country WHERE continent = "asia";
+easy gold: SELECT count(*) FROM country WHERE continent  =  "Asia"
+neval_err_num:100
+extra pred: SELECT count(*)FROM countrylanguageWHERE language = 'spanish'  AND percentage = (    SELECT max(percentage)    FROM countrylanguage    WHERE language = 'spanish'  );
+extra gold: SELECT count(*) ,   max(Percentage) FROM countrylanguage WHERE LANGUAGE  =  "Spanish" GROUP BY CountryCode
+neval_err_num:101
+easy pred: SELECT nameFROM conductorORDER BY year_of_work DESC;
+easy gold: SELECT Name FROM conductor ORDER BY Year_of_Work DESC
+neval_err_num:102
+medium pred: SQL Statement: SELECT t1.name FROM conductor AS t1 JOIN orchestra AS t2 ON t1.conductor_id = t2.conductor_id WHERE t2.year_of_founded > 2008;
+medium gold: SELECT T1.Name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.Conductor_ID  =  T2.Conductor_ID WHERE Year_of_Founded  >  2008
+neval_err_num:103
+hard pred: SELECT record_companyFROM orchestraGROUP BY record_companyORDER BY COUNT(*) DESCLIMIT 1;
+hard gold: SELECT Record_Company FROM orchestra GROUP BY Record_Company ORDER BY COUNT(*) DESC LIMIT 1
+neval_err_num:104
+hard pred: SELECT orchestraFROM orchestraWHERE orchestra_id NOT IN (SELECT orchestra_id FROM performance);
+hard gold: SELECT Orchestra FROM orchestra WHERE Orchestra_ID NOT IN (SELECT Orchestra_ID FROM performance)
+neval_err_num:105
+medium pred: SELECT name, gradeFROM highschooler;
+medium gold: SELECT name ,  grade FROM Highschooler
+neval_err_num:106
+easy pred: SELECT gradeFROM highschoolerWHERE name = "kyle";
+easy gold: SELECT grade FROM Highschooler WHERE name  =  "Kyle"
+neval_err_num:107
+easy pred: The corresponding SQL statement for the given query is:```sqlSELECT name FROM highschooler WHERE grade = 10;```
+easy gold: SELECT name FROM Highschooler WHERE grade  =  10
+neval_err_num:108
+medium pred: SQL statement:SELECT t2.name FROM friend as t1 JOIN highschooler as t2 ON t1.student_id = t2.id GROUP BY t1.student_id HAVING count(*) >= 3;
+medium gold: SELECT T2.name FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id GROUP BY T1.student_id HAVING count(*)  >=  3
+neval_err_num:109
+hard pred: SELECT t3.name FROM friend t1 JOIN highschooler t2 ON t1.student_id  =  t2.id JOIN highschooler t3 ON t1.friend_id  =  t3.id WHERE t2.name  =  "kyle";
+hard gold: SELECT T3.name FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id JOIN Highschooler AS T3 ON T1.friend_id  =  T3.id WHERE T2.name  =  "Kyle"
+neval_err_num:110
+medium pred: SELECT COUNT(*) FROM friend AS t1JOIN highschooler AS t2 ON t1.student_id = t2.idWHERE t2.name = "kyle";
+medium gold: SELECT count(*) FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  "Kyle"
+nhard pred: SELECT highschooler.id FROM highschooler WHERE highschooler.id NOT IN (SELECT friend.student_id FROM friend);
+hard gold: SELECT id FROM Highschooler EXCEPT SELECT student_id FROM Friend
+neval_err_num:111
+hard pred: SELECT name FROM highschoolerWHERE id NOT IN (SELECT student_id FROM friend);
+hard gold: SELECT name FROM Highschooler EXCEPT SELECT T2.name FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id
+neval_err_num:112
+hard pred: SELECT student_idFROM friendINTERSECTSELECT liked_idFROM likes;
+hard gold: SELECT student_id FROM Friend INTERSECT SELECT liked_id FROM Likes
+neval_err_num:113
+medium pred: SELECT t2.name FROM likes AS t1JOIN highschooler AS t2 ON t1.student_id = t2.idGROUP BY t1.student_idHAVING COUNT(*) >= 2;
+medium gold: SELECT T2.name FROM Likes AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id GROUP BY T1.student_id HAVING count(*)  >=  2
+neval_err_num:114
+hard pred: The SQL statement for the given query is:```sqlSELECT AVG(grade) FROM highschooler WHERE id IN (    SELECT t1.student_id     FROM friend AS t1     JOIN highschooler AS t2 ON t1.student_id = t2.id);```
+hard gold: SELECT avg(grade) FROM Highschooler WHERE id IN (SELECT T1.student_id FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id)
+neval_err_num:115
+extra pred: SELECT professional_id, last_name, cell_numberFROM professionalsWHERE state = 'indiana'UNIONSELECT t1.professional_id, t1.last_name, t1.cell_numberFROM professionals AS t1JOIN treatments AS t2 ON t1.professional_id = t2.professional_idGROUP BY t1.professional_idHAVING COUNT(*) > 2;
+extra gold: SELECT professional_id ,  last_name ,  cell_number FROM Professionals WHERE state  =  'Indiana' UNION SELECT T1.professional_id ,  T1.last_name ,  T1.cell_number FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >  2
+neval_err_num:116
+extra pred: SELECT professional_id, last_name, cell_numberFROM professionalsWHERE state = 'indiana'UNIONSELECT t1.professional_id, t1.last_name, t1.cell_numberFROM professionals AS t1JOIN treatments AS t2 ON t1.professional_id = t2.professional_idGROUP BY t1.professional_idHAVING COUNT(*) > 2;
+extra gold: SELECT professional_id ,  last_name ,  cell_number FROM Professionals WHERE state  =  'Indiana' UNION SELECT T1.professional_id ,  T1.last_name ,  T1.cell_number FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id GROUP BY T1.professional_id HAVING count(*)  >  2
+neval_err_num:117
+extra pred: SELECT t1.treatment_type_descriptionFROM treatment_types AS t1JOIN treatments AS t2 ON t1.treatment_type_code = t2.treatment_type_codeGROUP BY t1.treatment_type_codeORDER BY sum(cost_of_treatment) ASCLIMIT 1;
+extra gold: SELECT T1.treatment_type_description FROM Treatment_types AS T1 JOIN Treatments AS T2 ON T1.treatment_type_code  =  T2.treatment_type_code GROUP BY T1.treatment_type_code ORDER BY sum(cost_of_treatment) ASC LIMIT 1
+neval_err_num:118
+extra pred: SELECT t1.owner_id, t1.zip_codeFROM owners AS t1JOIN dogs AS t2 ON t1.owner_id = t2.owner_idJOIN treatments AS t3 ON t2.dog_id = t3.dog_idGROUP BY t1.owner_idORDER BY SUM(t3.cost_of_treatment) DESCLIMIT 1;
+extra gold: SELECT T1.owner_id ,  T1.zip_code FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id JOIN Treatments AS T3 ON T2.dog_id  =  T3.dog_id GROUP BY T1.owner_id ORDER BY sum(T3.cost_of_treatment) DESC LIMIT 1
+neval_err_num:119
+medium pred: SELECT t1.date_of_treatment, t2.first_nameFROM treatments as t1JOIN professionals as t2 ON t1.professional_id = t2.professional_id;
+medium gold: SELECT T1.date_of_treatment ,  T2.first_name FROM Treatments AS T1 JOIN Professionals AS T2 ON T1.professional_id  =  T2.professional_id
+neval_err_num:120
+medium pred: SELECT t1.first_name, t2.nameFROM owners AS t1JOIN dogs AS t2 ON t1.owner_id = t2.owner_id;
+medium gold: SELECT T1.first_name ,  T2.name FROM Owners AS T1 JOIN Dogs AS T2 ON T1.owner_id  =  T2.owner_id
+neval_err_num:121
+medium pred: SELECT role_code, street, city, stateFROM professionalsWHERE city LIKE '%west%';
+medium gold: SELECT role_code ,  street ,  city ,  state FROM professionals WHERE city LIKE '%West%'
+neval_err_num:122
+medium pred: SQL statement: SELECT role_code, street, city, state FROM professionals WHERE city LIKE '%west%';
+medium gold: SELECT role_code ,  street ,  city ,  state FROM professionals WHERE city LIKE '%West%'
+neval_err_num:123
+medium pred: SELECT first_name, last_name, email_addressFROM ownersWHERE state LIKE '%north%';
+medium gold: SELECT first_name ,  last_name ,  email_address FROM Owners WHERE state LIKE '%North%'
+neval_err_num:124
+medium pred: SELECT first_name, last_name, email_addressFROM ownersWHERE state LIKE '%north%';
+medium gold: SELECT first_name ,  last_name ,  email_address FROM Owners WHERE state LIKE '%North%'
+neval_err_num:125
+medium pred: SELECT name, age, weightFROM dogsWHERE abandoned_yn = 1;
+medium gold: SELECT name ,  age ,  weight FROM Dogs WHERE abandoned_yn  =  1
+neval_err_num:126
+medium pred: SELECT name, age, weightFROM dogsWHERE abandoned_yn = 1;
+medium gold: SELECT name ,  age ,  weight FROM Dogs WHERE abandoned_yn  =  1
+neval_err_num:127
+medium pred: SELECT DISTINCT t1.first_name, t3.treatment_type_description FROM professionals AS t1JOIN treatments AS t2 ON t1.professional_id = t2.professional_idJOIN treatment_types AS t3 ON t2.treatment_type_code = t3.treatment_type_code;
+medium gold: SELECT DISTINCT T1.first_name ,  T3.treatment_type_description FROM professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id JOIN Treatment_types AS T3 ON T2.treatment_type_code  =  T3.treatment_type_code
+neval_err_num:128
+medium pred: SELECT DISTINCT t1.first_name, t3.treatment_type_descriptionFROM professionals AS t1JOIN treatments AS t2 ON t1.professional_id = t2.professional_idJOIN treatment_types AS t3 ON t2.treatment_type_code = t3.treatment_type_code;
+medium gold: SELECT DISTINCT T1.first_name ,  T3.treatment_type_description FROM professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id JOIN Treatment_types AS T3 ON T2.treatment_type_code  =  T3.treatment_type_code
+neval_err_num:129
+easy pred: <|sql|>SELECT name FROM singer WHERE citizenship != "france";
+easy gold: SELECT Name FROM singer WHERE Citizenship != "France"
+neval_err_num:130
+medium pred: SELECT citizenship, COUNT(*)FROM singerGROUP BY citizenship;
+medium gold: SELECT Citizenship ,  COUNT(*) FROM singer GROUP BY Citizenship
+neval_err_num:131
+hard pred: SELECT citizenshipFROM singerGROUP BY citizenshipORDER BY COUNT(*) DESCLIMIT 1;
+hard gold: SELECT Citizenship FROM singer GROUP BY Citizenship ORDER BY COUNT(*) DESC LIMIT 1
+neval_err_num:132
+hard pred: SELECT citizenshipFROM singerGROUP BY citizenshipORDER BY COUNT(*) DESCLIMIT 1;
+hard gold: select citizenship from singer group by citizenship order by count(*) desc limit 1
+neval_err_num:133
+medium pred: The corresponding SQL statement for the given query and schema is:```sqlSELECT t2.title, t1.name FROM singer AS t1 JOIN song AS t2 ON t1.singer_id = t2.singer_id;```
+medium gold: SELECT T2.Title ,  T1.Name FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID
+neval_err_num:134
+medium pred: SELECT t1.name, SUM(t2.sales)FROM singer AS t1JOIN song AS t2 ON t1.singer_id = t2.singer_idGROUP BY t1.name;
+medium gold: SELECT T1.Name ,  sum(T2.Sales) FROM singer AS T1 JOIN song AS T2 ON T1.Singer_ID  =  T2.Singer_ID GROUP BY T1.Name
+nhard pred: SELECT property_name FROM properties WHERE property_type_code = "house" OR property_type_code = "apartment" AND room_count > 1;
+hard gold: SELECT property_name FROM Properties WHERE property_type_code  =  "House" UNION SELECT property_name FROM Properties WHERE property_type_code  =  "Apartment" AND room_count  >  1
+nn                    easy                 medium               hard                 extra                all                 
+count                248                  446                  174                  166                  1034                
+=====================   EXECUTION ACCURACY     =====================
+execution            0.681                0.666                0.661                0.729                0.679               
+====================== EXACT MATCHING ACCURACY =====================
+exact match          0.871                0.848                0.799                0.904                0.854               
+
+---------------------PARTIAL MATCHING ACCURACY----------------------
+select               0.995                0.997                1.000                1.000                0.998               
+select(no AGG)       0.995                0.997                1.000                1.000                0.998               
+where                0.989                0.987                0.920                0.988                0.974               
+where(no OP)         0.989                0.987                0.931                0.988                0.976               
+group(no Having)     1.000                1.000                1.000                1.000                1.000               
+group                1.000                1.000                1.000                1.000                1.000               
+order                1.000                1.000                1.000                1.000                1.000               
+and/or               1.000                0.989                0.983                0.988                0.990               
+IUEN                 0.000                0.000                0.969                1.000                0.984               
+keywords             0.992                0.994                0.959                0.993                0.987               
+---------------------- PARTIAL MATCHING RECALL ----------------------
+select               0.887                0.852                0.845                0.910                0.868               
+select(no AGG)       0.887                0.852                0.845                0.910                0.868               
+where                0.796                0.857                0.851                0.894                0.849               
+where(no OP)         0.796                0.857                0.862                0.894                0.851               
+group(no Having)     0.950                0.865                0.821                0.899                0.875               
+group                0.950                0.865                0.821                0.899                0.875               
+order                0.909                0.827                0.782                0.899                0.848               
+and/or               0.996                1.000                0.994                0.994                0.997               
+IUEN                 0.000                0.000                0.738                0.853                0.789               
+keywords             0.833                0.847                0.810                0.904                0.848               
+---------------------- PARTIAL MATCHING F1 --------------------------
+select               0.938                0.919                0.916                0.953                0.929               
+select(no AGG)       0.938                0.919                0.916                0.953                0.929               
+where                0.882                0.918                0.884                0.939                0.907               
+where(no OP)         0.882                0.918                0.895                0.939                0.909               
+group(no Having)     0.974                0.927                0.901                0.947                0.933               
+group                0.974                0.927                0.901                0.947                0.933               
+order                0.952                0.905                0.878                0.947                0.918               
+and/or               0.998                0.994                0.988                0.991                0.994               
+IUEN                 1.000                1.000                0.838                0.921                0.876               
+keywords             0.906                0.914                0.879                0.946                0.912               
