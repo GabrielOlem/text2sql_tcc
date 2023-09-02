@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-30T00:33:00.299Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="DA68rxUrnw1O-EHIj3h2" version="21.6.9" type="device">
+<mxfile host="app.diagrams.net" modified="2023-09-02T21:32:56.841Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="jVgFe2hKv3ZQZRYebBO1" version="21.7.2" type="device">
   <diagram name="Página-1" id="j3Tz3SWzkhN-e3PXR41i">
-    <mxGraphModel dx="1660" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="472" dy="1917" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="gv-i2YEqdemQeXcwKcJR-4" value="Spider Validação&lt;br&gt;1034 consultas" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#97D077;" parent="1" vertex="1">
-          <mxGeometry x="190" y="40" width="110" height="80" as="geometry" />
+          <mxGeometry x="190" y="-40" width="110" height="80" as="geometry" />
         </mxCell>
         <mxCell id="gv-i2YEqdemQeXcwKcJR-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Ea4S65HdMTTHUP1lMuB2-2" target="gv-i2YEqdemQeXcwKcJR-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -64,23 +64,29 @@
         <mxCell id="gv-i2YEqdemQeXcwKcJR-20" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png;" parent="gv-i2YEqdemQeXcwKcJR-24" vertex="1">
           <mxGeometry x="42.5" y="7.5" width="35" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="Ea4S65HdMTTHUP1lMuB2-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gv-i2YEqdemQeXcwKcJR-25" target="gv-i2YEqdemQeXcwKcJR-10">
+        <mxCell id="Ea4S65HdMTTHUP1lMuB2-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="gv-i2YEqdemQeXcwKcJR-25" target="gv-i2YEqdemQeXcwKcJR-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gv-i2YEqdemQeXcwKcJR-25" value="Desenvolvimento do &lt;i&gt;Prompt&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF66;" parent="1" vertex="1">
-          <mxGeometry x="480" y="50" width="120" height="60" as="geometry" />
+          <mxGeometry x="480" y="-30" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="gv-i2YEqdemQeXcwKcJR-29" value="Avaliação" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#33FFFF;" parent="1" vertex="1">
           <mxGeometry x="907" y="120" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ea4S65HdMTTHUP1lMuB2-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gv-i2YEqdemQeXcwKcJR-7" target="Ea4S65HdMTTHUP1lMuB2-2">
+        <mxCell id="Ea4S65HdMTTHUP1lMuB2-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gv-i2YEqdemQeXcwKcJR-7" target="Ea4S65HdMTTHUP1lMuB2-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="300" y="380" as="sourcePoint" />
             <mxPoint x="500" y="380" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ea4S65HdMTTHUP1lMuB2-2" value="Desenvolvimento do &lt;i&gt;Prompt&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF66;" vertex="1" parent="1">
+        <mxCell id="Ea4S65HdMTTHUP1lMuB2-2" value="Desenvolvimento do &lt;i&gt;Prompt&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF66;" parent="1" vertex="1">
           <mxGeometry x="340" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="flCXpkrSe3Wm0N8jv-8p-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="flCXpkrSe3Wm0N8jv-8p-1" target="gv-i2YEqdemQeXcwKcJR-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flCXpkrSe3Wm0N8jv-8p-1" value="SQLCoder" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF6666;" vertex="1" parent="1">
+          <mxGeometry x="480" y="50" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
