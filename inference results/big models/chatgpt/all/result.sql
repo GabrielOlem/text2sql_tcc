@@ -434,7 +434,7 @@ SELECT COUNT(*) AS num_matches  FROM matches;
 SELECT first_name, birth_date FROM players WHERE country_code = 'usa'
 SELECT first_name, birth_date  FROM players  WHERE country_code = 'usa'
 SELECT AVG(loser_age) AS average_loser_age, AVG(winner_age) AS average_winner_age FROM matches
-SELECT AVG(loser_age) AS avg_loser_age, AVG(winner_age) AS avg_winner_age FROM matches GROUP BY NULL
+SELECT AVG(loser_age) AS avg_loser_age, AVG(winner_age) AS avg_winner_age FROM matches
 SELECT AVG(winner_rank) FROM matches
 SELECT AVG(winner_rank)  FROM matches
 SELECT MAX(loser_rank) FROM matches
@@ -972,7 +972,7 @@ SELECT role_code, street, city, state FROM professionals WHERE city LIKE '%west%
 SELECT role_code, street, city, state  FROM professionals  WHERE city LIKE '%west%';
 SELECT first_name, last_name, email_address FROM owners WHERE UPPER(state) LIKE '%NORTH%'
 SELECT first_name, last_name, email_address  FROM owners  WHERE state LIKE '%north%'
-SELECT COUNT(*)  FROM dogs  WHERE age < (     SELECT AVG(age)      FROM dogs )
+SELECT COUNT(*)  FROM dogs  WHERE age < (SELECT AVG(age) FROM dogs)
 SELECT COUNT(*)  FROM dogs  WHERE age < (SELECT AVG(age) FROM dogs)
 SELECT MAX(date_of_treatment)  FROM treatments;
 SELECT cost_of_treatment  FROM treatments ORDER BY date_of_treatment DESC  LIMIT 1;
